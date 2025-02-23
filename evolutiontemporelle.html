@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Évolution temporelle des systèmes chimiques – Fiche de cours</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffe4e1;
+            color: rgb(63, 39, 39);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            width: 20px;
+            height: 20px;
+            background-color: #ff1493;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        h2, h3 {
+            color: #8b1152;
+        }
+
+        h4 {
+            font-size: 18px;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            color: #9abcab;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .concepts, .example {
+            background-color: #aa7788;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .concepts ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .concepts li {
+            margin-bottom: 15px;
+        }
+
+        .concepts li span {
+            color: #874b79;
+            font-weight: bold;
+        }
+
+        .example p {
+            font-size: 18px;
+        }
+
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .image-container {
+            background-color: #3c2b34;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .image-container p {
+            font-size: 14px;
+            color: #9abcab;
+            margin-top: 10px;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 50%;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        footer a {
+            color: #ff00c8;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"></div>
+            <h1>Évolution temporelle des systèmes chimiques – Fiche de cours</h1>
+        </header>
+
+        <main>
+            <section class="concepts">
+                <h2>1. Vitesse de réaction chimique</h2>
+                <p>Une réaction chimique est qualifiée de rapide si elle paraît terminée dès la mise en contact (lié à la persistance rétinienne de 50 ms). Plus généralement, toute réaction chimique d’une durée inférieure à 100 ms est qualifiée de rapide, sinon elle est lente.</p>
+                <p><strong>Exercice d'application :</strong> Expliquez pourquoi une réaction chimique peut être qualifiée de rapide ou lente.</p>
+                <p><strong>Solution :</strong> Une réaction est rapide si elle se termine en moins de 100 ms, sinon elle est lente. Cela dépend de la vitesse à laquelle les réactifs se transforment en produits.</p>
+            </section>
+
+            <section class="concepts">
+                <h2>2. Facteurs cinétiques</h2>
+                <h3>a. Définition</h3>
+                <p>Les facteurs cinétiques permettent de modifier la vitesse de réaction chimique (accélérer ou ralentir).</p>
+                <p><strong>Exercice d'application :</strong> Citez trois facteurs cinétiques qui influencent la vitesse d'une réaction chimique.</p>
+                <p><strong>Solution :</strong> La température, la concentration des réactifs, et la présence d'un catalyseur.</p>
+
+                <h3>b. Température</h3>
+                <p>Augmenter la température d’une solution augmente la probabilité d’interaction des réactifs, donc la vitesse de réaction. Diminuer la température (trempe chimique) ralentit la réaction.</p>
+                <p><strong>Exercice d'application :</strong> Expliquez pourquoi une augmentation de température accélère une réaction chimique.</p>
+                <p><strong>Solution :</strong> Une température plus élevée augmente l'énergie cinétique des molécules, ce qui augmente la fréquence des collisions et donc la vitesse de réaction.</p>
+
+                <h3>c. Concentration</h3>
+                <p>Augmenter la concentration des réactifs augmente la vitesse de réaction.</p>
+                <p><strong>Exercice d'application :</strong> Si la concentration d'un réactif est doublée, comment cela affecte-t-il la vitesse de réaction ?</p>
+                <p><strong>Solution :</strong> La vitesse de réaction augmente généralement proportionnellement à la concentration des réactifs.</p>
+
+                <h3>d. Éclairement</h3>
+                <p>L’éclairement d’une solution est un facteur cinétique (par exemple, la photosynthèse).</p>
+                <p><strong>Exercice d'application :</strong> Donnez un exemple de réaction chimique influencée par l'éclairement.</p>
+                <p><strong>Solution :</strong> La photosynthèse, où la lumière est nécessaire pour convertir le CO₂ et l'eau en glucose et en oxygène.</p>
+
+                <h3>e. Solvant</h3>
+                <p>La nature du solvant est un facteur cinétique.</p>
+                <p><strong>Exercice d'application :</strong> Expliquez comment le choix du solvant peut influencer la vitesse d'une réaction chimique.</p>
+                <p><strong>Solution :</strong> Le solvant peut affecter la solubilité des réactifs et la fréquence des collisions, influençant ainsi la vitesse de réaction.</p>
+
+                <h3>f. Catalyseurs</h3>
+                <p>Les catalyseurs permettent d’accélérer la vitesse de réaction chimique. On distingue la catalyse homogène, hétérogène et enzymatique.</p>
+                <p><strong>Exercice d'application :</strong> Expliquez la différence entre catalyse homogène et hétérogène.</p>
+                <p><strong>Solution :</strong> En catalyse homogène, le catalyseur et les réactifs sont dans la même phase, tandis qu'en catalyse hétérogène, ils sont dans des phases différentes.</p>
+            </section>
+
+            <section class="concepts">
+                <h2>3. Évolution des concentrations</h2>
+                <h3>a. Technique de suivi</h3>
+                <p>L’évolution de la concentration des espèces chimiques peut être étudiée par :</p>
+                <ul>
+                    <li>Spectrophotométrie (colorimétrie)</li>
+                    <li>pH-métrie</li>
+                    <li>Conductimétrie</li>
+                    <li>Manométrie</li>
+                </ul>
+                <p><strong>Exercice d'application :</strong> Expliquez comment la spectrophotométrie permet de suivre l'évolution d'une réaction chimique.</p>
+                <p><strong>Solution :</strong> La spectrophotométrie mesure l'absorbance d'une solution, qui est proportionnelle à la concentration d'une espèce chimique, permettant de suivre son évolution au cours du temps.</p>
+
+                <h3>b. Vitesse volumique</h3>
+                <p>La vitesse volumique d’évolution d’une espèce chimique X est définie par :</p>
+                <p>\[ v_x(t) = \left| \frac{d[X]}{dt} \right| \]</p>
+                <p><strong>Exercice d'application :</strong> Calculez la vitesse volumique à \( t = 2 \, \text{s} \) si la concentration de X passe de 0.5 M à 0.3 M entre \( t = 1 \, \text{s} \) et \( t = 3 \, \text{s} \).</p>
+                <p><strong>Solution :</strong> \( v_x(2) = \left| \frac{0.3 - 0.5}{3 - 1} \right| = 0.1 \, \text{M/s} \).</p>
+
+                <h3>c. Loi de vitesse d’ordre 1</h3>
+                <p>Pour les réactions d’ordre 1, on a :</p>
+                <p>\[ v(t) = k[X] \]</p>
+                <p>où \( k \) est la constante de vitesse en \( \text{s}^{-1} \).</p>
+                <p><strong>Exercice d'application :</strong> Si \( k = 0.02 \, \text{s}^{-1} \) et \( [X] = 0.1 \, \text{M} \), calculez la vitesse de réaction.</p>
+                <p><strong>Solution :</strong> \( v = 0.02 \times 0.1 = 0.002 \, \text{M/s} \).</p>
+
+                <h3>d. Temps de demi-réaction</h3>
+                <p>Le temps de demi-réaction \( t_{1/2} \) est le temps nécessaire pour que la concentration d'un réactif soit réduite de moitié. Pour les réactions d’ordre 1 :</p>
+                <p>\[ t_{1/2} = \frac{\ln 2}{k} \]</p>
+                <p><strong>Exercice d'application :</strong> Calculez le temps de demi-réaction pour une réaction d’ordre 1 avec \( k = 0.01 \, \text{s}^{-1} \).</p>
+                <p><strong>Solution :</strong> \( t_{1/2} = \frac{\ln 2}{0.01} \approx 69.3 \, \text{s} \).</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>Ce cours a été créé pour les étudiants de terminale en spécialité physique-chimie.</p>
+            <p>Retour au <a href="index.html">site principal</a>.</p>
+        </footer>
+    </div>
+
+    <script>
+        MathJax.typeset();
+    </script>
+</body>
+</html>

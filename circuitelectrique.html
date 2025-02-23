@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circuits électriques capacitifs – Fiche de cours</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffe4e1;
+            color: rgb(63, 39, 39);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            width: 20px;
+            height: 20px;
+            background-color: #ff1493;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        h2, h3 {
+            color: #8b1152;
+        }
+
+        h4 {
+            font-size: 18px;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            color: #9abcab;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .concepts, .example {
+            background-color: #aa7788;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .concepts ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .concepts li {
+            margin-bottom: 15px;
+        }
+
+        .concepts li span {
+            color: #874b79;
+            font-weight: bold;
+        }
+
+        .example p {
+            font-size: 18px;
+        }
+
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .image-container {
+            background-color: #3c2b34;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .image-container p {
+            font-size: 14px;
+            color: #9abcab;
+            margin-top: 10px;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 50%;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        footer a {
+            color: #ff00c8;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"></div>
+            <h1>Circuits électriques capacitifs – Fiche de cours</h1>
+        </header>
+
+        <main>
+            <section class="concepts">
+                <h2>1. Modélisation d’un condensateur</h2>
+                <h3>a. Principe d’un condensateur</h3>
+                <p>Les condensateurs sont constitués de deux plaques métalliques très proches séparées par un isolant. Ils sont utilisés pour stocker de l’énergie électrique, comme composants électroniques et pour mémoriser des informations numériques.</p>
+                <p><strong>Exercice d'application :</strong> Expliquez pourquoi un condensateur peut stocker de l'énergie électrique.</p>
+                <p><strong>Solution :</strong> Un condensateur stocke de l'énergie électrique sous forme de champ électrique entre ses deux plaques, grâce à la séparation des charges positives et négatives.</p>
+
+                <h3>b. Capacité d’un condensateur</h3>
+                <p>La capacité d’un condensateur est définie comme le rapport de la charge électrique stockée par la tension électrique à ses bornes. Elle est donnée par :</p>
+                <p>\[ C = \frac{\varepsilon S}{e} \]</p>
+                <p>où \( \varepsilon \) est la permittivité du matériau, \( S \) est la surface des plaques, et \( e \) est l'épaisseur de l'isolant.</p>
+                <p><strong>Exercice d'application :</strong> Calculez la capacité d'un condensateur avec \( \varepsilon = 8.85 \times 10^{-12} \, \text{F/m} \), \( S = 0.01 \, \text{m}^2 \), et \( e = 0.001 \, \text{m} \).</p>
+                <p><strong>Solution :</strong> \( C = \frac{8.85 \times 10^{-12} \times 0.01}{0.001} = 8.85 \times 10^{-11} \, \text{F} \).</p>
+
+                <h3>c. Charge d’un condensateur</h3>
+                <p>La charge d’un condensateur est définie par :</p>
+                <p>\[ q(t) = C \cdot u_c(t) \]</p>
+                <p><strong>Exercice d'application :</strong> Calculez la charge d'un condensateur de capacité \( 10 \, \mu\text{F} \) soumis à une tension de \( 5 \, \text{V} \).</p>
+                <p><strong>Solution :</strong> \( q = 10 \times 10^{-6} \times 5 = 50 \times 10^{-6} \, \text{C} = 50 \, \mu\text{C} \).</p>
+
+                <h3>d. Relation tension et intensité</h3>
+                <p>L’intensité et la tension sont reliées par :</p>
+                <p>\[ i(t) = \frac{dq(t)}{dt} = C \frac{du_c(t)}{dt} \]</p>
+                <p><strong>Exercice d'application :</strong> Si la tension aux bornes d'un condensateur varie selon \( u_c(t) = 10 \sin(100t) \), trouvez l'expression de l'intensité \( i(t) \).</p>
+                <p><strong>Solution :</strong> \( i(t) = C \frac{d}{dt}(10 \sin(100t)) = 10 \times 10^{-6} \times 1000 \cos(100t) = 0.01 \cos(100t) \, \text{A} \).</p>
+            </section>
+
+            <section class="concepts">
+                <h2>2. Charge d’un circuit série RC</h2>
+                <h3>a. Schéma électrique du circuit</h3>
+                <p>Un circuit série RC est composé d'une résistance \( R \) et d'un condensateur \( C \) en série, alimentés par une source de tension \( E \).</p>
+                <p><strong>Exercice d'application :</strong> Dessinez le schéma électrique d'un circuit série RC.</p>
+                <p><strong>Solution :</strong> Le schéma comprend une source de tension \( E \), une résistance \( R \), et un condensateur \( C \) en série.</p>
+
+                <h3>b. Mise en équation du circuit</h3>
+                <p>Selon la loi des mailles, on établit :</p>
+                <p>\[ E = u_R(t) + u_C(t) \]</p>
+                <p>La solution de cette équation différentielle est :</p>
+                <p>\[ u_c(t) = E \left( 1 - e^{-\frac{t}{\tau}} \right) \quad \text{avec} \quad \tau = RC \]</p>
+                <p><strong>Exercice d'application :</strong> Calculez la constante de temps \( \tau \) pour \( R = 1 \, \text{k}\Omega \) et \( C = 10 \, \mu\text{F} \).</p>
+                <p><strong>Solution :</strong> \( \tau = 1000 \times 10 \times 10^{-6} = 0.01 \, \text{s} \).</p>
+            </section>
+
+            <section class="concepts">
+                <h2>3. Décharge d’un circuit série RC</h2>
+                <h3>a. Schéma électrique du circuit</h3>
+                <p>Lors de la décharge, le condensateur se décharge à travers la résistance \( R \).</p>
+                <p><strong>Exercice d'application :</strong> Dessinez le schéma électrique d'un circuit RC en décharge.</p>
+                <p><strong>Solution :</strong> Le schéma comprend un condensateur \( C \) et une résistance \( R \) en série, sans source de tension.</p>
+
+                <h3>b. Mise en équation du circuit</h3>
+                <p>Selon la loi des mailles, on établit :</p>
+                <p>\[ 0 = u_R(t) + u_C(t) \]</p>
+                <p>La solution de cette équation différentielle est :</p>
+                <p>\[ u_c(t) = E \cdot e^{-\frac{t}{\tau}} \]</p>
+                <p><strong>Exercice d'application :</strong> Si \( E = 10 \, \text{V} \) et \( \tau = 0.01 \, \text{s} \), trouvez la tension \( u_c(t) \) après \( t = 0.01 \, \text{s} \).</p>
+                <p><strong>Solution :</strong> \( u_c(0.01) = 10 \cdot e^{-1} \approx 3.68 \, \text{V} \).</p>
+            </section>
+
+            <section class="concepts">
+                <h2>4. Capteurs électriques capacitifs</h2>
+                <h3>a. Présentation</h3>
+                <p>Les capteurs capacitifs sont utilisés pour mesurer des grandeurs physiques comme la pression, l'humidité, ou la proximité.</p>
+                <p><strong>Exercice d'application :</strong> Citez un exemple d'application des capteurs capacitifs dans la vie quotidienne.</p>
+                <p><strong>Solution :</strong> Les écrans tactiles des smartphones utilisent des capteurs capacitifs pour détecter les touches.</p>
+
+                <h3>b. Exemples de capteurs capacitifs</h3>
+                <p>Exemples de capteurs capacitifs : microphone, capteur de pression, capteur d'humidité, capteur de proximité.</p>
+                <p><strong>Exercice d'application :</strong> Expliquez comment un capteur capacitif peut mesurer l'humidité.</p>
+                <p><strong>Solution :</strong> Un capteur capacitif mesure l'humidité en détectant les variations de capacité dues à la présence d'eau dans l'air.</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>Ce cours a été créé pour les étudiants de terminale en spécialité physique-chimie.</p>
+            <p>Retour au <a href="index.html">site principal</a>.</p>
+        </footer>
+    </div>
+
+    <script>
+        MathJax.typeset();
+    </script>
+</body>
+</html>

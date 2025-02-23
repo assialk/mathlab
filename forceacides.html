@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Force des acides et des bases – Fiche de cours</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffe4e1;
+            color: rgb(63, 39, 39);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            width: 20px;
+            height: 20px;
+            background-color: #ff1493;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        h2, h3 {
+            color: #8b1152;
+        }
+
+        h4 {
+            font-size: 18px;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            color: #9abcab;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .concepts, .example {
+            background-color: #aa7788;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .concepts ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .concepts li {
+            margin-bottom: 15px;
+        }
+
+        .concepts li span {
+            color: #874b79;
+            font-weight: bold;
+        }
+
+        .example p {
+            font-size: 18px;
+        }
+
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .image-container {
+            background-color: #3c2b34;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .image-container p {
+            font-size: 14px;
+            color: #9abcab;
+            margin-top: 10px;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 50%;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        footer a {
+            color: #ff00c8;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"></div>
+            <h1>Force des acides et des bases – Fiche de cours</h1>
+        </header>
+
+        <main>
+            <section class="concepts">
+                <h2>1. Définitions</h2>
+                <p>Un <strong>acide</strong> est une espèce chimique capable de libérer au moins un proton. Une <strong>base</strong> est une espèce chimique capable de capter au moins un proton. Le <strong>pH</strong> caractérise l’acidité d’une solution et est défini par :</p>
+                <p>\[ pH = -\log[H_3O^+] \quad \text{et} \quad [H_3O^+] = 10^{-pH} \]</p>
+                <p><strong>Exercice d'application :</strong> Calculez le pH d'une solution avec \( [H_3O^+] = 10^{-3} \, \text{mol/L} \).</p>
+                <p><strong>Solution :</strong> \( pH = -\log(10^{-3}) = 3 \).</p>
+            </section>
+
+            <section class="concepts">
+                <h2>2. Réaction acide-base</h2>
+                <p>Une réaction acide-base est une réaction chimique au cours de laquelle l’acide d’un couple acide/base réagit avec la base d’un autre couple acide/base avec échange de protons.</p>
+                <p><strong>Équation bilan :</strong> \( AH + B^- \rightarrow A^- + BH \)</p>
+                <p><strong>Produit ionique de l’eau :</strong></p>
+                <p>\[ 2H_2O \rightarrow H_3O^+ + HO^- \]</p>
+                <p>Le produit ionique de l’eau est défini par :</p>
+                <p>\[ [H_3O^+][HO^-] = K_e = 10^{-14} \quad \text{avec} \quad pK_e = 14 \]</p>
+                <p><strong>Exercice d'application :</strong> Calculez la concentration en \( HO^- \) dans une solution avec \( [H_3O^+] = 10^{-5} \, \text{mol/L} \).</p>
+                <p><strong>Solution :</strong> \( [HO^-] = \frac{10^{-14}}{10^{-5}} = 10^{-9} \, \text{mol/L} \).</p>
+
+                <h3>Constante d’acidité</h3>
+                <p>La constante d’acidité est la constante d’équilibre associée à la réaction :</p>
+                <p>\[ AH + H_2O \rightleftharpoons A^- + H_3O^+ \]</p>
+                <p>\[ K_A = \frac{[H_3O^+][A^-]}{[AH]} \]</p>
+                <p><strong>Exercice d'application :</strong> Si \( K_A = 10^{-5} \), calculez \( pK_A \).</p>
+                <p><strong>Solution :</strong> \( pK_A = -\log(10^{-5}) = 5 \).</p>
+            </section>
+
+            <section class="concepts">
+                <h2>3. Force des acides et des bases</h2>
+                <h3>a. Acide fort</h3>
+                <p>Un acide est fort s'il est totalement dissocié en solution aqueuse. Exemple : \( H_3O^+ \).</p>
+                <p>\[ AH + H_2O \rightarrow A^- + H_3O^+ \]</p>
+                <p><strong>Exercice d'application :</strong> Calculez le pH d'une solution d'acide fort de concentration \( 0.01 \, \text{mol/L} \).</p>
+                <p><strong>Solution :</strong> \( pH = -\log(0.01) = 2 \).</p>
+
+                <h3>b. Acide faible</h3>
+                <p>Un acide est faible s'il est partiellement dissocié en solution aqueuse.</p>
+                <p>\[ AH + H_2O \rightleftharpoons A^- + H_3O^+ \]</p>
+                <p><strong>Exercice d'application :</strong> Si \( pK_A = 4.75 \) et \( [A^-] = [AH] \), calculez le pH.</p>
+                <p><strong>Solution :</strong> \( pH = pK_A + \log \frac{[A^-]}{[AH]} = 4.75 + \log(1) = 4.75 \).</p>
+
+                <h3>c. Base faible</h3>
+                <p>Une base est faible si elle s'associe partiellement à des ions \( H^+ \).</p>
+                <p>\[ A^- + H_2O \rightleftharpoons AH + HO^- \]</p>
+                <p><strong>Exercice d'application :</strong> Si \( pK_A = 9.25 \) et \( [A^-] = [AH] \), calculez le pH.</p>
+                <p><strong>Solution :</strong> \( pH = pK_A + \log \frac{[A^-]}{[AH]} = 9.25 + \log(1) = 9.25 \).</p>
+
+                <h3>d. Base forte</h3>
+                <p>Une base est forte si elle s'associe totalement à des ions \( H^+ \). Exemple : \( HO^- \).</p>
+                <p>\[ A^- + H_2O \rightarrow AH + HO^- \]</p>
+                <p><strong>Exercice d'application :</strong> Calculez le pH d'une solution de base forte de concentration \( 0.01 \, \text{mol/L} \).</p>
+                <p><strong>Solution :</strong> \( pH = 14 + \log(0.01) = 12 \).</p>
+            </section>
+
+            <section class="concepts">
+                <h2>4. Diagramme de prédominance</h2>
+                <p>Pour un acide faible ou une base faible, on représente sur une droite de pH l’espèce chimique \( AH \) ou \( A^- \) qui prédomine.</p>
+                <p><strong>Exercice d'application :</strong> Tracez le diagramme de prédominance pour un acide avec \( pK_A = 5 \).</p>
+                <p><strong>Solution :</strong> \( AH \) prédomine pour \( pH < 5 \) et \( A^- \) prédomine pour \( pH > 5 \).</p>
+            </section>
+
+            <section class="concepts">
+                <h2>5. Diagramme de distribution</h2>
+                <p>Pour un acide faible ou une base faible, on représente le pourcentage en solution de \( AH \) ou \( A^- \) en fonction du pH.</p>
+                <p><strong>Exercice d'application :</strong> Expliquez comment le diagramme de distribution permet de visualiser les espèces prédominantes.</p>
+                <p><strong>Solution :</strong> Le diagramme montre les pourcentages de \( AH \) et \( A^- \) en fonction du pH, permettant de déterminer quelle espèce prédomine à un pH donné.</p>
+            </section>
+
+            <section class="concepts">
+                <h2>6. Mélanges d’acides et de bases</h2>
+                <p>Les mélanges d’acides et de bases peuvent conduire à des réactions totales ou limitées, selon la force des acides et des bases impliqués.</p>
+                <p><strong>Exercice d'application :</strong> Expliquez ce qui se passe lorsqu'on mélange un acide fort et une base forte.</p>
+                <p><strong>Solution :</strong> La réaction est totale et exothermique, avec formation d'eau et de sels.</p>
+            </section>
+
+            <section class="concepts">
+                <h2>7. Les acides alpha aminés</h2>
+                <p>Les acides aminés ont au moins deux fonctions chimiques : une fonction acide carboxylique et une fonction amine. Ils se présentent sous plusieurs formes en fonction du pH.</p>
+                <p><strong>Exercice d'application :</strong> Expliquez pourquoi un acide aminé a deux \( pK_A \).</p>
+                <p><strong>Solution :</strong> Un acide aminé a deux \( pK_A \) car il possède deux groupes fonctionnels ionisables : le groupe carboxyle et le groupe amine.</p>
+            </section>
+
+            <section class="concepts">
+                <h2>8. Les solutions tampons</h2>
+                <p>Les solutions tampons maintiennent un pH stable malgré l'ajout d'acide ou de base. Elles sont caractérisées par \( [AH] = [A^-] \) et \( pH = pK_A \).</p>
+                <p><strong>Exercice d'application :</strong> Expliquez pourquoi une solution tampon résiste aux variations de pH.</p>
+                <p><strong>Solution :</strong> Une solution tampon contient un acide faible et sa base conjuguée en concentrations similaires, ce qui permet de neutraliser les ajouts d'acide ou de base.</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>Ce cours a été créé pour les étudiants de terminale en spécialité physique-chimie.</p>
+            <p>Retour au <a href="index.html">site principal</a>.</p>
+        </footer>
+    </div>
+
+    <script>
+        MathJax.typeset();
+    </script>
+</body>
+</html>

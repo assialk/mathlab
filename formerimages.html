@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Former des images – Fiche de cours</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffe4e1;
+            color: rgb(63, 39, 39);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            width: 20px;
+            height: 20px;
+            background-color: #ff1493;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        h2, h3 {
+            color: #8b1152;
+        }
+
+        h4 {
+            font-size: 18px;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            color: #9abcab;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .concepts, .example {
+            background-color: #aa7788;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .concepts ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .concepts li {
+            margin-bottom: 15px;
+        }
+
+        .concepts li span {
+            color: #874b79;
+            font-weight: bold;
+        }
+
+        .example p {
+            font-size: 18px;
+        }
+
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .image-container {
+            background-color: #3c2b34;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .image-container p {
+            font-size: 14px;
+            color: #9abcab;
+            margin-top: 10px;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 50%;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        footer a {
+            color: #ff00c8;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"></div>
+            <h1>Former des images – Fiche de cours</h1>
+        </header>
+
+        <main>
+            <section class="concepts">
+                <h2>1. Rappels de première</h2>
+                <h3>a. Lentille convergente</h3>
+                <p>Une lentille convergente est symbolisée par 2 flèches orientées vers l’extérieur.</p>
+                <p><strong>Exercice d'application :</strong> Dessinez le symbole d'une lentille convergente et expliquez pourquoi les flèches sont orientées vers l'extérieur.</p>
+                <p><strong>Solution :</strong> Les flèches représentent la convergence des rayons lumineux vers le foyer image.</p>
+
+                <h3>b. Construction de l’image d’un objet placé à l’infini</h3>
+                <p>On représente un rayon passant par le centre optique. Tous les rayons émergents de la lentille convergent au plan focal image.</p>
+                <p><strong>Exercice d'application :</strong> Tracez le trajet des rayons lumineux pour un objet placé à l'infini.</p>
+                <p><strong>Solution :</strong> Les rayons parallèles à l'axe optique convergent au foyer image après avoir traversé la lentille.</p>
+
+                <h3>c. Distance focale et vergence</h3>
+                <p>La distance focale d’une lentille est définie par :</p>
+                <p>\[ \text{OF} = f' \]</p>
+                <p>La vergence vaut :</p>
+                <p>\[ V = \frac{1}{f'} \]</p>
+                <p><strong>Exercice d'application :</strong> Calculez la vergence d'une lentille de distance focale 0.5 m.</p>
+                <p><strong>Solution :</strong> \( V = \frac{1}{0.5} = 2 \, \delta \).</p>
+
+                <h3>d. Construction de l’image d’un objet placé sur le plan focal objet</h3>
+                <p>On représente un rayon passant par le centre optique. Tous les rayons émergents de la lentille sont parallèles entre eux.</p>
+                <p><strong>Exercice d'application :</strong> Tracez le trajet des rayons lumineux pour un objet placé sur le plan focal objet.</p>
+                <p><strong>Solution :</strong> Les rayons émergents sont parallèles car l'objet est au foyer objet.</p>
+            </section>
+
+            <section class="concepts">
+                <h2>2. Lunette astronomique</h2>
+                <h3>a. Définition</h3>
+                <p>Une lunette astronomique est un instrument utilisé en optique pour observer les objets lointains, considérés à l’infini.</p>
+                <p><strong>Exercice d'application :</strong> Expliquez pourquoi une lunette astronomique est utilisée pour observer des objets lointains.</p>
+                <p><strong>Solution :</strong> Elle permet de grossir les images des objets lointains en utilisant deux lentilles convergentes.</p>
+
+                <h3>b. Composition d’une lunette astronomique</h3>
+                <p>Une lunette astronomique est constituée par 2 lentilles convergentes : l'objectif et l'oculaire.</p>
+                <p><strong>Exercice d'application :</strong> Identifiez les deux lentilles d'une lunette astronomique et expliquez leur rôle.</p>
+                <p><strong>Solution :</strong> L'objectif forme une image réelle de l'objet, et l'oculaire agit comme une loupe pour grossir cette image.</p>
+
+                <h3>c. Grossissement angulaire</h3>
+                <p>Le grossissement angulaire est défini par :</p>
+                <p>\[ G = \frac{a'}{a} = \frac{f_1'}{f_2'} \]</p>
+                <p><strong>Exercice d'application :</strong> Calculez le grossissement angulaire d'une lunette astronomique avec \( f_1' = 50 \, \text{cm} \) et \( f_2' = 5 \, \text{cm} \).</p>
+                <p><strong>Solution :</strong> \( G = \frac{50}{5} = 10 \).</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>Ce cours a été créé pour les étudiants de terminale en spécialité physique-chimie.</p>
+            <p>Retour au <a href="index.html">site principal</a>.</p>
+        </footer>
+    </div>
+
+    <script>
+        MathJax.typeset();
+    </script>
+</body>
+</html>

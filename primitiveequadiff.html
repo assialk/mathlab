@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primitives et Équations Différentielles</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffe4e1;
+            color: rgb(63, 39, 39);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            width: 20px;
+            height: 20px;
+            background-color: #ff1493;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        h2, h3 {
+            color: #8b1152;
+        }
+
+        h4 {
+            font-size: 18px;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            color: #9abcab;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .concepts, .example {
+            background-color: #aa7788;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .concepts ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .concepts li {
+            margin-bottom: 15px;
+        }
+
+        .concepts li span {
+            color: #874b79;
+            font-weight: bold;
+        }
+
+        .example p {
+            font-size: 18px;
+        }
+
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .image-container {
+            background-color: #3c2b34;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .image-container p {
+            font-size: 14px;
+            color: #9abcab;
+            margin-top: 10px;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 50%;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        footer a {
+            color: #ff00c8;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"></div>
+            <h1>Primitives et Équations Différentielles</h1>
+        </header>
+
+        <main>
+            <section class="concepts">
+                <h2>1. Équation différentielle \( y' = f \)</h2>
+                <h3>a. Primitive d’une fonction continue sur un intervalle</h3>
+                <p>On dit que \( F \) est une primitive de \( f \) sur un intervalle \( I \) si \( F \) est dérivable sur \( I \) et \( F' = f \).</p>
+                <p>Toute fonction continue sur un intervalle admet des primitives sur cet intervalle (à une constante d’intégration près).</p>
+
+                <h3>b. Primitives des fonctions de référence</h3>
+                <table>
+                    <tr>
+                        <th>Fonction \( f(x) \)</th>
+                        <th>Primitive \( F(x) \)</th>
+                        <th>Intervalle</th>
+                    </tr>
+                    <tr>
+                        <td>\( a \)</td>
+                        <td>\( ax \)</td>
+                        <td>\( \mathbb{R} \)</td>
+                    </tr>
+                    <tr>
+                        <td>\( x \)</td>
+                        <td>\( \frac{x^2}{2} \)</td>
+                        <td>\( \mathbb{R} \)</td>
+                    </tr>
+                    <tr>
+                        <td>\( x^n \)</td>
+                        <td>\( \frac{x^{n+1}}{n+1} \)</td>
+                        <td>\( \mathbb{R} \)</td>
+                    </tr>
+                    <tr>
+                        <td>\( \frac{1}{x} \)</td>
+                        <td>\( \ln|x| \)</td>
+                        <td>\( ]0; +\infty[ \)</td>
+                    </tr>
+                    <tr>
+                        <td>\( \frac{1}{x^n} \)</td>
+                        <td>\( -\frac{1}{(n-1)x^{n-1}} \)</td>
+                        <td>\( ]-\infty; 0[ \) ou \( ]0; +\infty[ \)</td>
+                    </tr>
+                    <tr>
+                        <td>\( \frac{1}{\sqrt{x}} \)</td>
+                        <td>\( 2\sqrt{x} \)</td>
+                        <td>\( \mathbb{R}_+^* \)</td>
+                    </tr>
+                    <tr>
+                        <td>\( \sin(x) \)</td>
+                        <td>\( -\cos(x) \)</td>
+                        <td>\( \mathbb{R} \)</td>
+                    </tr>
+                    <tr>
+                        <td>\( \cos(x) \)</td>
+                        <td>\( \sin(x) \)</td>
+                        <td>\( \mathbb{R} \)</td>
+                    </tr>
+                    <tr>
+                        <td>\( e^x \)</td>
+                        <td>\( e^x \)</td>
+                        <td>\( \mathbb{R} \)</td>
+                    </tr>
+                </table>
+
+                <h3>c. Opérations sur les primitives</h3>
+                <table>
+                    <tr>
+                        <th>Fonction \( f \)</th>
+                        <th>Primitive \( F \)</th>
+                        <th>Intervalle</th>
+                    </tr>
+                    <tr>
+                        <td>\( u + v \)</td>
+                        <td>\( U + V \)</td>
+                        <td>\( D_u \cap D_v \)</td>
+                    </tr>
+                    <tr>
+                        <td>\( u' \cdot u^n \)</td>
+                        <td>\( \frac{u^{n+1}}{n+1} \)</td>
+                        <td>\( D_u \)</td>
+                    </tr>
+                    <tr>
+                        <td>\( \frac{u'}{\sqrt{u}} \)</td>
+                        <td>\( 2\sqrt{u} \)</td>
+                        <td>\( D_u \cap u > 0 \)</td>
+                    </tr>
+                    <tr>
+                        <td>\( \frac{u'}{u^2} \)</td>
+                        <td>\( -\frac{1}{u} \)</td>
+                        <td>\( D_u \cap u \neq 0 \)</td>
+                    </tr>
+                    <tr>
+                        <td>\( u' \cdot e^u \)</td>
+                        <td>\( e^u \)</td>
+                        <td>\( D_u \)</td>
+                    </tr>
+                    <tr>
+                        <td>\( \frac{u'}{u} \)</td>
+                        <td>\( \ln|u| \)</td>
+                        <td>\( D_u \cap u \neq 0 \)</td>
+                    </tr>
+                    <tr>
+                        <td>\( u' \cdot \sin(u) \)</td>
+                        <td>\( -\cos(u) \)</td>
+                        <td>\( D_u \)</td>
+                    </tr>
+                    <tr>
+                        <td>\( u' \cdot \cos(u) \)</td>
+                        <td>\( \sin(u) \)</td>
+                        <td>\( D_u \)</td>
+                    </tr>
+                </table>
+
+                <h3>Exercice 1 :</h3>
+                <p>Trouver une primitive de \( f(x) = 3x^2 + 2x + 1 \).</p>
+                <p><strong>Solution :</strong></p>
+                <p>\[
+                    F(x) = x^3 + x^2 + x + C \quad \text{où } C \text{ est une constante.}
+                \]</p>
+            </section>
+
+            <section class="concepts">
+                <h2>2. Équation différentielle \( y' = ay \)</h2>
+                <p>L’équation différentielle \( y' = ay \) est une équation différentielle linéaire homogène du premier ordre sans second membre.</p>
+                <p>Les solutions sont de la forme :</p>
+                <p>\[
+                    y(x) = Ce^{ax} \quad \text{où } C \in \mathbb{R}
+                \]</p>
+                <p>Pour déterminer \( C \), on utilise une condition initiale.</p>
+
+                <h3>Exercice 2 :</h3>
+                <p>Résoudre l’équation différentielle \( y' = 2y \) avec la condition initiale \( y(0) = 3 \).</p>
+                <p><strong>Solution :</strong></p>
+                <p>\[
+                    y(x) = Ce^{2x}
+                \]</p>
+                <p>Avec \( y(0) = 3 \), on trouve \( C = 3 \). Donc :</p>
+                <p>\[
+                    y(x) = 3e^{2x}
+                \]</p>
+            </section>
+
+            <section class="concepts">
+                <h2>3. Équation différentielle \( y' = ay + b \) avec \( a \neq 0 \)</h2>
+                <p>Les solutions de l’équation différentielle \( y' = ay + b \) sont de la forme :</p>
+                <p>\[
+                    y(x) = Ce^{ax} - \frac{b}{a} \quad \text{où } C \in \mathbb{R}
+                \]</p>
+                <p>Pour déterminer \( C \), on utilise une condition initiale.</p>
+
+                <h3>Exercice 3 :</h3>
+                <p>Résoudre l’équation différentielle \( y' = 3y + 6 \) avec la condition initiale \( y(0) = 2 \).</p>
+                <p><strong>Solution :</strong></p>
+                <p>\[
+                    y(x) = Ce^{3x} - 2
+                \]</p>
+                <p>Avec \( y(0) = 2 \), on trouve \( C = 4 \). Donc :</p>
+                <p>\[
+                    y(x) = 4e^{3x} - 2
+                \]</p>
+            </section>
+
+            <section class="concepts">
+                <h2>4. Équation différentielle \( y' = ay + f(x) \) avec \( a \neq 0 \)</h2>
+                <p>Les solutions de l’équation différentielle \( y' = ay + f(x) \) sont de la forme :</p>
+                <p>\[
+                    y(x) = Ce^{ax} + \phi(x) \quad \text{où } C \in \mathbb{R}
+                \]</p>
+                <p>\( \phi(x) \) est une solution particulière de l’équation différentielle.</p>
+
+                <h3>Exercice 4 :</h3>
+                <p>Résoudre l’équation différentielle \( y' = 2y + e^x \) avec la condition initiale \( y(0) = 1 \).</p>
+                <p><strong>Solution :</strong></p>
+                <p>La solution générale est :</p>
+                <p>\[
+                    y(x) = Ce^{2x} + \frac{e^x}{1}
+                \]</p>
+                <p>Avec \( y(0) = 1 \), on trouve \( C = 0 \). Donc :</p>
+                <p>\[
+                    y(x) = e^x
+                \]</p>
+            </section>
+
+            <section class="concepts">
+                <h2>5. Principe de résolution des équations différentielles</h2>
+                <p>La solution générale d’une équation différentielle linéaire est la somme de la solution homogène et d’une solution particulière.</p>
+                <p>\[
+                    y(x) = y_{\text{homogène}}(x) + y_{\text{particulier}}(x)
+                \]</p>
+
+                <h3>Exercice 5 :</h3>
+                <p>Résoudre l’équation différentielle \( y' + y = x \) avec la condition initiale \( y(0) = 1 \).</p>
+                <p><strong>Solution :</strong></p>
+                <p>La solution homogène est :</p>
+                <p>\[
+                    y_{\text{homogène}}(x) = Ce^{-x}
+                \]</p>
+                <p>Une solution particulière est :</p>
+                <p>\[
+                    y_{\text{particulier}}(x) = x - 1
+                \]</p>
+                <p>Donc la solution générale est :</p>
+                <p>\[
+                    y(x) = Ce^{-x} + x - 1
+                \]</p>
+                <p>Avec \( y(0) = 1 \), on trouve \( C = 2 \). Donc :</p>
+                <p>\[
+                    y(x) = 2e^{-x} + x - 1
+                \]</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>Ce cours a été créé pour les étudiants en mathématiques.</p>
+            <p>Retour au <a href="index.html">site principal</a>.</p>
+        </footer>
+    </div>
+
+    <script>
+        MathJax.typeset();
+    </script>
+</body>
+</html>

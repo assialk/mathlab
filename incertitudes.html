@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Incertitudes – Fiche de Cours</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffe4e1;
+            color: rgb(63, 39, 39);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            width: 20px;
+            height: 20px;
+            background-color: #ff1493;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        h2, h3 {
+            color: #8b1152;
+        }
+
+        h4 {
+            font-size: 18px;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            color: #9abcab;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .concepts, .example {
+            background-color: #aa7788;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .concepts ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .concepts li {
+            margin-bottom: 15px;
+        }
+
+        .concepts li span {
+            color: #874b79;
+            font-weight: bold;
+        }
+
+        .example p {
+            font-size: 18px;
+        }
+
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .image-container {
+            background-color: #3c2b34;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .image-container p {
+            font-size: 14px;
+            color: #9abcab;
+            margin-top: 10px;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 50%;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        footer a {
+            color: #ff00c8;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"></div>
+            <h1>Les Incertitudes – Fiche de Cours</h1>
+        </header>
+
+        <main>
+            <section class="concepts">
+                <h2>1. Les incertitudes</h2>
+                <h3>1.1. Définitions</h3>
+                <p>Les incertitudes sont des erreurs aléatoires lors d’une expérience provenant de la précision des appareils ou de l’expérimentateur.</p>
+                <p>On considère une grandeur physique notée \( X \) :</p>
+                <ul>
+                    <li><strong>Valeur vraie :</strong> Résultat que l’on obtiendrait pour une mesure parfaite.</li>
+                    <li><strong>Valeur mesurée :</strong> Résultat obtenu par l’expérience.</li>
+                </ul>
+
+                <h3>1.2. Incertitudes et intervalle de confiance</h3>
+                <p>Les incertitudes peuvent être exprimées de différentes manières :</p>
+                <ul>
+                    <li><strong>Incertitude absolue :</strong> \( u(X) \) estimation de l’erreur de mesure.</li>
+                    <li><strong>Incertitude relative :</strong> \( \frac{u(X)}{X} \) estimation de l’erreur de mesure en pourcentage.</li>
+                    <li><strong>Intervalle de confiance :</strong> Estimation pour que la valeur vraie appartienne à un intervalle avec un risque d’erreur fixé.</li>
+                </ul>
+            </section>
+
+            <section class="concepts">
+                <h2>2. Incertitudes de type A</h2>
+                <p>Lors de la répétition de \( N \) mesures, l’incertitude-type est définie par :</p>
+                <p>\[ u(X) = k \cdot \frac{s}{\sqrt{N}} \]</p>
+                <p>où \( s \) est l'écart-type des mesures et \( k \) dépend du niveau de confiance :</p>
+                <ul>
+                    <li>Pour un niveau de confiance de 68 % : \( k = 1 \).</li>
+                    <li>Pour un niveau de confiance de 95,5 % : \( k = 2 \).</li>
+                    <li>Pour un niveau de confiance de 99,7 % : \( k = 3 \).</li>
+                </ul>
+            </section>
+
+            <section class="concepts">
+                <h2>3. Incertitudes de type B</h2>
+                <p>Lors d’une seule mesure, l’incertitude-type est définie par :</p>
+                <ul>
+                    <li><strong>Instrument sans graduation :</strong> \( u(X) = \frac{h}{\sqrt{3}} \), où \( h \) est la précision de l’instrument.</li>
+                    <li><strong>Instrument avec graduations :</strong> \( u(X) = \frac{graduation}{\sqrt{12}} \).</li>
+                </ul>
+            </section>
+
+            <section class="concepts">
+                <h2>4. Grandeurs composées</h2>
+                <p>Pour une grandeur composée \( C_A = \frac{C_B V_B}{V_A} \), l’incertitude relative est donnée par :</p>
+                <p>\[ \frac{u(C_A)}{C_A} = \sqrt{ \left( \frac{u(C_B)^2}{C_B} + \frac{u(V_B)^2}{V_B} + \frac{u(V_A)^2}{V_A} \right) } \]</p>
+            </section>
+
+            <section class="concepts">
+                <h2>5. Z-score</h2>
+                <p>Pour comparer une valeur mesurée \( X \) avec une valeur de référence \( x_{\text{ref}} \), on utilise le z-score :</p>
+                <p>\[ Z = \frac{X - x_{\text{ref}}}{u(X)} \]</p>
+                <p>Interprétation :</p>
+                <ul>
+                    <li>Si \( Z \leq 2 \), alors \( X \) et \( x_{\text{ref}} \) sont compatibles.</li>
+                    <li>Si \( Z > 2 \), alors \( X \) et \( x_{\text{ref}} \) sont incompatibles.</li>
+                </ul>
+            </section>
+
+            <section class="example">
+                <h2>Exercices d'application</h2>
+                <h3>Exercice 1 : Incertitude de type A</h3>
+                <p>On effectue 10 mesures d’une grandeur \( X \) et on obtient les valeurs suivantes : 5,2 ; 5,3 ; 5,1 ; 5,4 ; 5,2 ; 5,3 ; 5,1 ; 5,2 ; 5,3 ; 5,4. Calculez l’incertitude-type pour un niveau de confiance de 95,5 %.</p>
+                <p><strong>Solution :</strong></p>
+                <p>La moyenne \( \overline{x} = 5,25 \).</p>
+                <p>L’écart-type \( s = 0,1 \).</p>
+                <p>Pour \( k = 2 \) et \( N = 10 \) :</p>
+                <p>\[ u(X) = 2 \cdot \frac{0,1}{\sqrt{10}} = 0,063 \]</p>
+
+                <h3>Exercice 2 : Incertitude de type B</h3>
+                <p>Un instrument sans graduation a une précision de \( h = 0,5 \, \text{mm} \). Calculez l’incertitude-type.</p>
+                <p><strong>Solution :</strong></p>
+                <p>\[ u(X) = \frac{0,5}{\sqrt{3}} = 0,29 \, \text{mm} \]</p>
+
+                <h3>Exercice 3 : Z-score</h3>
+                <p>Une valeur mesurée est \( X = 10,2 \) avec une incertitude \( u(X) = 0,3 \). La valeur de référence est \( x_{\text{ref}} = 10,0 \). Calculez le z-score et concluez.</p>
+                <p><strong>Solution :</strong></p>
+                <p>\[ Z = \frac{10,2 - 10,0}{0,3} = 0,67 \]</p>
+                <p>Comme \( Z \leq 2 \), les valeurs sont compatibles.</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>Ce cours a été créé pour les étudiants de terminale en spécialité physique-chimie.</p>
+            <p>Retour au <a href="index.html">site principal</a>.</p>
+        </footer>
+    </div>
+
+    <script>
+        MathJax.typeset();
+    </script>
+</body>
+</html>

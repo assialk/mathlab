@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stratégie de Synthèse – Fiche de Cours</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffe4e1;
+            color: rgb(63, 39, 39);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            width: 20px;
+            height: 20px;
+            background-color: #ff1493;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        h2, h3 {
+            color: #8b1152;
+        }
+
+        h4 {
+            font-size: 18px;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            color: #9abcab;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .concepts, .example {
+            background-color: #aa7788;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .concepts ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .concepts li {
+            margin-bottom: 15px;
+        }
+
+        .concepts li span {
+            color: #874b79;
+            font-weight: bold;
+        }
+
+        .example p {
+            font-size: 18px;
+        }
+
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .image-container {
+            background-color: #3c2b34;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .image-container p {
+            font-size: 14px;
+            color: #9abcab;
+            margin-top: 10px;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 50%;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        footer a {
+            color: #ff00c8;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"></div>
+            <h1>Stratégie de Synthèse – Fiche de Cours</h1>
+        </header>
+
+        <main>
+            <section class="concepts">
+                <h2>1. Modélisation microscopique</h2>
+                <h3>a. Electronégativité</h3>
+                <p>L’électronégativité est la force d’un atome à attirer les électrons.</p>
+                <p><strong>Exemple :</strong> L'électronégativité du fluor (F) est la plus élevée, tandis que celle du césium (Cs) est la plus faible.</p>
+
+                <h3>b. Polarisation des liaisons</h3>
+                <p>Une liaison covalente simple est une mise en commun de deux électrons entre deux atomes. Les électrons communs sont délocalisés vers l’atome le plus électronégatif, ce qui polarise la liaison.</p>
+                <p><strong>Exemple :</strong> Dans la molécule d'eau (\( H_2O \)), l'oxygène est plus électronégatif que l'hydrogène, ce qui polarise les liaisons O-H.</p>
+
+                <h3>c. Sites donneurs et accepteurs de doublets d’électrons</h3>
+                <ul>
+                    <li><strong>Site accepteur :</strong> Atome présentant un défaut d’électrons (généralement des atomes électropositifs).</li>
+                    <li><strong>Site donneur :</strong> Atome présentant un excès d’électrons (anion, liaison multiple, doublet non liant).</li>
+                </ul>
+
+                <h3>d. Représentation du mouvement d’un doublet d’électron</h3>
+                <p>Les mouvements de doublets d’électrons sont représentés par des flèches courbes lors des mécanismes réactionnels.</p>
+                <p><strong>Exemple :</strong> Formation d'une liaison : les électrons vont du site donneur vers le site accepteur.</p>
+
+                <h3>e. Influence du catalyseur</h3>
+                <p>Un catalyseur ne modifie pas l’équation bilan mais agit sur le mécanisme réactionnel en augmentant la vitesse de réaction.</p>
+
+                <h3>f. Théorie des collisions</h3>
+                <p>Pour qu'une réaction chimique se produise, des collisions entre les entités chimiques doivent avoir lieu. La vitesse de réaction dépend de la température et de la concentration des réactifs.</p>
+            </section>
+
+            <section class="concepts">
+                <h2>2. Transformations en chimie organique</h2>
+                <h3>a. Réaction d’addition</h3>
+                <p>Une addition est une réaction chimique où deux groupes d’atomes se fixent sur une molécule, avec rupture d’une liaison multiple.</p>
+                <p><strong>Exemple :</strong> Addition de \( H_2 \) sur un alcène : \( \ce{CH2=CH2 + H2 -> CH3-CH3} \).</p>
+
+                <h3>b. Réaction d’élimination</h3>
+                <p>Une élimination est une réaction chimique où deux groupes d’atomes sont retirés d’une molécule, avec formation d’une liaison multiple.</p>
+                <p><strong>Exemple :</strong> Élimination d'eau à partir d'un alcool : \( \ce{CH3-CH2-OH ->[H2SO4] CH2=CH2 + H2O} \).</p>
+
+                <h3>c. Réaction de substitution</h3>
+                <p>Une substitution est une réaction chimique où un groupe d’atomes est remplacé par un autre.</p>
+                <p><strong>Exemple :</strong> Substitution d'un halogène par un groupe hydroxyle : \( \ce{CH3-CH2-Cl + NaOH -> CH3-CH2-OH + NaCl} \).</p>
+
+                <h3>d. Modification du groupe caractéristique</h3>
+                <p>Des transformations en chimie organique permettent la modification du groupe caractéristique.</p>
+                <p><strong>Exemple :</strong> Oxydation d'un alcool primaire en aldéhyde : \( \ce{CH3-CH2-OH ->[KMnO4] CH3-CHO} \).</p>
+
+                <h3>e. Modification de la chaîne carbonée</h3>
+                <p>Lors des étapes de la synthèse organique, il peut y avoir un raccourcissement, un rallongement ou un réaménagement de la chaîne carbonée.</p>
+
+                <h3>f. Polymérisation</h3>
+                <p>Il existe deux types de polymérisation :</p>
+                <ul>
+                    <li><strong>Polyaddition :</strong> Les monomères s’ajoutent les uns aux autres par le biais de liaisons doubles.</li>
+                    <li><strong>Polycondensation :</strong> Il y a formation de sous-produits comme l'eau ou le chlorure d'hydrogène.</li>
+                </ul>
+            </section>
+
+            <section class="concepts">
+                <h2>3. Optimisation d’une étape de synthèse</h2>
+                <p>Pour optimiser le rendement d’une synthèse chimique, il est possible :</p>
+                <ul>
+                    <li>D'optimiser la vitesse de réaction chimique.</li>
+                    <li>D'optimiser le rendement en ajustant les conditions expérimentales.</li>
+                </ul>
+            </section>
+
+            <section class="concepts">
+                <h2>4. Protection et déprotection</h2>
+                <p>Lors d’une réaction chimique mettant en jeu des composés polyfonctionnels, il peut être nécessaire de protéger un groupe pour l’empêcher de réagir. En fin de synthèse, les groupes protecteurs sont enlevés (déprotégés).</p>
+                <p><strong>Exemple :</strong> Protection d'un groupe hydroxyle par un groupe triméthylsilyle (TMS).</p>
+            </section>
+
+            <section class="concepts">
+                <h2>5. Synthèse écoresponsable</h2>
+                <h3>a. Notion d’économie d’atomes</h3>
+                <p>L’économie d’atomes (EA) mesure l’efficacité d’une synthèse en termes d’utilisation des atomes des réactifs pour former les produits utiles.</p>
+                <p><strong>Formule :</strong> \( EA = \frac{\sum \text{masse des produits utiles}}{\sum \text{masse des réactifs}} \).</p>
+
+                <h3>b. Les 12 principes de la chimie verte</h3>
+                <p>Les 12 principes de la chimie verte visent à réduire l’impact environnemental des synthèses chimiques. Parmi eux :</p>
+                <ul>
+                    <li>Prévention de la pollution à la source.</li>
+                    <li>Utilisation de produits chimiques moins toxiques.</li>
+                    <li>Limitation des dépenses énergétiques.</li>
+                </ul>
+            </section>
+
+            <section class="example">
+                <h2>Exercices d'application</h2>
+                <h3>Exercice 1 : Réaction d’addition</h3>
+                <p>Écrivez l’équation de la réaction d’addition de \( Br_2 \) sur l’éthène (\( \ce{CH2=CH2} \)).</p>
+                <p><strong>Solution :</strong></p>
+                <p>\( \ce{CH2=CH2 + Br2 -> CH2Br-CH2Br} \).</p>
+
+                <h3>Exercice 2 : Réaction de substitution</h3>
+                <p>Écrivez l’équation de la réaction de substitution du chlore par un groupe hydroxyle dans le chlorométhane (\( \ce{CH3Cl} \)).</p>
+                <p><strong>Solution :</strong></p>
+                <p>\( \ce{CH3Cl + NaOH -> CH3OH + NaCl} \).</p>
+
+                <h3>Exercice 3 : Polymérisation</h3>
+                <p>Donnez un exemple de polymérisation par polyaddition.</p>
+                <p><strong>Solution :</strong></p>
+                <p>La polymérisation de l’éthylène (\( \ce{CH2=CH2} \)) pour former du polyéthylène : \( n \ce{CH2=CH2 -> [-CH2-CH2-]_n} \).</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>Ce cours a été créé pour les étudiants de terminale en spécialité physique-chimie.</p>
+            <p>Retour au <a href="index.html">site principal</a>.</p>
+        </footer>
+    </div>
+
+    <script>
+        MathJax.typeset();
+    </script>
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinématique et lois de Newton – Fiche de cours</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffe4e1;
+            color: rgb(63, 39, 39);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            width: 20px;
+            height: 20px;
+            background-color: #ff1493;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        h2, h3 {
+            color: #8b1152;
+        }
+
+        h4 {
+            font-size: 18px;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            color: #9abcab;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .concepts, .example {
+            background-color: #aa7788;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .concepts ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .concepts li {
+            margin-bottom: 15px;
+        }
+
+        .concepts li span {
+            color: #874b79;
+            font-weight: bold;
+        }
+
+        .example p {
+            font-size: 18px;
+        }
+
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .image-container {
+            background-color: #3c2b34;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .image-container p {
+            font-size: 14px;
+            color: #9abcab;
+            margin-top: 10px;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 50%;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        footer a {
+            color: #ff00c8;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"></div>
+            <h1>Cinématique et lois de Newton – Fiche de cours</h1>
+        </header>
+
+        <main>
+            <section class="concepts">
+                <h2>1. Description du mouvement d’un point</h2>
+                <h3>a. Centre d’inertie</h3>
+                <p>Le mouvement d’un solide est généralement réduit à celui de son centre d’inertie (point G). Ce point est celui par lequel il faut fournir le moins d’effort pour mettre l’objet en rotation.</p>
+                <p><strong>Exercice d'application :</strong> Expliquez pourquoi le centre d’inertie est important pour l’étude du mouvement.</p>
+                <p><strong>Solution :</strong> Le centre d’inertie permet de simplifier l’étude du mouvement en réduisant le système à un point unique, ce qui facilite les calculs.</p>
+
+                <h3>b. Système mécanique</h3>
+                <p>Un système mécanique est un solide ou un ensemble de solides dont on étudie le mouvement.</p>
+                <p><strong>Exercice d'application :</strong> Donnez un exemple de système mécanique.</p>
+                <p><strong>Solution :</strong> Une balle de tennis en mouvement est un exemple de système mécanique.</p>
+
+                <h3>c. Référentiel</h3>
+                <p>Un référentiel est un solide par rapport auquel on décrit le mouvement d’un système mécanique. Il est muni d’un repère de l’espace et de temps.</p>
+                <p><strong>Exercice d'application :</strong> Citez trois types de référentiels.</p>
+                <p><strong>Solution :</strong> Référentiel terrestre, géocentrique et héliocentrique.</p>
+
+                <h3>d. Vecteur position</h3>
+                <p>Le vecteur position d’un point M est défini par :</p>
+                <p>\[ \vec{OM}(t) = x(t)\vec{i} + y(t)\vec{j} + z(t)\vec{k} \]</p>
+                <p><strong>Exercice d'application :</strong> Calculez la norme du vecteur position si \( x(t) = 3 \, \text{m} \), \( y(t) = 4 \, \text{m} \), et \( z(t) = 0 \, \text{m} \).</p>
+                <p><strong>Solution :</strong> \( |\vec{OM}| = \sqrt{3^2 + 4^2 + 0^2} = 5 \, \text{m} \).</p>
+            </section>
+
+            <section class="concepts">
+                <h2>2. Vecteur vitesse et accélération</h2>
+                <h3>a. Vecteur vitesse</h3>
+                <p>La vitesse instantanée d’un point M est définie par :</p>
+                <p>\[ \vec{v}(t) = \frac{d\vec{OM}}{dt} \]</p>
+                <p><strong>Exercice d'application :</strong> Si \( \vec{OM}(t) = 2t\vec{i} + 3t^2\vec{j} \), trouvez \( \vec{v}(t) \).</p>
+                <p><strong>Solution :</strong> \( \vec{v}(t) = 2\vec{i} + 6t\vec{j} \).</p>
+
+                <h3>b. Vecteur accélération</h3>
+                <p>L’accélération instantanée d’un point M est définie par :</p>
+                <p>\[ \vec{a}(t) = \frac{d\vec{v}}{dt} \]</p>
+                <p><strong>Exercice d'application :</strong> Si \( \vec{v}(t) = 2\vec{i} + 6t\vec{j} \), trouvez \( \vec{a}(t) \).</p>
+                <p><strong>Solution :</strong> \( \vec{a}(t) = 6\vec{j} \).</p>
+            </section>
+
+            <section class="concepts">
+                <h2>3. Les différents types de mouvement</h2>
+                <h3>a. Mouvement rectiligne</h3>
+                <p>Un mouvement est rectiligne lorsque la trajectoire est une droite.</p>
+                <p><strong>Exercice d'application :</strong> Donnez un exemple de mouvement rectiligne.</p>
+                <p><strong>Solution :</strong> Une voiture roulant en ligne droite à vitesse constante.</p>
+
+                <h3>b. Mouvement circulaire</h3>
+                <p>Un mouvement est circulaire lorsque la trajectoire est un cercle.</p>
+                <p><strong>Exercice d'application :</strong> Expliquez comment étudier un mouvement circulaire.</p>
+                <p><strong>Solution :</strong> On utilise une base de Frenet pour décomposer la vitesse et l’accélération en composantes tangentielle et normale.</p>
+
+                <h3>c. Mouvement curviligne</h3>
+                <p>Un mouvement est curviligne lorsque la trajectoire n’est ni une droite ni un cercle.</p>
+                <p><strong>Exercice d'application :</strong> Donnez un exemple de mouvement curviligne.</p>
+                <p><strong>Solution :</strong> Une balle lancée en l’air avec une trajectoire parabolique.</p>
+            </section>
+
+            <section class="concepts">
+                <h2>4. Les forces usuelles</h2>
+                <h3>a. Le poids</h3>
+                <p>Le poids est une force verticale dirigée vers le bas, définie par :</p>
+                <p>\[ \vec{P} = m\vec{g} \]</p>
+                <p><strong>Exercice d'application :</strong> Calculez le poids d’un objet de masse \( 10 \, \text{kg} \).</p>
+                <p><strong>Solution :</strong> \( \vec{P} = 10 \times 9.81 = 98.1 \, \text{N} \).</p>
+
+                <h3>b. La réaction au support</h3>
+                <p>La réaction au support a deux composantes : normale et tangentielle.</p>
+                <p><strong>Exercice d'application :</strong> Expliquez la différence entre la composante normale et tangentielle de la réaction au support.</p>
+                <p><strong>Solution :</strong> La composante normale est perpendiculaire à la surface, tandis que la composante tangentielle est parallèle à la surface.</p>
+
+                <h3>c. Les forces de frottement</h3>
+                <p>Les forces de frottement s’opposent au mouvement et sont tangentes à la trajectoire.</p>
+                <p><strong>Exercice d'application :</strong> Expliquez pourquoi les forces de frottement ralentissent un objet.</p>
+                <p><strong>Solution :</strong> Les forces de frottement agissent dans le sens opposé au mouvement, ce qui réduit la vitesse de l’objet.</p>
+            </section>
+
+            <section class="concepts">
+                <h2>5. Les lois de Newton</h2>
+                <h3>a. Première loi de Newton (principe d’inertie)</h3>
+                <p>Un système reste au repos ou en mouvement rectiligne uniforme si la somme des forces extérieures est nulle :</p>
+                <p>\[ \sum \vec{F}_{ext} = \vec{0} \]</p>
+                <p><strong>Exercice d'application :</strong> Expliquez ce qui se passe si aucune force extérieure n’agit sur un objet.</p>
+                <p><strong>Solution :</strong> L’objet reste au repos ou continue son mouvement rectiligne uniforme.</p>
+
+                <h3>b. Deuxième loi de Newton (principe de la dynamique)</h3>
+                <p>La somme des forces extérieures est égale à la masse multipliée par l’accélération :</p>
+                <p>\[ \sum \vec{F}_{ext} = m\vec{a} \]</p>
+                <p><strong>Exercice d'application :</strong> Si une force de \( 10 \, \text{N} \) agit sur un objet de masse \( 2 \, \text{kg} \), calculez l’accélération.</p>
+                <p><strong>Solution :</strong> \( \vec{a} = \frac{10}{2} = 5 \, \text{m/s}^2 \).</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>Ce cours a été créé pour les étudiants de terminale en spécialité physique-chimie.</p>
+            <p>Retour au <a href="index.html">site principal</a>.</p>
+        </footer>
+    </div>
+
+    <script>
+        MathJax.typeset();
+    </script>
+</body>
+</html>

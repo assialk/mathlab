@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orthogonalité et distances dans l’espace</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffe4e1;
+            color: rgb(63, 39, 39);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            width: 20px;
+            height: 20px;
+            background-color: #ff1493;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        h2, h3 {
+            color: #8b1152;
+        }
+
+        h4 {
+            font-size: 18px;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            color: #9abcab;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .concepts, .example {
+            background-color: #aa7788;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .concepts ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .concepts li {
+            margin-bottom: 15px;
+        }
+
+        .concepts li span {
+            color: #874b79;
+            font-weight: bold;
+        }
+
+        .example p {
+            font-size: 18px;
+        }
+
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .image-container {
+            background-color: #3c2b34;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .image-container p {
+            font-size: 14px;
+            color: #9abcab;
+            margin-top: 10px;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 50%;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        footer a {
+            color: #ff00c8;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"></div>
+            <h1>Orthogonalité et distances dans l’espace</h1>
+        </header>
+
+        <main>
+            <section class="concepts">
+                <h2>1. Base orthonormée de l’espace</h2>
+                <p>Une base orthonormée de l’espace est composée de trois vecteurs linéairement indépendants \( \vec{i}, \vec{j}, \vec{k} \) tels que :</p>
+                <ul>
+                    <li>\( \vec{i} \cdot \vec{j} = 0 \)</li>
+                    <li>\( \vec{j} \cdot \vec{k} = 0 \)</li>
+                    <li>\( \vec{i} \cdot \vec{k} = 0 \)</li>
+                    <li>\( \|\vec{i}\| = \|\vec{j}\| = \|\vec{k}\| = 1 \)</li>
+                </ul>
+
+                <h3>Exercice 1 :</h3>
+                <p>Vérifier que les vecteurs \( \vec{i} = (1, 0, 0) \), \( \vec{j} = (0, 1, 0) \), et \( \vec{k} = (0, 0, 1) \) forment une base orthonormée.</p>
+                <p><strong>Solution :</strong></p>
+                <p>Les produits scalaires sont nuls et les normes sont égales à 1, donc ils forment une base orthonormée.</p>
+            </section>
+
+            <section class="concepts">
+                <h2>2. Orthogonalité dans l’espace</h2>
+                <h3>a. Orthogonalité de deux droites</h3>
+                <p>Deux droites de l’espace sont orthogonales si leurs projections sur un plan sont perpendiculaires.</p>
+
+                <h3>b. Orthogonalité d’une droite et d’un plan</h3>
+                <p>Une droite est orthogonale à un plan si elle est orthogonale à deux droites sécantes de ce plan.</p>
+                <p><strong>Propriété :</strong> Toute droite orthogonale à un plan est orthogonale à toutes les droites de ce plan.</p>
+
+                <h3>c. Plan médiateur</h3>
+                <p>Le plan médiateur d’un segment est l’ensemble des points de l’espace équidistants des extrémités de ce segment.</p>
+                <p><strong>Propriété :</strong> Le plan médiateur passe par le milieu du segment et est perpendiculaire à celui-ci.</p>
+
+                <h3>Exercice 2 :</h3>
+                <p>Soit \( A(1, 2, 3) \) et \( B(3, 2, 1) \). Trouver l’équation du plan médiateur du segment \( [AB] \).</p>
+                <p><strong>Solution :</strong></p>
+                <p>Le milieu de \( [AB] \) est \( M(2, 2, 2) \). Le vecteur \( \overrightarrow{AB} = (2, 0, -2) \) est normal au plan. L’équation du plan médiateur est :</p>
+                <p>\[
+                    2(x - 2) + 0(y - 2) - 2(z - 2) = 0 \Rightarrow 2x - 2z = 0
+                \]</p>
+            </section>
+
+            <section class="concepts">
+                <h2>3. Produit scalaire dans l’espace</h2>
+                <h3>a. Définition</h3>
+                <p>Le produit scalaire de deux vecteurs non nuls \( \vec{u} \) et \( \vec{v} \) est :</p>
+                <p>\[
+                    \vec{u} \cdot \vec{v} = \|\vec{u}\| \cdot \|\vec{v}\| \cdot \cos(\theta)
+                \]</p>
+                <p>où \( \theta \) est l’angle entre \( \vec{u} \) et \( \vec{v} \).</p>
+
+                <h3>b. Autres expressions du produit scalaire</h3>
+                <p><strong>Projection orthogonale :</strong></p>
+                <p>\[
+                    \overrightarrow{AB} \cdot \overrightarrow{CD} = \overrightarrow{AB} \cdot \overrightarrow{C'D'}
+                \]</p>
+                <p><strong>Définition analytique :</strong></p>
+                <p>Si \( \vec{u} = (x, y, z) \) et \( \vec{v} = (x', y', z') \), alors :</p>
+                <p>\[
+                    \vec{u} \cdot \vec{v} = xx' + yy' + zz'
+                \]</p>
+                <p><strong>Formule de polarisation :</strong></p>
+                <p>\[
+                    \vec{u} \cdot \vec{v} = \frac{1}{2} \left( \|\vec{u} + \vec{v}\|^2 - \|\vec{u}\|^2 - \|\vec{v}\|^2 \right)
+                \]</p>
+
+                <h3>c. Propriétés de bilinéarité</h3>
+                <ul>
+                    <li>Symétrie : \( \vec{u} \cdot \vec{v} = \vec{v} \cdot \vec{u} \)</li>
+                    <li>Bilinéarité : \( \vec{u} \cdot (\vec{v} + \vec{w}) = \vec{u} \cdot \vec{v} + \vec{u} \cdot \vec{w} \)</li>
+                </ul>
+
+                <h3>d. Critère d’orthogonalité</h3>
+                <p>Deux vecteurs \( \vec{u} \) et \( \vec{v} \) sont orthogonaux si et seulement si :</p>
+                <p>\[
+                    \vec{u} \cdot \vec{v} = 0
+                \]</p>
+
+                <h3>Exercice 3 :</h3>
+                <p>Soit \( \vec{u} = (1, 2, 3) \) et \( \vec{v} = (4, -2, 0) \). Vérifier si \( \vec{u} \) et \( \vec{v} \) sont orthogonaux.</p>
+                <p><strong>Solution :</strong></p>
+                <p>\[
+                    \vec{u} \cdot \vec{v} = 1 \times 4 + 2 \times (-2) + 3 \times 0 = 4 - 4 + 0 = 0
+                \]</p>
+                <p>Les vecteurs sont orthogonaux.</p>
+            </section>
+
+            <section class="concepts">
+                <h2>4. Équations de droites, de plans et de sphères dans l’espace</h2>
+                <h3>a. Représentation paramétrique d’une droite</h3>
+                <p>Une droite \( (d) \) de l’espace peut être définie par un vecteur directeur \( \vec{u}(x_d, y_d, z_d) \) et un point \( A(x_A, y_A, z_A) \). Sa représentation paramétrique est :</p>
+                <p>\[
+                    \begin{cases}
+                        x = t \cdot x_d + x_A \\
+                        y = t \cdot y_d + y_A \\
+                        z = t \cdot z_d + z_A
+                    \end{cases} \quad t \in \mathbb{R}
+                \]</p>
+
+                <h3>b. Équation cartésienne d’un plan</h3>
+                <p>Un plan peut être défini par un vecteur normal \( \vec{n}(a, b, c) \) et un point \( A(x_A, y_A, z_A) \). Son équation cartésienne est :</p>
+                <p>\[
+                    a(x - x_A) + b(y - y_A) + c(z - z_A) = 0
+                \]</p>
+
+                <h3>c. Équation cartésienne d’une sphère</h3>
+                <p>Une sphère de centre \( \Omega(x_0, y_0, z_0) \) et de rayon \( R \) a pour équation :</p>
+                <p>\[
+                    (x - x_0)^2 + (y - y_0)^2 + (z - z_0)^2 = R^2
+                \]</p>
+
+                <h3>Exercice 4 :</h3>
+                <p>Soit une sphère de centre \( \Omega(1, 2, 3) \) et de rayon \( 4 \). Donner son équation cartésienne.</p>
+                <p><strong>Solution :</strong></p>
+                <p>\[
+                    (x - 1)^2 + (y - 2)^2 + (z - 3)^2 = 16
+                \]</p>
+            </section>
+
+            <section class="concepts">
+                <h2>5. Distances dans l’espace</h2>
+                <h3>a. Distance entre deux points</h3>
+                <p>Soient \( A(x_A, y_A, z_A) \) et \( B(x_B, y_B, z_B) \). La distance entre \( A \) et \( B \) est :</p>
+                <p>\[
+                    AB = \sqrt{(x_B - x_A)^2 + (y_B - y_A)^2 + (z_B - z_A)^2}
+                \]</p>
+
+                <h3>b. Distance d’un point à une droite</h3>
+                <p>La distance d’un point \( A \) à une droite \( (d) \) est la distance entre \( A \) et son projeté orthogonal \( H \) sur \( (d) \).</p>
+
+                <h3>c. Distance d’un point à un plan</h3>
+                <p>Soit \( A(x_A, y_A, z_A) \) et un plan \( (P) \) d’équation \( ax + by + cz + d = 0 \). La distance de \( A \) à \( (P) \) est :</p>
+                <p>\[
+                    d(A, P) = \frac{|ax_A + by_A + cz_A + d|}{\sqrt{a^2 + b^2 + c^2}}
+                \]</p>
+
+                <h3>Exercice 5 :</h3>
+                <p>Soit \( A(1, 2, 3) \) et le plan \( (P) : 2x - y + 3z + 4 = 0 \). Calculer la distance de \( A \) à \( (P) \).</p>
+                <p><strong>Solution :</strong></p>
+                <p>\[
+                    d(A, P) = \frac{|2 \times 1 - 1 \times 2 + 3 \times 3 + 4|}{\sqrt{2^2 + (-1)^2 + 3^2}} = \frac{|2 - 2 + 9 + 4|}{\sqrt{4 + 1 + 9}} = \frac{13}{\sqrt{14}}
+                \]</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>Ce cours a été créé pour les étudiants en mathématiques.</p>
+            <p>Retour au <a href="index.html">site principal</a>.</p>
+        </footer>
+    </div>
+
+    <script>
+        MathJax.typeset();
+    </script>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Écoulement d’un fluide – Fiche de cours</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffe4e1;
+            color: rgb(63, 39, 39);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            width: 20px;
+            height: 20px;
+            background-color: #ff1493;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        h2, h3 {
+            color: #8b1152;
+        }
+
+        h4 {
+            font-size: 18px;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            color: #9abcab;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .concepts, .example {
+            background-color: #aa7788;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .concepts ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .concepts li {
+            margin-bottom: 15px;
+        }
+
+        .concepts li span {
+            color: #874b79;
+            font-weight: bold;
+        }
+
+        .example p {
+            font-size: 18px;
+        }
+
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .image-container {
+            background-color: #3c2b34;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .image-container p {
+            font-size: 14px;
+            color: #9abcab;
+            margin-top: 10px;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 50%;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        footer a {
+            color: #ff00c8;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"></div>
+            <h1>Écoulement d’un fluide – Fiche de cours</h1>
+        </header>
+
+        <main>
+            <section class="concepts">
+                <h2>1. Poussée d’Archimède</h2>
+                <p>La poussée d’Archimède est la résultante des forces de pression exercées par un fluide au repos sur un corps immergé. Elle est donnée par :</p>
+                <p>\[ \Pi = -P_{\text{fluide}} V_{\text{immergé}} \vec{g} \]</p>
+                <p><strong>Exercice d'application :</strong> Calculez la poussée d’Archimède exercée sur un corps de volume \( 0.1 \, \text{m}^3 \) immergé dans l’eau (\( \rho = 1000 \, \text{kg/m}^3 \)).</p>
+                <p><strong>Solution :</strong> \( \Pi = 1000 \times 0.1 \times 9.81 = 981 \, \text{N} \).</p>
+            </section>
+
+            <section class="concepts">
+                <h2>2. Écoulement d’un fluide</h2>
+                <h3>a. Lignes de courant</h3>
+                <p>Les lignes de courant sont les trajectoires suivies par les molécules d’un fluide en mouvement.</p>
+                <p><strong>Exercice d'application :</strong> Dessinez les lignes de courant pour un écoulement laminaire.</p>
+                <p><strong>Solution :</strong> Les lignes de courant sont parallèles et régulières, sans croisement.</p>
+
+                <h3>b. Écoulement permanent</h3>
+                <p>Un écoulement est dit permanent lorsque les lignes de courant ne varient pas au cours du temps. En un point du fluide, toutes les molécules passent avec la même vitesse.</p>
+                <p><strong>Exercice d'application :</strong> Expliquez pourquoi un écoulement permanent est souvent utilisé en ingénierie.</p>
+                <p><strong>Solution :</strong> Un écoulement permanent est prévisible et stable, ce qui facilite la conception des systèmes hydrauliques et aérodynamiques.</p>
+
+                <h3>c. Débit volumique</h3>
+                <p>Le débit volumique est défini par :</p>
+                <p>\[ D_v = \frac{V}{\Delta t} \]</p>
+                <p>Pour un écoulement incompressible, on a :</p>
+                <p>\[ D_v = v \cdot S \]</p>
+                <p><strong>Exercice d'application :</strong> Calculez le débit volumique d’un fluide s’écoulant à \( 2 \, \text{m/s} \) dans une conduite de section \( 0.01 \, \text{m}^2 \).</p>
+                <p><strong>Solution :</strong> \( D_v = 2 \times 0.01 = 0.02 \, \text{m}^3/\text{s} \).</p>
+
+                <h3>d. Équation de continuité</h3>
+                <p>Pour un écoulement permanent d’un fluide incompressible, on a :</p>
+                <p>\[ D_{v1} = D_{v2} \quad \text{ou} \quad v_1 \cdot S_1 = v_2 \cdot S_2 \]</p>
+                <p><strong>Exercice d'application :</strong> Si la section d’une conduite passe de \( 0.02 \, \text{m}^2 \) à \( 0.01 \, \text{m}^2 \), et que la vitesse initiale est de \( 1 \, \text{m/s} \), calculez la vitesse finale.</p>
+                <p><strong>Solution :</strong> \( v_2 = \frac{v_1 \cdot S_1}{S_2} = \frac{1 \times 0.02}{0.01} = 2 \, \text{m/s} \).</p>
+            </section>
+
+            <section class="concepts">
+                <h2>3. Dynamique des fluides incompressibles</h2>
+                <h3>a. Formes de pression dans un fluide</h3>
+                <p>En un point donné du fluide, la pression peut être décomposée en trois catégories :</p>
+                <ul>
+                    <li><strong>Pression statique :</strong> \( P_{\text{statique}} = p \)</li>
+                    <li><strong>Pression hydrostatique :</strong> \( P_{\text{hydrostatique}} = \rho g z_A \)</li>
+                    <li><strong>Pression dynamique :</strong> \( P_{\text{dynamique}} = \frac{1}{2} \rho v^2 \)</li>
+                </ul>
+                <p><strong>Exercice d'application :</strong> Calculez la pression hydrostatique à une profondeur de 5 m dans l’eau (\( \rho = 1000 \, \text{kg/m}^3 \)).</p>
+                <p><strong>Solution :</strong> \( P_{\text{hydrostatique}} = 1000 \times 9.81 \times 5 = 49050 \, \text{Pa} \).</p>
+
+                <h3>b. Loi fondamentale de la statique des fluides</h3>
+                <p>Pour un fluide incompressible dans un champ de pesanteur uniforme, la pression totale est constante :</p>
+                <p>\[ P_A + \rho g z_A = P_B + \rho g z_B \]</p>
+                <p><strong>Exercice d'application :</strong> Si \( P_A = 100000 \, \text{Pa} \), \( z_A = 0 \, \text{m} \), et \( z_B = 10 \, \text{m} \), calculez \( P_B \).</p>
+                <p><strong>Solution :</strong> \( P_B = 100000 + 1000 \times 9.81 \times 10 = 198100 \, \text{Pa} \).</p>
+
+                <h3>c. Relation de Bernoulli</h3>
+                <p>Pour un fluide parfait incompressible en écoulement permanent, la somme des pressions statique, hydrostatique et dynamique est constante :</p>
+                <p>\[ P_{\text{statique}} + P_{\text{hydrostatique}} + P_{\text{dynamique}} = \text{Constante} \]</p>
+                <p><strong>Exercice d'application :</strong> Si la pression statique est \( 100000 \, \text{Pa} \), la pression hydrostatique est \( 5000 \, \text{Pa} \), et la pression dynamique est \( 2000 \, \text{Pa} \), calculez la pression totale.</p>
+                <p><strong>Solution :</strong> \( P_{\text{totale}} = 100000 + 5000 + 2000 = 107000 \, \text{Pa} \).</p>
+
+                <h3>d. Effet Venturi</h3>
+                <p>Dans un fluide parfait incompressible, lorsque la section diminue, la vitesse du fluide augmente et la pression diminue.</p>
+                <p><strong>Exercice d'application :</strong> Expliquez pourquoi la pression diminue lorsque la vitesse augmente dans un tube de Venturi.</p>
+                <p><strong>Solution :</strong> Selon la relation de Bernoulli, une augmentation de vitesse entraîne une diminution de pression pour conserver l’énergie totale du fluide.</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>Ce cours a été créé pour les étudiants de terminale en spécialité physique-chimie.</p>
+            <p>Retour au <a href="index.html">site principal</a>.</p>
+        </footer>
+    </div>
+
+    <script>
+        MathJax.typeset();
+    </script>
+</body>
+</html>

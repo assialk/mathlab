@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programmation Python – Algorithme – Fiche de Cours</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffe4e1;
+            color: rgb(63, 39, 39);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            width: 20px;
+            height: 20px;
+            background-color: #ff1493;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        h2, h3 {
+            color: #8b1152;
+        }
+
+        h4 {
+            font-size: 18px;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            color: #9abcab;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .concepts, .example {
+            background-color: #aa7788;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .concepts ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .concepts li {
+            margin-bottom: 15px;
+        }
+
+        .concepts li span {
+            color: #874b79;
+            font-weight: bold;
+        }
+
+        .example p {
+            font-size: 18px;
+        }
+
+        .solution {
+            background-color: #ba8295;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            color: #333;
+        }
+
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .image-container {
+            background-color: #3c2b34;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .image-container p {
+            font-size: 14px;
+            color: #9abcab;
+            margin-top: 10px;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 50%;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        footer a {
+            color: #ff00c8;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"></div>
+            <h1>Programmation Python – Algorithme – Fiche de Cours</h1>
+        </header>
+
+        <main>
+            <section class="concepts">
+                <h2>1. Les bibliothèques</h2>
+                <p>Les bibliothèques en Python contiennent des fonctions prêtes à l'emploi. Voici quelques bibliothèques couramment utilisées :</p>
+                <ul>
+                    <li><strong>math</strong> : fonctions mathématiques de base.</li>
+                    <li><strong>cmath</strong> : fonctions mathématiques pour les nombres complexes.</li>
+                    <li><strong>fractions</strong> : fonctions pour les nombres rationnels.</li>
+                    <li><strong>random</strong> : fonctions de tirages aléatoires et de probabilités.</li>
+                </ul>
+                <p>Pour importer une bibliothèque, on utilise :</p>
+                <pre><code>from fichier import *</code></pre>
+
+                <h3>Exercice d'application</h3>
+                <p>Importez la bibliothèque <strong>math</strong> et utilisez-la pour calculer la racine carrée de 16.</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <pre><code>from math import sqrt
+resultat = sqrt(16)
+print(resultat)  # Affiche 4.0</code></pre>
+                </div>
+            </section>
+
+            <section class="concepts">
+                <h2>2. Entrées, sorties et variables</h2>
+                <p>Pour lire une entrée utilisateur :</p>
+                <pre><code>variable = input("Message")</code></pre>
+                <p>Pour afficher un message :</p>
+                <pre><code>print("Message", variable)</code></pre>
+
+                <h3>Exercice d'application</h3>
+                <p>Écrivez un programme qui demande à l'utilisateur son nom et affiche "Bonjour, [nom] !".</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <pre><code>nom = input("Entrez votre nom : ")
+print("Bonjour,", nom, "!")</code></pre>
+                </div>
+            </section>
+
+            <section class="concepts">
+                <h2>3. Types de données</h2>
+                <h3>a. Typage, création et initialisation d'une variable</h3>
+                <p>En Python, une variable est typée, créée et initialisée en une seule instruction :</p>
+                <pre><code>variable = valeur</code></pre>
+
+                <h3>Exercice d'application</h3>
+                <p>Créez une variable <code>age</code> et initialisez-la avec la valeur 25.</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <pre><code>age = 25</code></pre>
+                </div>
+
+                <h3>b. Conversion de type (transtypage)</h3>
+                <p>Pour convertir le type d'une variable :</p>
+                <pre><code>str()  # Chaîne de caractères
+float()  # Nombre décimal
+int()  # Nombre entier</code></pre>
+
+                <h3>Exercice d'application</h3>
+                <p>Convertissez la chaîne de caractères "123" en un entier.</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <pre><code>nombre = int("123")</code></pre>
+                </div>
+
+                <h3>c. Variables booléennes</h3>
+                <p>Une variable booléenne peut prendre deux valeurs : <code>True</code> ou <code>False</code>.</p>
+
+                <h3>Exercice d'application</h3>
+                <p>Créez une variable booléenne <code>est_majeur</code> et initialisez-la à <code>True</code>.</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <pre><code>est_majeur = True</code></pre>
+                </div>
+            </section>
+
+            <section class="concepts">
+                <h2>4. Opérations et calculs</h2>
+                <h3>a. Opérations algébriques</h3>
+                <p>Les opérations de base en Python :</p>
+                <pre><code>+  # Addition
+-  # Soustraction
+*  # Multiplication
+/  # Division
+%  # Reste de la division
+**  # Puissance
+//  # Division entière</code></pre>
+
+                <h3>Exercice d'application</h3>
+                <p>Calculez le reste de la division de 10 par 3.</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <pre><code>reste = 10 % 3
+print(reste)  # Affiche 1</code></pre>
+                </div>
+
+                <h3>b. Opérations booléennes</h3>
+                <p>Les opérations booléennes en Python :</p>
+                <pre><code>not  # NON
+and  # ET
+or  # OU</code></pre>
+
+                <h3>Exercice d'application</h3>
+                <p>Écrivez une expression booléenne qui vérifie si une variable <code>age</code> est comprise entre 18 et 25.</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <pre><code>age = 20
+est_dans_intervalle = age >= 18 and age <= 25
+print(est_dans_intervalle)  # Affiche True</code></pre>
+                </div>
+            </section>
+
+            <section class="concepts">
+                <h2>5. Instructions sélectives</h2>
+                <p>Les instructions conditionnelles en Python :</p>
+                <pre><code>if condition:
+    # Instructions si la condition est vraie
+else:
+    # Instructions si la condition est fausse</code></pre>
+
+                <h3>Exercice d'application</h3>
+                <p>Écrivez un programme qui vérifie si un nombre est positif ou négatif.</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <pre><code>nombre = float(input("Entrez un nombre : "))
+if nombre >= 0:
+    print("Le nombre est positif.")
+else:
+    print("Le nombre est négatif.")</code></pre>
+                </div>
+            </section>
+
+            <section class="concepts">
+                <h2>6. Les listes de valeur</h2>
+                <p>Les listes en Python sont des collections ordonnées et modifiables :</p>
+                <pre><code>liste = [a, b, c]  # Crée une liste
+liste[n]  # Accède à l'élément à l'indice n
+liste.append(a)  # Ajoute un élément à la fin
+len(liste)  # Retourne la longueur de la liste
+min(liste)  # Retourne le minimum
+max(liste)  # Retourne le maximum
+sum(liste)  # Retourne la somme des éléments
+liste.sort()  # Trie la liste</code></pre>
+
+                <h3>Exercice d'application</h3>
+                <p>Créez une liste contenant les nombres 5, 10, 15, puis ajoutez 20 à la fin de la liste.</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <pre><code>liste = [5, 10, 15]
+liste.append(20)
+print(liste)  # Affiche [5, 10, 15, 20]</code></pre>
+                </div>
+            </section>
+
+            <section class="concepts">
+                <h2>7. Instructions itératives</h2>
+                <p>Les boucles en Python :</p>
+                <pre><code>for n in range(nombre):
+    # Instructions répétées
+
+while condition:
+    # Instructions répétées tant que la condition est vraie</code></pre>
+
+                <h3>Exercice d'application</h3>
+                <p>Écrivez une boucle <code>for</code> qui affiche les nombres de 1 à 5.</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <pre><code>for i in range(1, 6):
+    print(i)  # Affiche 1, 2, 3, 4, 5</code></pre>
+                </div>
+            </section>
+
+            <section class="concepts">
+                <h2>8. Définir une fonction</h2>
+                <p>Pour définir une fonction en Python :</p>
+                <pre><code>def nom_fonction(paramètre1, paramètre2):
+    # Instructions
+    return resultat</code></pre>
+
+                <h3>Exercice d'application</h3>
+                <p>Écrivez une fonction qui prend deux nombres en entrée et retourne leur somme.</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <pre><code>def somme(a, b):
+    return a + b
+
+resultat = somme(3, 5)
+print(resultat)  # Affiche 8</code></pre>
+                </div>
+            </section>
+
+            <section class="concepts">
+                <h2>9. Utilisation des fichiers</h2>
+                <p>Pour manipuler des fichiers en Python :</p>
+                <pre><code>fichier = open("fichier.txt", "r")  # Ouverture en lecture
+ligne = fichier.readline()  # Lit une ligne
+fichier.close()  # Ferme le fichier</code></pre>
+
+                <h3>Exercice d'application</h3>
+                <p>Écrivez un programme qui lit un fichier texte et affiche son contenu.</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <pre><code>fichier = open("fichier.txt", "r")
+contenu = fichier.read()
+print(contenu)
+fichier.close()</code></pre>
+                </div>
+            </section>
+
+            <section class="concepts">
+                <h2>10. Fonctions mathématiques</h2>
+                <p>La bibliothèque <strong>math</strong> fournit des fonctions mathématiques avancées :</p>
+                <pre><code>from math import sqrt, pow, sin, cos, pi</code></pre>
+
+                <h3>Exercice d'application</h3>
+                <p>Calculez la valeur de \(\sin(\pi/2)\) en utilisant la bibliothèque <strong>math</strong>.</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <pre><code>from math import sin, pi
+resultat = sin(pi / 2)
+print(resultat)  # Affiche 1.0</code></pre>
+                </div>
+            </section>
+
+            <section class="concepts">
+                <h2>11. Représentation graphique</h2>
+                <p>La bibliothèque <strong>matplotlib</strong> permet de créer des graphiques :</p>
+                <pre><code>import matplotlib.pyplot as plt
+plt.plot(x, y)
+plt.show()</code></pre>
+
+                <h3>Exercice d'application</h3>
+                <p>Créez un graphique simple avec les points (1, 2), (2, 4), (3, 6).</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <pre><code>import matplotlib.pyplot as plt
+x = [1, 2, 3]
+y = [2, 4, 6]
+plt.plot(x, y)
+plt.show()</code></pre>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Ce cours a été créé pour les étudiants de première et terminale en spécialité mathématiques.</p>
+            <p>Retour au <a href="index.html">site principal</a>.</p>
+        </footer>
+    </div>
+
+    <script>
+        MathJax.typeset();
+    </script>
+</body>
+</html>

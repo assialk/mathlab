@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouvement dans un champ de gravitation – Fiche de cours</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffe4e1;
+            color: rgb(63, 39, 39);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            width: 20px;
+            height: 20px;
+            background-color: #ff1493;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        h2, h3 {
+            color: #8b1152;
+        }
+
+        h4 {
+            font-size: 18px;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            color: #9abcab;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .concepts, .example {
+            background-color: #aa7788;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .concepts ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .concepts li {
+            margin-bottom: 15px;
+        }
+
+        .concepts li span {
+            color: #874b79;
+            font-weight: bold;
+        }
+
+        .example p {
+            font-size: 18px;
+        }
+
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .image-container {
+            background-color: #3c2b34;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .image-container p {
+            font-size: 14px;
+            color: #9abcab;
+            margin-top: 10px;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 50%;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        footer a {
+            color: #ff00c8;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"></div>
+            <h1>Mouvement dans un champ de gravitation – Fiche de cours</h1>
+        </header>
+
+        <main>
+            <section class="concepts">
+                <h2>1. Rappels sur les référentiels</h2>
+                <h3>a. Référentiel héliocentrique</h3>
+                <p>Le référentiel héliocentrique a pour origine le centre du Soleil, avec trois axes dirigés vers trois étoiles fixes et lointaines, et est associé à une base de temps.</p>
+                <p><strong>Exercice d'application :</strong> Expliquez pourquoi le référentiel héliocentrique est utilisé pour étudier le mouvement des planètes.</p>
+                <p><strong>Solution :</strong> Le référentiel héliocentrique permet de décrire le mouvement des planètes autour du Soleil de manière précise, car il est fixe par rapport aux étoiles lointaines.</p>
+
+                <h3>b. Référentiel géocentrique</h3>
+                <p>Le référentiel géocentrique a pour origine le centre de la Terre, avec trois axes dirigés vers trois étoiles fixes, et est associé à une base de temps.</p>
+                <p><strong>Exercice d'application :</strong> Donnez un exemple de situation où le référentiel géocentrique est utilisé.</p>
+                <p><strong>Solution :</strong> Le référentiel géocentrique est utilisé pour étudier le mouvement des satellites autour de la Terre.</p>
+            </section>
+
+            <section class="concepts">
+                <h2>2. Les lois de Képler</h2>
+                <h3>a. Première loi de Képler : loi des trajectoires</h3>
+                <p>Dans le référentiel héliocentrique, la trajectoire du centre d’une planète est une ellipse dont l’un des foyers est le centre du Soleil.</p>
+                <p><strong>Exercice d'application :</strong> Dessinez une ellipse et indiquez les foyers.</p>
+                <p><strong>Solution :</strong> Une ellipse est une courbe fermée avec deux foyers (F1 et F2). Le Soleil est situé à l’un des foyers.</p>
+
+                <h3>b. Deuxième loi de Képler : loi des aires</h3>
+                <p>Le segment reliant le Soleil à la planète balaie des aires égales pendant des durées égales.</p>
+                <p><strong>Exercice d'application :</strong> Expliquez pourquoi une planète se déplace plus vite près du Soleil.</p>
+                <p><strong>Solution :</strong> Pour balayer des aires égales en des temps égaux, la planète doit se déplacer plus vite lorsqu’elle est proche du Soleil.</p>
+
+                <h3>c. Troisième loi de Képler : loi des périodes</h3>
+                <p>Pour les planètes du système solaire, le rapport entre le carré de la période de révolution et le cube du demi-grand axe est constant :</p>
+                <p>\[ \frac{T^2}{a^3} = k \]</p>
+                <p><strong>Exercice d'application :</strong> Si la période de révolution d’une planète est de 2 ans et que son demi-grand axe est de 4 UA, calculez la constante \( k \).</p>
+                <p><strong>Solution :</strong> \( k = \frac{2^2}{4^3} = \frac{4}{64} = 0.0625 \).</p>
+            </section>
+
+            <section class="concepts">
+                <h2>3. Mouvement des planètes et des satellites</h2>
+                <h3>a. Gravitation universelle</h3>
+                <p>La force gravitationnelle entre deux corps de masses \( m_A \) et \( m_B \) est donnée par :</p>
+                <p>\[ F_{A/B} = \frac{G m_A m_B}{r^2} \]</p>
+                <p>où \( G = 6.67 \times 10^{-11} \, \text{N·m}^2/\text{kg}^2 \).</p>
+                <p><strong>Exercice d'application :</strong> Calculez la force gravitationnelle entre la Terre (\( m_T = 5.97 \times 10^{24} \, \text{kg} \)) et la Lune (\( m_L = 7.34 \times 10^{22} \, \text{kg} \)) séparées de \( 3.84 \times 10^8 \, \text{m} \).</p>
+                <p><strong>Solution :</strong> \( F = \frac{6.67 \times 10^{-11} \times 5.97 \times 10^{24} \times 7.34 \times 10^{22}}{(3.84 \times 10^8)^2} \approx 1.98 \times 10^{20} \, \text{N} \).</p>
+
+                <h3>b. Mouvement des satellites</h3>
+                <p>Pour étudier le mouvement d’un satellite autour d’une planète, on utilise la deuxième loi de Newton ou la troisième loi de Képler.</p>
+                <p><strong>Exercice d'application :</strong> Expliquez comment la troisième loi de Képler peut être utilisée pour déterminer la période d’un satellite.</p>
+                <p><strong>Solution :</strong> La troisième loi de Képler permet de relier la période de révolution \( T \) au demi-grand axe \( a \) de l’orbite du satellite.</p>
+
+                <h3>c. Satellites géostationnaires</h3>
+                <p>Un satellite géostationnaire reste fixe par rapport à un observateur terrestre et a une période de révolution égale à celle de la rotation de la Terre (24 heures).</p>
+                <p><strong>Exercice d'application :</strong> Calculez l’altitude d’un satellite géostationnaire en utilisant la troisième loi de Képler.</p>
+                <p><strong>Solution :</strong> L’altitude d’un satellite géostationnaire est d’environ 36 000 km au-dessus de la surface de la Terre.</p>
+            </section>
+
+            <section class="concepts">
+                <h2>4. L’impesanteur</h2>
+                <p>L’impesanteur est l’absence apparente de pesanteur, ressentie par les astronautes en orbite autour de la Terre.</p>
+                <p><strong>Exercice d'application :</strong> Expliquez pourquoi les astronautes ressentent l’impesanteur en orbite.</p>
+                <p><strong>Solution :</strong> Les astronautes ressentent l’impesanteur car ils sont en chute libre autour de la Terre, et leur vitesse horizontale compense la gravité.</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>Ce cours a été créé pour les étudiants de terminale en spécialité physique-chimie.</p>
+            <p>Retour au <a href="index.html">site principal</a>.</p>
+        </footer>
+    </div>
+
+    <script>
+        MathJax.typeset();
+    </script>
+</body>
+</html>

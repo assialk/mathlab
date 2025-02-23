@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformations nucléaires – Fiche de cours</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffe4e1;
+            color: rgb(63, 39, 39);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            width: 20px;
+            height: 20px;
+            background-color: #ff1493;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        h2, h3 {
+            color: #8b1152;
+        }
+
+        h4 {
+            font-size: 18px;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            color: #9abcab;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .concepts, .example {
+            background-color: #aa7788;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .concepts ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .concepts li {
+            margin-bottom: 15px;
+        }
+
+        .concepts li span {
+            color: #874b79;
+            font-weight: bold;
+        }
+
+        .example p {
+            font-size: 18px;
+        }
+
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .image-container {
+            background-color: #3c2b34;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .image-container p {
+            font-size: 14px;
+            color: #9abcab;
+            margin-top: 10px;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 50%;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        footer a {
+            color: #ff00c8;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"></div>
+            <h1>Transformations nucléaires – Fiche de cours</h1>
+        </header>
+
+        <main>
+            <section class="concepts">
+                <h2>1. Les isotopes</h2>
+                <h3>a. Définition</h3>
+                <p>Un élément chimique est symbolisé par \( \frac{A}{Z} X \), où \( A \) est le nombre de nucléons et \( Z \) est le nombre de protons. Les isotopes d’un élément chimique sont des atomes qui ont le même nombre de protons mais un nombre différent de neutrons.</p>
+                <p><strong>Exercice d'application :</strong> Donnez un exemple d’isotopes de l’hydrogène.</p>
+                <p><strong>Solution :</strong> Les isotopes de l’hydrogène sont \( ^1_1H \) (hydrogène), \( ^2_1H \) (deutérium) et \( ^3_1H \) (tritium).</p>
+
+                <h3>b. Stabilité d’un isotope</h3>
+                <p>Un isotope est stable si \( A = 2Z \) ou \( A - Z = Z \). Cependant, il existe des exceptions à cette règle.</p>
+                <p><strong>Exercice d'application :</strong> Expliquez pourquoi certains isotopes ne sont pas stables.</p>
+                <p><strong>Solution :</strong> Certains isotopes ne sont pas stables car leur nombre de neutrons est trop élevé ou trop faible par rapport au nombre de protons, ce qui les rend instables et sujets à la désintégration radioactive.</p>
+            </section>
+
+            <section class="concepts">
+                <h2>2. Les réactions nucléaires</h2>
+                <p>Les réactions nucléaires impliquent la transformation d’un noyau en un autre noyau, avec conservation du nombre de charge \( Z \) et du nombre de masse \( A \).</p>
+                <p><strong>Exercice d'application :</strong> Écrivez l’équation de la désintégration alpha de l’uranium-238.</p>
+                <p><strong>Solution :</strong> \( ^{238}_{92}U \rightarrow ^{234}_{90}Th + ^4_2He \).</p>
+            </section>
+
+            <section class="concepts">
+                <h2>3. Les réactions nucléaires spontanées</h2>
+                <h3>a. Radioactivité α</h3>
+                <p>Un noyau émet une particule alpha (\( ^4_2He \)) lors de la désintégration.</p>
+                <p><strong>Exercice d'application :</strong> Écrivez l’équation de la désintégration alpha du radium-226.</p>
+                <p><strong>Solution :</strong> \( ^{226}_{88}Ra \rightarrow ^{222}_{86}Rn + ^4_2He \).</p>
+
+                <h3>b. Radioactivité β+</h3>
+                <p>Un noyau émet un positron (\( e^+ \)) lors de la désintégration.</p>
+                <p><strong>Exercice d'application :</strong> Écrivez l’équation de la désintégration β+ du carbone-11.</p>
+                <p><strong>Solution :</strong> \( ^{11}_{6}C \rightarrow ^{11}_{5}B + e^+ \).</p>
+
+                <h3>c. Radioactivité β−</h3>
+                <p>Un noyau émet un électron (\( e^- \)) lors de la désintégration.</p>
+                <p><strong>Exercice d'application :</strong> Écrivez l’équation de la désintégration β− du cobalt-60.</p>
+                <p><strong>Solution :</strong> \( ^{60}_{27}Co \rightarrow ^{60}_{28}Ni + e^- \).</p>
+
+                <h3>d. Radioactivité γ</h3>
+                <p>Un noyau émet un rayonnement gamma (\( \gamma \)) lors de la désexcitation.</p>
+                <p><strong>Exercice d'application :</strong> Expliquez pourquoi la désintégration gamma ne modifie pas le nombre de protons ou de neutrons.</p>
+                <p><strong>Solution :</strong> La désintégration gamma est une émission de rayonnement électromagnétique qui ne modifie pas la composition du noyau, mais permet au noyau de passer à un état d’énergie plus bas.</p>
+            </section>
+
+            <section class="concepts">
+                <h2>4. Applications et dangers</h2>
+                <h3>a. Applications</h3>
+                <p>Les transformations nucléaires ont des applications en médecine, agriculture, industrie et agroalimentaire.</p>
+                <p><strong>Exercice d'application :</strong> Donnez un exemple d’application médicale de la radioactivité.</p>
+                <p><strong>Solution :</strong> La radiothérapie utilise des rayonnements ionisants pour détruire les cellules cancéreuses.</p>
+
+                <h3>b. Dangers et effets biologiques</h3>
+                <p>Les rayonnements ionisants peuvent causer des brûlures, des cancers, des tumeurs et des malformations génétiques.</p>
+                <p><strong>Exercice d'application :</strong> Expliquez pourquoi une exposition prolongée aux rayonnements ionisants est dangereuse.</p>
+                <p><strong>Solution :</strong> Une exposition prolongée peut endommager l’ADN des cellules, entraînant des mutations, des cancers ou des malformations génétiques.</p>
+            </section>
+
+            <section class="concepts">
+                <h2>5. Décroissance radioactive</h2>
+                <h3>a. Activité d’un échantillon</h3>
+                <p>L’activité d’un échantillon radioactif est donnée par :</p>
+                <p>\[ A(t) = \lambda N(t) \]</p>
+                <p><strong>Exercice d'application :</strong> Calculez l’activité d’un échantillon contenant \( 10^{20} \) noyaux radioactifs avec \( \lambda = 10^{-3} \, \text{s}^{-1} \).</p>
+                <p><strong>Solution :</strong> \( A(t) = 10^{-3} \times 10^{20} = 10^{17} \, \text{Bq} \).</p>
+
+                <h3>b. Loi de décroissance radioactive</h3>
+                <p>La loi de décroissance radioactive est :</p>
+                <p>\[ N(t) = N_0 e^{-\lambda t} \]</p>
+                <p><strong>Exercice d'application :</strong> Si \( N_0 = 10^{20} \) et \( \lambda = 10^{-3} \, \text{s}^{-1} \), calculez \( N(t) \) après 1000 secondes.</p>
+                <p><strong>Solution :</strong> \( N(t) = 10^{20} e^{-10^{-3} \times 1000} = 10^{20} e^{-1} \approx 3.68 \times 10^{19} \).</p>
+
+                <h3>c. Temps de demi-vie</h3>
+                <p>Le temps de demi-vie est donné par :</p>
+                <p>\[ t_{1/2} = \frac{\ln 2}{\lambda} \]</p>
+                <p><strong>Exercice d'application :</strong> Calculez le temps de demi-vie pour \( \lambda = 10^{-3} \, \text{s}^{-1} \).</p>
+                <p><strong>Solution :</strong> \( t_{1/2} = \frac{\ln 2}{10^{-3}} \approx 693 \, \text{s} \).</p>
+            </section>
+
+            <section class="concepts">
+                <h2>6. Datation</h2>
+                <p>La datation utilise la décroissance radioactive pour déterminer l’âge d’un échantillon. La durée à mesurer ne doit pas dépasser 10 fois la période radioactive.</p>
+                <p><strong>Exercice d'application :</strong> Expliquez pourquoi la datation au carbone-14 est limitée à environ 50 000 ans.</p>
+                <p><strong>Solution :</strong> La période radioactive du carbone-14 est de 5730 ans, donc au-delà de 50 000 ans, la quantité de carbone-14 restante est trop faible pour être mesurée avec précision.</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>Ce cours a été créé pour les étudiants de terminale en spécialité physique-chimie.</p>
+            <p>Retour au <a href="index.html">site principal</a>.</p>
+        </footer>
+    </div>
+
+    <script>
+        MathJax.typeset();
+    </script>
+</body>
+</html>

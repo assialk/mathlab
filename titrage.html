@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suivi d’un titrage – Fiche de cours</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffe4e1;
+            color: rgb(63, 39, 39);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            width: 20px;
+            height: 20px;
+            background-color: #ff1493;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        h2, h3 {
+            color: #8b1152;
+        }
+
+        h4 {
+            font-size: 18px;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            color: #9abcab;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .concepts, .example {
+            background-color: #aa7788;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .concepts ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .concepts li {
+            margin-bottom: 15px;
+        }
+
+        .concepts li span {
+            color: #874b79;
+            font-weight: bold;
+        }
+
+        .example p {
+            font-size: 18px;
+        }
+
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .image-container {
+            background-color: #3c2b34;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .image-container p {
+            font-size: 14px;
+            color: #9abcab;
+            margin-top: 10px;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 50%;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        footer a {
+            color: #ff00c8;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"></div>
+            <h1>Suivi d’un titrage – Fiche de cours</h1>
+        </header>
+
+        <main>
+            <section class="concepts">
+                <h2>1. Masse volumique, densité et titre massique</h2>
+                <h3>a. Masse volumique et densité</h3>
+                <p>La masse volumique d’une solution est définie par :</p>
+                <p>\[ \rho = \frac{m_{\text{Solution}}}{V_{\text{Solution}}} \]</p>
+                <p>La densité d’un liquide est définie par :</p>
+                <p>\[ d = \frac{\rho_{\text{Solution}}}{\rho_{\text{eau}}} \]</p>
+                <p><strong>Exercice d'application :</strong> Calculez la masse volumique d'une solution de 200 mL ayant une masse de 250 g.</p>
+                <p><strong>Solution :</strong> \( \rho = \frac{250}{0.2} = 1250 \, \text{g/L} \).</p>
+
+                <h3>b. Titre massique</h3>
+                <p>Le titre massique d’une solution est défini par :</p>
+                <p>\[ t = \frac{m_{\text{Soluté}}}{m_{\text{Solution}}} \quad \text{ou} \quad t (\%) = \frac{m_{\text{Soluté}}}{m_{\text{Solution}}} \cdot 100 \]</p>
+                <p><strong>Exercice d'application :</strong> Calculez le titre massique d'une solution contenant 30 g de soluté dans 150 g de solution.</p>
+                <p><strong>Solution :</strong> \( t = \frac{30}{150} \cdot 100 = 20\% \).</p>
+            </section>
+
+            <section class="concepts">
+                <h2>2. Analyser un système avec des méthodes chimiques</h2>
+                <h3>a. Titrage chimique</h3>
+                <p>Le titrage chimique est une méthode utilisée pour déterminer la concentration d'une espèce chimique en solution. Il nécessite :</p>
+                <ul>
+                    <li>Une burette</li>
+                    <li>Une espèce titrante</li>
+                    <li>Un bécher</li>
+                    <li>Une espèce titrée</li>
+                    <li>Un agitateur</li>
+                </ul>
+                <p><strong>Exercice d'application :</strong> Expliquez le rôle de la burette dans un titrage chimique.</p>
+                <p><strong>Solution :</strong> La burette permet d'ajouter progressivement l'espèce titrante à la solution titrée pour déterminer le point d'équivalence.</p>
+
+                <h3>b. Équivalence d’un titrage</h3>
+                <p>L’équivalence d’un titrage est l’état chimique pour lequel les réactifs sont introduits en proportions stoechiométriques. Elle est déterminée par un changement de réactif limitant.</p>
+                <p><strong>Exercice d'application :</strong> Déterminez le volume de solution titrante nécessaire pour atteindre l'équivalence si la concentration de la solution titrante est 0.1 M et que la solution titrée contient 0.02 moles de réactif.</p>
+                <p><strong>Solution :</strong> \( V = \frac{0.02}{0.1} = 0.2 \, \text{L} = 200 \, \text{mL} \).</p>
+
+                <h3>c. Équivalence en colorimétrie</h3>
+                <p>Lors d’un titrage colorimétrique, l’équivalence est repérée par un changement de teinte du mélange réactionnel. Un indicateur coloré peut être utilisé pour faciliter le repérage.</p>
+                <p><strong>Exercice d'application :</strong> Choisissez un indicateur coloré pour un titrage acido-basique dont le pH à l'équivalence est 7.</p>
+                <p><strong>Solution :</strong> Le bleu de bromothymol est un bon choix car sa zone de virage est autour de pH 7.</p>
+
+                <h3>d. Équivalence en pH-métrie</h3>
+                <p>L'équivalence en pH-métrie peut être déterminée par la méthode des tangentes ou la courbe dérivée.</p>
+                <p><strong>Exercice d'application :</strong> Expliquez comment la méthode des tangentes permet de déterminer le point d'équivalence.</p>
+                <p><strong>Solution :</strong> La méthode des tangentes consiste à tracer des tangentes aux parties linéaires de la courbe pH = f(V) et à déterminer leur intersection, qui correspond au point d'équivalence.</p>
+
+                <h3>e. Équivalence en conductimétrie</h3>
+                <p>L'équivalence en conductimétrie est déterminée par une rupture de pente dans la courbe de conductivité en fonction du volume de titrant ajouté.</p>
+                <p><strong>Exercice d'application :</strong> Expliquez pourquoi la conductivité change avant et après l'équivalence.</p>
+                <p><strong>Solution :</strong> Avant l'équivalence, la conductivité est due aux ions de la solution titrée. Après l'équivalence, elle est due aux ions de la solution titrante, ce qui entraîne une rupture de pente.</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>Ce cours a été créé pour les étudiants de terminale en spécialité physique-chimie.</p>
+            <p>Retour au <a href="index.html">site principal</a>.</p>
+        </footer>
+    </div>
+
+    <script>
+        MathJax.typeset();
+    </script>
+</body>
+</html>

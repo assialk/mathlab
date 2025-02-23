@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limites de Fonctions</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffe4e1;
+            color: rgb(63, 39, 39);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            width: 20px;
+            height: 20px;
+            background-color: #ff1493;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        h2, h3 {
+            color: #8b1152;
+        }
+
+        h4 {
+            font-size: 18px;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            color: #9abcab;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .concepts, .example {
+            background-color: #aa7788;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .concepts ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .concepts li {
+            margin-bottom: 15px;
+        }
+
+        .concepts li span {
+            color: #874b79;
+            font-weight: bold;
+        }
+
+        .example p {
+            font-size: 18px;
+        }
+
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .image-container {
+            background-color: #3c2b34;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .image-container p {
+            font-size: 14px;
+            color: #9abcab;
+            margin-top: 10px;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 50%;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        footer a {
+            color: #ff00c8;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"></div>
+            <h1>Limites de Fonctions</h1>
+        </header>
+
+        <main>
+            <section class="concepts">
+                <h2>1. Limite infinie en l’infini</h2>
+                <h3>a. Définition</h3>
+                <p>L’infini est un concept qui n’a pas d’équivalent physique ; il s’agit d’une limite.</p>
+                <ul>
+                    <li><strong>Limite en \( +\infty \) :</strong>
+                        \[
+                        \lim_{x \to +\infty} f(x) = +\infty \iff \forall A \in \mathbb{R}, \exists x \in \mathbb{R} \text{ tel que } f(x) \in ]A; +\infty[
+                        \]
+                    </li>
+                    <li><strong>Limite en \( -\infty \) :</strong>
+                        \[
+                        \lim_{x \to -\infty} f(x) = -\infty \iff \forall A \in \mathbb{R}, \exists x \in \mathbb{R} \text{ tel que } f(x) \in ]-\infty; A[
+                        \]
+                    </li>
+                </ul>
+
+                <h3>b. Limites de références</h3>
+                <p>Pour tout \( x \in \mathbb{R}^* \) et \( n \in \mathbb{N}^* \) :</p>
+                <ul>
+                    <li>\[ \lim_{x \to +\infty} x^n = +\infty \]</li>
+                    <li>\[ \lim_{x \to -\infty} x^n = \begin{cases} +\infty & \text{si } n \text{ est pair} \\ -\infty & \text{si } n \text{ est impair} \end{cases} \]</li>
+                    <li>\[ \lim_{x \to +\infty} e^x = +\infty \]</li>
+                </ul>
+
+                <h3>Exercice 1 :</h3>
+                <p>Calculer \( \lim_{x \to +\infty} x^3 \).</p>
+                <p><strong>Solution :</strong></p>
+                <p>\[
+                    \lim_{x \to +\infty} x^3 = +\infty
+                \]</p>
+            </section>
+
+            <section class="concepts">
+                <h2>2. Limite réelle en l’infini</h2>
+                <h3>a. Définition</h3>
+                <p>\[
+                    \lim_{x \to +\infty} f(x) = L \iff \forall \epsilon > 0, \exists x \in \mathbb{R} \text{ tel que } f(x) \in ]L - \epsilon; L + \epsilon[
+                \]</p>
+
+                <h3>b. Limites de références</h3>
+                <p>Pour tout \( x \in \mathbb{R}^* \) et \( n \in \mathbb{N}^* \) :</p>
+                <ul>
+                    <li>\[ \lim_{x \to +\infty} \frac{1}{\sqrt{x}} = 0 \]</li>
+                    <li>\[ \lim_{x \to -\infty} \frac{1}{x^n} = 0 \]</li>
+                    <li>\[ \lim_{x \to +\infty} e^{-x} = 0 \]</li>
+                </ul>
+
+                <h3>c. Asymptote horizontale</h3>
+                <p>Si \( \lim_{x \to +\infty} f(x) = L \), alors la droite d’équation \( y = L \) est une asymptote horizontale à la courbe représentative de \( f \) en \( +\infty \).</p>
+
+                <h3>Exercice 2 :</h3>
+                <p>Calculer \( \lim_{x \to +\infty} \frac{1}{x^2} \).</p>
+                <p><strong>Solution :</strong></p>
+                <p>\[
+                    \lim_{x \to +\infty} \frac{1}{x^2} = 0
+                \]</p>
+            </section>
+
+            <section class="concepts">
+                <h2>3. Limite infinie pour un réel</h2>
+                <h3>a. Mise en évidence</h3>
+                <p>Une fonction peut avoir une limite infinie en un point \( a \).</p>
+
+                <h3>b. Limites de références</h3>
+                <p>Pour tout \( x \in \mathbb{R}^* \) et \( n \in \mathbb{N}^* \) :</p>
+                <ul>
+                    <li>\[ \lim_{x \to 0^+} \frac{1}{\sqrt{x}} = +\infty \]</li>
+                    <li>\[ \lim_{x \to 0^+} \frac{1}{x^n} = +\infty \]</li>
+                    <li>\[ \lim_{x \to 0^-} \frac{1}{x^n} = \begin{cases} +\infty & \text{si } n \text{ est pair} \\ -\infty & \text{si } n \text{ est impair} \end{cases} \]</li>
+                </ul>
+
+                <h3>c. Asymptote verticale</h3>
+                <p>Si \( \lim_{x \to a} f(x) = \pm \infty \), alors la droite d’équation \( x = a \) est une asymptote verticale à la courbe représentative de \( f \).</p>
+
+                <h3>Exercice 3 :</h3>
+                <p>Calculer \( \lim_{x \to 0^+} \frac{1}{x} \).</p>
+                <p><strong>Solution :</strong></p>
+                <p>\[
+                    \lim_{x \to 0^+} \frac{1}{x} = +\infty
+                \]</p>
+            </section>
+
+            <section class="concepts">
+                <h2>4. Croissances comparées</h2>
+                <ul>
+                    <li>\[ \lim_{x \to +\infty} \frac{e^x}{x^n} = +\infty \]</li>
+                    <li>\[ \lim_{x \to -\infty} x^n \cdot e^x = 0 \]</li>
+                </ul>
+
+                <h3>Exercice 4 :</h3>
+                <p>Calculer \( \lim_{x \to +\infty} \frac{e^x}{x^2} \).</p>
+                <p><strong>Solution :</strong></p>
+                <p>\[
+                    \lim_{x \to +\infty} \frac{e^x}{x^2} = +\infty
+                \]</p>
+            </section>
+
+            <section class="concepts">
+                <h2>5. Opérations sur les limites</h2>
+                <h3>a. Somme de deux fonctions</h3>
+                <p>Si \( \lim_{x \to a} f(x) = L \) et \( \lim_{x \to a} g(x) = L' \), alors :</p>
+                <p>\[
+                    \lim_{x \to a} (f(x) + g(x)) = L + L'
+                \]</p>
+
+                <h3>b. Produit de deux fonctions</h3>
+                <p>Si \( \lim_{x \to a} f(x) = L \) et \( \lim_{x \to a} g(x) = L' \), alors :</p>
+                <p>\[
+                    \lim_{x \to a} (f(x) \cdot g(x)) = L \cdot L'
+                \]</p>
+
+                <h3>c. Quotient de deux fonctions</h3>
+                <p>Si \( \lim_{x \to a} f(x) = L \) et \( \lim_{x \to a} g(x) = L' \neq 0 \), alors :</p>
+                <p>\[
+                    \lim_{x \to a} \frac{f(x)}{g(x)} = \frac{L}{L'}
+                \]</p>
+
+                <h3>d. Limite d’une fonction rationnelle en l’infini</h3>
+                <p>La limite d’un polynôme en l’infini est égale à la limite de son monôme de plus haut degré.</p>
+
+                <h3>e. Limite d’une composée de deux fonctions</h3>
+                <p>Si \( \lim_{x \to a} u(x) = b \) et \( \lim_{u \to b} f(u) = c \), alors :</p>
+                <p>\[
+                    \lim_{x \to a} f(u(x)) = c
+                \]</p>
+
+                <h3>Exercice 5 :</h3>
+                <p>Calculer \( \lim_{x \to +\infty} \frac{2x^2 + 3x + 1}{x^2 + 5} \).</p>
+                <p><strong>Solution :</strong></p>
+                <p>\[
+                    \lim_{x \to +\infty} \frac{2x^2 + 3x + 1}{x^2 + 5} = 2
+                \]</p>
+            </section>
+
+            <section class="concepts">
+                <h2>6. Limites et inégalités</h2>
+                <h3>a. Comparaison de limites finies</h3>
+                <p>Si \( \forall x \in \mathbb{R} \), \( f(x) \leq g(x) \) et \( \lim_{x \to \infty} f(x) = L \), \( \lim_{x \to \infty} g(x) = L' \), alors \( L \leq L' \).</p>
+
+                <h3>b. Théorèmes de comparaison</h3>
+                <ul>
+                    <li>Si \( \forall x \in \mathbb{R} \), \( f(x) \leq g(x) \) et \( \lim_{x \to \infty} g(x) = -\infty \), alors \( \lim_{x \to \infty} f(x) = -\infty \).</li>
+                    <li>Si \( \forall x \in \mathbb{R} \), \( f(x) \leq g(x) \) et \( \lim_{x \to \infty} f(x) = +\infty \), alors \( \lim_{x \to \infty} g(x) = +\infty \).</li>
+                </ul>
+
+                <h3>c. Théorème d’encadrement (théorème des gendarmes)</h3>
+                <p>Si \( \forall x \in \mathbb{R} \), \( g(x) \leq f(x) \leq h(x) \) et \( \lim_{x \to \infty} g(x) = L \), \( \lim_{x \to \infty} h(x) = L \), alors \( \lim_{x \to \infty} f(x) = L \).</p>
+
+                <h3>Exercice 6 :</h3>
+                <p>Soit \( f(x) = \frac{\sin(x)}{x} \). Montrer que \( \lim_{x \to +\infty} f(x) = 0 \).</p>
+                <p><strong>Solution :</strong></p>
+                <p>On sait que \( -1 \leq \sin(x) \leq 1 \), donc \( -\frac{1}{x} \leq \frac{\sin(x)}{x} \leq \frac{1}{x} \).</p>
+                <p>Comme \( \lim_{x \to +\infty} -\frac{1}{x} = 0 \) et \( \lim_{x \to +\infty} \frac{1}{x} = 0 \), par le théorème des gendarmes, \( \lim_{x \to +\infty} \frac{\sin(x)}{x} = 0 \).</p>
+            </section>
+
+            <section class="concepts">
+                <h2>7. Asymptote oblique</h2>
+                <p>Si \( \lim_{x \to \infty} \left( f(x) - (ax + b) \right) = 0 \), alors la droite d’équation \( y = ax + b \) est une asymptote oblique à la courbe représentative de \( f \) en \( \pm \infty \).</p>
+
+                <h3>Exercice 7 :</h3>
+                <p>Soit \( f(x) = \frac{x^2 + 1}{x} \). Trouver l’asymptote oblique de \( f \).</p>
+                <p><strong>Solution :</strong></p>
+                <p>On a \( f(x) = x + \frac{1}{x} \). Comme \( \lim_{x \to \infty} \frac{1}{x} = 0 \), l’asymptote oblique est \( y = x \).</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>Ce cours a été créé pour les étudiants en mathématiques.</p>
+            <p>Retour au <a href="index.html">site principal</a>.</p>
+        </footer>
+    </div>
+
+    <script>
+        MathJax.typeset();
+    </script>
+</body>
+</html>

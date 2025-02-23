@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combinatoire et Dénombrement</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffe4e1;
+            color: rgb(63, 39, 39);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            width: 20px;
+            height: 20px;
+            background-color: #ff1493;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        h2, h3 {
+            color: #8b1152;
+        }
+
+        h4 {
+            font-size: 18px;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            color: #9abcab;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .concepts, .example {
+            background-color: #aa7788;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .concepts ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .concepts li {
+            margin-bottom: 15px;
+        }
+
+        .concepts li span {
+            color: #874b79;
+            font-weight: bold;
+        }
+
+        .example p {
+            font-size: 18px;
+        }
+
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .image-container {
+            background-color: #3c2b34;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .image-container p {
+            font-size: 14px;
+            color: #9abcab;
+            margin-top: 10px;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 50%;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        footer a {
+            color: #ff00c8;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"></div>
+            <h1>Combinatoire et Dénombrement</h1>
+        </header>
+
+        <main>
+            <section class="concepts">
+                <h2>Introduction</h2>
+                <p>La **combinatoire** est une branche des mathématiques qui étudie les configurations possibles d'objets finis. Le **dénombrement** consiste à compter le nombre de ces configurations. Ce cours est conçu pour être accessible à tous, avec des explications claires et des exemples concrets.</p>
+            </section>
+
+            <section class="concepts">
+                <h2>1. Cardinal d’ensembles</h2>
+                <p>Le **cardinal** d'un ensemble fini est le nombre d'éléments qu'il contient. On le note \( \text{Card}(A) \).</p>
+                <ul>
+                    <li>Si \( A \) et \( B \) sont deux ensembles **disjoints** (sans éléments en commun), alors :
+                        \[
+                        \text{Card}(A \cup B) = \text{Card}(A) + \text{Card}(B)
+                        \]
+                    </li>
+                </ul>
+                <p><strong>Exemple :</strong></p>
+                <ul>
+                    <li>Soit \( A = \{1, 2, 3\} \) et \( B = \{4, 5\} \). Alors \( \text{Card}(A) = 3 \) et \( \text{Card}(B) = 2 \).</li>
+                    <li>Puisque \( A \) et \( B \) sont disjoints, \( \text{Card}(A \cup B) = 3 + 2 = 5 \).</li>
+                </ul>
+            </section>
+
+            <section class="concepts">
+                <h2>2. Principes additif et multiplicatif</h2>
+                <h3>a. Principe additif</h3>
+                <p>Si \( A_1, A_2, \ldots, A_n \) sont des ensembles **deux à deux disjoints**, alors :
+                    \[
+                    \text{Card}(A_1 \cup A_2 \cup \ldots \cup A_n) = \text{Card}(A_1) + \text{Card}(A_2) + \ldots + \text{Card}(A_n)
+                    \]
+                </p>
+                <p><strong>Exemple :</strong></p>
+                <ul>
+                    <li>Soit \( A = \{1, 2\} \), \( B = \{3, 4\} \), et \( C = \{5\} \). Alors \( \text{Card}(A \cup B \cup C) = 2 + 2 + 1 = 5 \).</li>
+                </ul>
+
+                <h3>b. Principe multiplicatif</h3>
+                <p>Le **produit cartésien** de deux ensembles \( A \) et \( B \), noté \( A \times B \), est l'ensemble des couples \( (a, b) \) où \( a \in A \) et \( b \in B \). Le cardinal de \( A \times B \) est :
+                    \[
+                    \text{Card}(A \times B) = \text{Card}(A) \times \text{Card}(B)
+                    \]
+                </p>
+                <p><strong>Exemple :</strong></p>
+                <ul>
+                    <li>Soit \( A = \{1, 2\} \) et \( B = \{a, b\} \). Alors \( A \times B = \{(1, a), (1, b), (2, a), (2, b)\} \), et \( \text{Card}(A \times B) = 2 \times 2 = 4 \).</li>
+                </ul>
+            </section>
+
+            <section class="concepts">
+                <h2>3. Dénombrement</h2>
+                <h3>a. Partie d’un ensemble</h3>
+                <p>Une **partie** d'un ensemble \( E \) est un sous-ensemble de \( E \). Le nombre de parties d'un ensemble à \( n \) éléments est \( 2^n \).</p>
+                <p><strong>Exemple :</strong></p>
+                <ul>
+                    <li>Soit \( E = \{1, 2\} \). Les parties de \( E \) sont : \( \emptyset, \{1\}, \{2\}, \{1, 2\} \). Il y a \( 2^2 = 4 \) parties.</li>
+                </ul>
+
+                <h3>b. Jeuplets et n-uplets</h3>
+                <p>Un **n-uplet** est une liste ordonnée de \( n \) éléments.</p>
+                <ul>
+                    <li>**1-uplet** : un seul élément.</li>
+                    <li>**2-uplet (couple)** : deux éléments ordonnés.</li>
+                    <li>**k-uplet** : \( k \) éléments ordonnés.</li>
+                </ul>
+                <p><strong>Exemple :</strong></p>
+                <ul>
+                    <li>Soit \( E = \{a, b\} \). Les 2-uplets de \( E \) sont : \( (a, a), (a, b), (b, a), (b, b) \).</li>
+                </ul>
+
+                <h3>c. Factorielle d’un entier naturel</h3>
+                <p>La **factorielle** d'un entier naturel \( n \), notée \( n! \), est le produit des entiers de 1 à \( n \) :
+                    \[
+                    n! = 1 \times 2 \times \ldots \times n
+                    \]
+                    avec \( 0! = 1 \).
+                </p>
+                <p><strong>Exemple :</strong></p>
+                <ul>
+                    <li>\( 4! = 1 \times 2 \times 3 \times 4 = 24 \).</li>
+                </ul>
+
+                <h3>d. Arrangements (combinaisons avec ordre)</h3>
+                <p>Un **arrangement** de \( k \) éléments parmi \( n \) est une liste ordonnée de \( k \) éléments distincts. Le nombre d'arrangements est :
+                    \[
+                    A_n^k = \frac{n!}{(n - k)!}
+                    \]
+                </p>
+                <p><strong>Exemple :</strong></p>
+                <ul>
+                    <li>Combien de mots de 3 lettres peut-on former avec les lettres \( A, B, C, D \) sans répétition ?
+                        \[
+                        A_4^3 = \frac{4!}{(4 - 3)!} = 24
+                        \]
+                    </li>
+                </ul>
+
+                <h3>e. Combinaisons (sans ordre)</h3>
+                <p>Une **combinaison** de \( k \) éléments parmi \( n \) est un sous-ensemble de \( k \) éléments sans ordre. Le nombre de combinaisons est :
+                    \[
+                    \binom{n}{k} = \frac{n!}{k!(n - k)!}
+                    \]
+                </p>
+                <p><strong>Exemple :</strong></p>
+                <ul>
+                    <li>Combien de groupes de 2 personnes peut-on former avec 4 personnes ?
+                        \[
+                        \binom{4}{2} = \frac{4!}{2!2!} = 6
+                        \]
+                    </li>
+                </ul>
+            </section>
+
+            <section class="concepts">
+                <h2>4. Propriétés des combinaisons</h2>
+                <ul>
+                    <li>**Symétrie** : \( \binom{n}{k} = \binom{n}{n - k} \)</li>
+                    <li>**Somme** : \( \sum_{k=0}^n \binom{n}{k} = 2^n \)</li>
+                    <li>**Relation de Pascal** : \( \binom{n}{k} + \binom{n}{k + 1} = \binom{n + 1}{k + 1} \)</li>
+                </ul>
+                <p><strong>Exemple :</strong></p>
+                <ul>
+                    <li>\( \binom{5}{2} = \binom{5}{3} = 10 \)</li>
+                </ul>
+            </section>
+
+            <section class="concepts">
+                <h2>5. Exercices</h2>
+                <h3>Exercice 1</h3>
+                <p>Combien de nombres à 3 chiffres distincts peut-on former avec les chiffres \( 1, 2, 3, 4, 5 \) ?</p>
+                <p><strong>Solution :</strong></p>
+                <p>\[
+                    A_5^3 = \frac{5!}{(5 - 3)!} = 60
+                    \]
+                </p>
+
+                <h3>Exercice 2</h3>
+                <p>Combien de mains de 5 cartes peut-on former avec un jeu de 52 cartes ?</p>
+                <p><strong>Solution :</strong></p>
+                <p>\[
+                    \binom{52}{5} = \frac{52!}{5!47!} = 2\,598\,960
+                    \]
+                </p>
+
+                <h3>Exercice 3</h3>
+                <p>Combien de façons y a-t-il de choisir 3 fruits parmi une corbeille contenant des pommes, des bananes, des oranges et des poires ?</p>
+                <p><strong>Solution :</strong></p>
+                <p>\[
+                    \binom{4}{3} = 4
+                    \]
+                </p>
+            </section>
+        </main>
+
+        <footer>
+            <p>Ce cours a été créé pour les étudiants en mathématiques.</p>
+            <p>Retour au <a href="index.html">site principal</a>.</p>
+        </footer>
+    </div>
+
+    <script>
+        MathJax.typeset();
+    </script>
+</body>
+</html>

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suites Numériques</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffe4e1;
+            color: rgb(63, 39, 39);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            width: 20px;
+            height: 20px;
+            background-color: #ff1493;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        h2, h3 {
+            color: #8b1152;
+        }
+
+        h4 {
+            font-size: 18px;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            color: #9abcab;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .concepts, .example {
+            background-color: #aa7788;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .concepts ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .concepts li {
+            margin-bottom: 15px;
+        }
+
+        .concepts li span {
+            color: #874b79;
+            font-weight: bold;
+        }
+
+        .example p {
+            font-size: 18px;
+        }
+
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .image-container {
+            background-color: #3c2b34;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .image-container p {
+            font-size: 14px;
+            color: #9abcab;
+            margin-top: 10px;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 50%;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        footer a {
+            color: #ff00c8;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"></div>
+            <h1>Suites Numériques</h1>
+        </header>
+
+        <main>
+            <section class="concepts">
+                <h2>1. Le raisonnement par récurrence</h2>
+                <p>Soit une propriété \( (P_n) \) définie sur \( \mathbb{N} \) ou un sous-ensemble de \( \mathbb{N} \).</p>
+                <ul>
+                    <li><strong>Initialisation :</strong> On étudie si la propriété est vraie au rang initial.</li>
+                    <li><strong>Hérédité :</strong> On suppose qu’il existe un entier \( n \geq n_0 \) tel que \( P_n \) soit vraie et l’on démontre que \( P_{n+1} \) l’est aussi.</li>
+                    <li><strong>Conclusion :</strong> D’après le principe du raisonnement par récurrence, la propriété \( (P_n) \) est vraie pour tout entier naturel (ou un sous-ensemble de \( \mathbb{N} \)).</li>
+                </ul>
+
+                <h3>Exercice 1 :</h3>
+                <p>Montrer par récurrence que pour tout entier naturel \( n \), \( 1 + 2 + 3 + \ldots + n = \frac{n(n + 1)}{2} \).</p>
+                <p><strong>Solution :</strong></p>
+                <ul>
+                    <li><strong>Initialisation :</strong> Pour \( n = 1 \), \( 1 = \frac{1(1 + 1)}{2} = 1 \). La propriété est vraie au rang 1.</li>
+                    <li><strong>Hérédité :</strong> Supposons que la propriété est vraie pour un entier \( k \geq 1 \), c'est-à-dire \( 1 + 2 + \ldots + k = \frac{k(k + 1)}{2} \).</li>
+                    <li>Montrons que la propriété est vraie pour \( k + 1 \) :
+                        \[
+                        1 + 2 + \ldots + k + (k + 1) = \frac{k(k + 1)}{2} + (k + 1) = \frac{(k + 1)(k + 2)}{2}
+                        \]
+                    </li>
+                    <li><strong>Conclusion :</strong> La propriété est vraie pour tout entier naturel \( n \).</li>
+                </ul>
+            </section>
+
+            <section class="concepts">
+                <h2>2. Inégalité de Bernoulli</h2>
+                <p>Pour tout \( a > 0 \) et tout entier naturel \( n \), on a :</p>
+                <p>\[
+                    (1 + a)^n \geq 1 + na
+                \]</p>
+
+                <h3>Exercice 2 :</h3>
+                <p>Montrer que pour tout \( n \in \mathbb{N} \), \( (1 + 0.1)^n \geq 1 + 0.1n \).</p>
+                <p><strong>Solution :</strong></p>
+                <p>En appliquant l'inégalité de Bernoulli avec \( a = 0.1 \), on obtient directement :
+                    \[
+                    (1 + 0.1)^n \geq 1 + 0.1n
+                    \]
+                </p>
+            </section>
+
+            <section class="concepts">
+                <h2>3. Limite d’une suite</h2>
+                <h3>3.1 Limite finie</h3>
+                <p>Une suite \( (u_n) \) admet une limite \( L \) si :</p>
+                <p>\[
+                    \lim_{n \to \infty} u_n = L
+                \]</p>
+                <p>Une suite \( (u_n) \) a pour limite \( L \) si :</p>
+                <p>\[
+                    \forall \epsilon > 0, \exists n_0 \in \mathbb{N} \text{ tel que } \forall n \geq n_0, |u_n - L| < \epsilon
+                \]</p>
+                <p><strong>Exemples :</strong></p>
+                <p>\[
+                    \lim_{n \to \infty} \frac{1}{n} = \lim_{n \to \infty} \frac{1}{n^2} = \lim_{n \to \infty} \frac{1}{\sqrt{n}} = 0
+                \]</p>
+
+                <h3>Exercice 3 :</h3>
+                <p>Montrer que \( \lim_{n \to \infty} \frac{1}{n^2} = 0 \).</p>
+                <p><strong>Solution :</strong></p>
+                <p>Pour tout \( \epsilon > 0 \), il existe \( n_0 \) tel que pour tout \( n \geq n_0 \), \( \frac{1}{n^2} < \epsilon \).</p>
+                <p>On peut choisir \( n_0 = \lceil \frac{1}{\sqrt{\epsilon}} \rceil \).</p>
+
+                <h3>3.2 Limite infinie</h3>
+                <p>Une suite \( (u_n) \) a pour limite \( +\infty \) si :</p>
+                <p>\[
+                    \forall A > 0, \exists n_0 \in \mathbb{N} \text{ tel que } \forall n \geq n_0, u_n > A
+                \]</p>
+                <p>De même, une suite \( (u_n) \) a pour limite \( -\infty \) si :</p>
+                <p>\[
+                    \forall A > 0, \exists n_0 \in \mathbb{N} \text{ tel que } \forall n \geq n_0, u_n < -A
+                \]</p>
+                <p><strong>Exemples :</strong></p>
+                <p>\[
+                    \lim_{n \to \infty} n = \lim_{n \to \infty} n^2 = \lim_{n \to \infty} n^3 = \lim_{n \to \infty} \sqrt{n} = +\infty
+                \]</p>
+
+                <h3>Exercice 4 :</h3>
+                <p>Montrer que \( \lim_{n \to \infty} n^2 = +\infty \).</p>
+                <p><strong>Solution :</strong></p>
+                <p>Pour tout \( A > 0 \), il existe \( n_0 \) tel que pour tout \( n \geq n_0 \), \( n^2 > A \).</p>
+                <p>On peut choisir \( n_0 = \lceil \sqrt{A} \rceil \).</p>
+
+                <h3>3.3 Limites par encadrement ou comparaison</h3>
+                <p><strong>a. Théorème d’encadrement (des gendarmes) :</strong></p>
+                <p>Si \( v_n \leq u_n \leq w_n \) et si \( \lim_{n \to \infty} v_n = L \) et \( \lim_{n \to \infty} w_n = L \), alors \( \lim_{n \to \infty} u_n = L \).</p>
+
+                <p><strong>b. Théorèmes de comparaison :</strong></p>
+                <ul>
+                    <li>Si \( u_n \geq v_n \) et \( \lim_{n \to \infty} v_n = +\infty \), alors \( \lim_{n \to \infty} u_n = +\infty \).</li>
+                    <li>Si \( u_n \leq w_n \) et \( \lim_{n \to \infty} w_n = -\infty \), alors \( \lim_{n \to \infty} u_n = -\infty \).</li>
+                </ul>
+
+                <h3>Exercice 5 :</h3>
+                <p>Soit \( u_n = \frac{n^2 + 1}{n} \). Montrer que \( \lim_{n \to \infty} u_n = +\infty \).</p>
+                <p><strong>Solution :</strong></p>
+                <p>On a \( u_n = n + \frac{1}{n} \). Comme \( n \to +\infty \) et \( \frac{1}{n} \to 0 \), alors \( u_n \to +\infty \).</p>
+
+                <h3>3.4 Opérations sur les limites</h3>
+                <p><strong>Limite d’une somme :</strong></p>
+                <table>
+                    <tr>
+                        <th>Si \( (u_n) \) a pour limite</th>
+                        <th>\( \ell \)</th>
+                        <th>\( \ell \)</th>
+                        <th>\( \ell \)</th>
+                        <th>\( +\infty \)</th>
+                        <th>\( -\infty \)</th>
+                        <th>\( +\infty \)</th>
+                    </tr>
+                    <tr>
+                        <th>Si \( (v_n) \) a pour limite</th>
+                        <th>\( \ell' \)</th>
+                        <th>\( +\infty \)</th>
+                        <th>\( -\infty \)</th>
+                        <th>\( +\infty \)</th>
+                        <th>\( -\infty \)</th>
+                        <th>\( -\infty \)</th>
+                    </tr>
+                    <tr>
+                        <th>Alors \( (u_n + v_n) \) a pour limite</th>
+                        <th>\( \ell + \ell' \)</th>
+                        <th>\( +\infty \)</th>
+                        <th>\( -\infty \)</th>
+                        <th>\( +\infty \)</th>
+                        <th>\( -\infty \)</th>
+                        <th>F. Ind.</th>
+                    </tr>
+                </table>
+
+                <p><strong>Limite d’un produit :</strong></p>
+                <table>
+                    <tr>
+                        <th>Si \( (u_n) \) a pour limite</th>
+                        <th>\( \ell \)</th>
+                        <th>\( \ell \neq 0 \)</th>
+                        <th>0</th>
+                        <th>\( +\infty \)</th>
+                    </tr>
+                    <tr>
+                        <th>Si \( (v_n) \) a pour limite</th>
+                        <th>\( \ell' \)</th>
+                        <th>\( +\infty \)</th>
+                        <th>\( +\infty \)</th>
+                        <th>\( +\infty \)</th>
+                    </tr>
+                    <tr>
+                        <th>Alors \( (u_n \times v_n) \) a pour limite</th>
+                        <th>\( \ell \times \ell' \)</th>
+                        <th>\( +\infty^* \)</th>
+                        <th>F. Ind.</th>
+                        <th>\( +\infty^* \)</th>
+                    </tr>
+                </table>
+
+                <p><strong>Limite d’un quotient :</strong></p>
+                <table>
+                    <tr>
+                        <th>Si \( (u_n) \) a pour limite</th>
+                        <th>\( \ell \)</th>
+                        <th>\( \ell \neq 0 \)</th>
+                        <th>0</th>
+                        <th>\( \ell \)</th>
+                        <th>\( +\infty \)</th>
+                        <th>\( +\infty \)</th>
+                    </tr>
+                    <tr>
+                        <th>Si \( (v_n) \) a pour limite</th>
+                        <th>\( \ell' \neq 0 \)</th>
+                        <th>0</th>
+                        <th>0</th>
+                        <th>\( +\infty \)</th>
+                        <th>\( \ell' \)</th>
+                        <th>\( +\infty \)</th>
+                    </tr>
+                    <tr>
+                        <th>Alors \( \frac{u_n}{v_n} \) a pour limite</th>
+                        <th>\( \frac{\ell}{\ell'} \)</th>
+                        <th>\( +\infty^* \)</th>
+                        <th>F. Ind.</th>
+                        <th>0</th>
+                        <th>\( +\infty^* \)</th>
+                        <th>F. Ind.</th>
+                    </tr>
+                </table>
+
+                <h3>Exercice 6 :</h3>
+                <p>Calculer \( \lim_{n \to \infty} \frac{2n^2 + 3n + 1}{n^2 + 5} \).</p>
+                <p><strong>Solution :</strong></p>
+                <p>On divise le numérateur et le dénominateur par \( n^2 \) :
+                    \[
+                    \lim_{n \to \infty} \frac{2 + \frac{3}{n} + \frac{1}{n^2}}{1 + \frac{5}{n^2}} = \frac{2 + 0 + 0}{1 + 0} = 2
+                    \]
+                </p>
+
+                <h3>3.5 Limites des suites géométriques</h3>
+                <p>Soit \( q \) un réel. On a les limites suivantes :</p>
+                <ul>
+                    <li>Si \( q > 1 \), alors \( \lim_{n \to +\infty} q^n = +\infty \).</li>
+                    <li>Si \( q = 1 \), alors \( \lim_{n \to +\infty} q^n = 1 \).</li>
+                    <li>Si \( -1 < q < 1 \), alors \( \lim_{n \to +\infty} q^n = 0 \).</li>
+                    <li>Si \( q \leq -1 \), alors \( \lim_{n \to +\infty} q^n \) n’existe pas.</li>
+                </ul>
+
+                <h3>Exercice 7 :</h3>
+                <p>Calculer \( \lim_{n \to \infty} \left(\frac{1}{2}\right)^n \).</p>
+                <p><strong>Solution :</strong></p>
+                <p>Comme \( \frac{1}{2} < 1 \), alors \( \lim_{n \to \infty} \left(\frac{1}{2}\right)^n = 0 \).</p>
+
+                <h3>3.6 Convergence des suites</h3>
+                <p><strong>Définition :</strong></p>
+                <ul>
+                    <li>Une suite \( (u_n) \) est <strong>majorée</strong> s’il existe un réel \( M \) tel que \( \forall n \in \mathbb{N}, u_n \leq M \).</li>
+                    <li>Une suite \( (u_n) \) est <strong>minorée</strong> s’il existe un réel \( m \) tel que \( \forall n \in \mathbb{N}, u_n \geq m \).</li>
+                    <li>Une suite \( (u_n) \) est <strong>bornée</strong> si elle est à la fois majorée et minorée.</li>
+                </ul>
+
+                <p><strong>Théorème de divergence :</strong></p>
+                <ul>
+                    <li>Si une suite \( (u_n) \) est croissante et non majorée, alors \( \lim_{n \to +\infty} u_n = +\infty \).</li>
+                    <li>Si une suite \( (u_n) \) est décroissante et non minorée, alors \( \lim_{n \to +\infty} u_n = -\infty \).</li>
+                </ul>
+
+                <p><strong>Théorème de convergence :</strong></p>
+                <ul>
+                    <li>Si une suite \( (u_n) \) est croissante et majorée, alors elle converge.</li>
+                    <li>Si une suite \( (u_n) \) est décroissante et minorée, alors elle converge.</li>
+                </ul>
+
+                <h3>Exercice 8 :</h3>
+                <p>Soit \( u_n = \frac{n}{n + 1} \). Montrer que \( (u_n) \) est croissante et bornée, puis déterminer sa limite.</p>
+                <p><strong>Solution :</strong></p>
+                <p>La suite \( u_n \) est croissante car \( u_{n+1} - u_n = \frac{1}{(n + 1)(n + 2)} > 0 \).</p>
+                <p>Elle est majorée par 1 car \( u_n = \frac{n}{n + 1} < 1 \).</p>
+                <p>Comme elle est croissante et majorée, elle converge vers \( L = 1 \).</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>Ce cours a été créé pour les étudiants en mathématiques.</p>
+            <p>Retour au <a href="index.html">site principal</a>.</p>
+        </footer>
+    </div>
+
+    <script>
+        MathJax.typeset();
+    </script>
+</body>
+</html>

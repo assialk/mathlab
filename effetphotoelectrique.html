@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Effet Photoélectrique – Fiche de Cours</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffe4e1;
+            color: rgb(63, 39, 39);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            width: 20px;
+            height: 20px;
+            background-color: #ff1493;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        h2, h3 {
+            color: #8b1152;
+        }
+
+        h4 {
+            font-size: 18px;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            color: #9abcab;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .concepts, .example {
+            background-color: #aa7788;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .concepts ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .concepts li {
+            margin-bottom: 15px;
+        }
+
+        .concepts li span {
+            color: #874b79;
+            font-weight: bold;
+        }
+
+        .example p {
+            font-size: 18px;
+        }
+
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .image-container {
+            background-color: #3c2b34;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .image-container p {
+            font-size: 14px;
+            color: #9abcab;
+            margin-top: 10px;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 50%;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        footer a {
+            color: #ff00c8;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"></div>
+            <h1>Effet Photoélectrique – Fiche de Cours</h1>
+        </header>
+
+        <main>
+            <section class="concepts">
+                <h2>1. Modèle particulaire de la lumière</h2>
+                <p>Le photon est une particule qui a les propriétés suivantes :</p>
+                <ul>
+                    <li>Il est toujours en mouvement à la vitesse \( v = 3,00 \cdot 10^8 \, m \cdot s^{-1} \).</li>
+                    <li>Il n’a ni charge ni masse.</li>
+                    <li>Il transporte une quantité d’énergie \( E_{ph} = h f = \frac{h c}{\lambda} \), où \( h = 6,63 \cdot 10^{-34} \, J \cdot s \) est la constante de Planck.</li>
+                </ul>
+            </section>
+
+            <section class="concepts">
+                <h2>2. Effet photoélectrique</h2>
+                <h3>2.1. Définition</h3>
+                <p>L’effet photoélectrique est l’émission d’électrons par la matière (situés sur les couches externes atomiques ou en surface) sous l’action de la lumière.</p>
+                <p><strong>Exemple :</strong> Lorsqu'un photon de lumière ultraviolette frappe un métal, il peut arracher un électron de la surface du métal.</p>
+
+                <h3>2.2. Travail d’extraction</h3>
+                <p>Les électrons sont retenus autour du noyau de l’atome par interaction électrique. Pour arracher un électron, il faut apporter une énergie moyenne appelée travail d’extraction \( W \).</p>
+
+                <h3>2.3. Énergie cinétique maximale</h3>
+                <p>Lorsqu’un électron est en mouvement dans un matériau, il est soumis à une énergie cinétique maximale :</p>
+                <p>\[ E_{Conex} = e \cdot U_a \]</p>
+                <p>où \( U_a \) est le potentiel d’arrêt.</p>
+
+                <h3>2.4. Conservation de l’énergie</h3>
+                <p>Lorsqu’un photon rencontre un électron, l’énergie est répartie en :</p>
+                <ul>
+                    <li>Travail d’extraction de l’électron \( W \).</li>
+                    <li>Énergie cinétique maximale \( E_{Conex} \).</li>
+                </ul>
+                <p>La relation de conservation de l’énergie est :</p>
+                <p>\[ E_{ph} = h f = W + E_{Conex} \]</p>
+            </section>
+
+            <section class="concepts">
+                <h2>3. Panneau photovoltaïque</h2>
+                <h3>3.1. Propriétés de l’intensité électrique</h3>
+                <p>L’intensité électrique est liée au nombre de porteurs de charges (électrons pour les solides) et à leur vitesse traversant une surface.</p>
+
+                <h3>3.2. Principe</h3>
+                <p>Les cellules photovoltaïques fonctionnent grâce à l’effet photoélectrique :</p>
+                <ul>
+                    <li>Plus l’intensité du rayonnement reçu est grande, plus le nombre d’électrons émis est important.</li>
+                    <li>Plus la fréquence du rayonnement est grande, plus la vitesse des électrons émis est importante.</li>
+                </ul>
+
+                <h3>3.3. Cellule photovoltaïque</h3>
+                <p>Une cellule photovoltaïque est constituée de deux semi-conducteurs, l’un dopé N et l’un dopé P. Lorsque la jonction PN conduit l’électricité, il existe une tension électrique à ses bornes.</p>
+
+                <h3>3.4. Caractéristique des cellules photovoltaïques</h3>
+                <p>Les cellules photovoltaïques convertissent l’énergie solaire en énergie électrique avec un rendement de l’ordre de 20 % à 25 %.</p>
+                <p>Le rendement est donné par :</p>
+                <p>\[ \eta = \frac{P_{électrique}}{P_{lumière}} \]</p>
+
+                <h3>3.5. Rendement</h3>
+                <p>La puissance maximale \( P_m \) est obtenue lorsque la tension \( U_m \) et le courant \( I_m \) sont optimaux :</p>
+                <p>\[ P_m = U_m I_m \]</p>
+            </section>
+
+            <section class="example">
+                <h2>Exercices d'application</h2>
+                <h3>Exercice 1 : Énergie d'un photon</h3>
+                <p>Calculez l’énergie d’un photon de longueur d’onde \( \lambda = 500 \, nm \).</p>
+                <p><strong>Solution :</strong></p>
+                <p>\[ E_{ph} = \frac{h c}{\lambda} = \frac{6,63 \cdot 10^{-34} \cdot 3,00 \cdot 10^8}{500 \cdot 10^{-9}} = 3,98 \cdot 10^{-19} \, J \]</p>
+
+                <h3>Exercice 2 : Travail d’extraction</h3>
+                <p>Un métal a un travail d’extraction \( W = 4,5 \, eV \). Calculez l’énergie minimale en joules nécessaire pour arracher un électron.</p>
+                <p><strong>Solution :</strong></p>
+                <p>\[ W = 4,5 \, eV = 4,5 \cdot 1,6 \cdot 10^{-19} = 7,2 \cdot 10^{-19} \, J \]</p>
+
+                <h3>Exercice 3 : Rendement d'une cellule photovoltaïque</h3>
+                <p>Une cellule photovoltaïque reçoit une puissance lumineuse de \( 100 \, W \) et produit une puissance électrique de \( 20 \, W \). Calculez son rendement.</p>
+                <p><strong>Solution :</strong></p>
+                <p>\[ \eta = \frac{P_{électrique}}{P_{lumière}} = \frac{20}{100} = 0,20 \, \text{ou} \, 20\% \]</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>Ce cours a été créé pour les étudiants de terminale en spécialité physique-chimie.</p>
+            <p>Retour au <a href="index.html">site principal</a>.</p>
+        </footer>
+    </div>
+
+    <script>
+        MathJax.typeset();
+    </script>
+</body>
+</html>

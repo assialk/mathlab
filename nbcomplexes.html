@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nombres Complexes - Fiche de Cours</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffe4e1;
+            color: rgb(63, 39, 39);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            width: 20px;
+            height: 20px;
+            background-color: #ff1493;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        h2, h3 {
+            color: #8b1152;
+        }
+
+        h4 {
+            font-size: 18px;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            color: #9abcab;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .concepts, .example {
+            background-color: #aa7788;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .concepts ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .concepts li {
+            margin-bottom: 15px;
+        }
+
+        .concepts li span {
+            color: #874b79;
+            font-weight: bold;
+        }
+
+        .example p {
+            font-size: 18px;
+        }
+
+        .solution {
+            background-color: #ba8295;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            color: #333;
+        }
+
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .image-container {
+            background-color: #3c2b34;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .image-container p {
+            font-size: 14px;
+            color: #9abcab;
+            margin-top: 10px;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 50%;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        footer a {
+            color: #ff00c8;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"></div>
+            <h1>Nombres Complexes - Fiche de Cours</h1>
+        </header>
+
+        <main>
+            <section class="concepts">
+                <h2>1. L’idée des nombres complexes</h2>
+                <p>Les nombres complexes ont été introduits pour résoudre des équations polynomiales de degré \( n \geq 1 \), notamment celles qui n'ont pas de solutions réelles.</p>
+
+                <h3>Exercice d'application</h3>
+                <p>Résoudre l'équation \( x^2 + x + 1 = 0 \) dans \(\mathbb{C}\).</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <p>Le discriminant est \(\Delta = 1^2 - 4 \times 1 \times 1 = -3\). Les solutions sont donc :</p>
+                    <p>\[
+                    z_1 = \frac{-1 + i\sqrt{3}}{2} \quad \text{et} \quad z_2 = \frac{-1 - i\sqrt{3}}{2}
+                    \]</p>
+                </div>
+            </section>
+
+            <section class="concepts">
+                <h2>2. Ensemble des nombres complexes</h2>
+                <p>L'ensemble des nombres complexes, noté \(\mathbb{C}\), contient les nombres réels et un nombre imaginaire \(i\) tel que \(i^2 = -1\).</p>
+
+                <h3>Exercice d'application</h3>
+                <p>Montrer que \(i^3 = -i\).</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <p>On a \(i^3 = i^2 \times i = (-1) \times i = -i\).</p>
+                </div>
+            </section>
+
+            <section class="concepts">
+                <h2>3. Nombre complexe</h2>
+                <h3>a. Définition</h3>
+                <p>Un nombre complexe \(z\) s'écrit sous la forme \(z = x + iy\), où \(x\) est la partie réelle et \(y\) est la partie imaginaire.</p>
+
+                <h3>Exercice d'application</h3>
+                <p>Soit \(z = 3 + 4i\). Déterminer \(\text{Re}(z)\) et \(\text{Im}(z)\).</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <p>\(\text{Re}(z) = 3\) et \(\text{Im}(z) = 4\).</p>
+                </div>
+
+                <h3>b. Égalité de nombres complexes</h3>
+                <p>Deux nombres complexes \(z_1\) et \(z_2\) sont égaux si et seulement si leurs parties réelles et imaginaires sont égales.</p>
+
+                <h3>Exercice d'application</h3>
+                <p>Déterminer \(x\) et \(y\) tels que \(2x + 3i = 4 + yi\).</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <p>On a \(2x = 4\) et \(3 = y\), donc \(x = 2\) et \(y = 3\).</p>
+                </div>
+            </section>
+
+            <section class="concepts">
+                <h2>4. Opérations sur les nombres complexes</h2>
+                <h3>a. La somme</h3>
+                <p>La somme de deux nombres complexes \(z = x + iy\) et \(z' = x' + iy'\) est définie par :</p>
+                <p>\[
+                z + z' = (x + x') + i(y + y')
+                \]</p>
+
+                <h3>Exercice d'application</h3>
+                <p>Calculer \((2 + 3i) + (4 - 5i)\).</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <p>\[
+                    (2 + 3i) + (4 - 5i) = 6 - 2i
+                    \]</p>
+                </div>
+
+                <h3>b. Le produit</h3>
+                <p>Le produit de deux nombres complexes \(z = x + iy\) et \(z' = x' + iy'\) est défini par :</p>
+                <p>\[
+                z \cdot z' = (xx' - yy') + i(x'y + xy')
+                \]</p>
+
+                <h3>Exercice d'application</h3>
+                <p>Calculer \((1 + i)(2 - 3i)\).</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <p>\[
+                    (1 + i)(2 - 3i) = 2 - 3i + 2i - 3i^2 = 2 - i + 3 = 5 - i
+                    \]</p>
+                </div>
+
+                <h3>c. Inverse d’un nombre complexe</h3>
+                <p>L'inverse d'un nombre complexe \(z = x + iy\) est donné par :</p>
+                <p>\[
+                \frac{1}{z} = \frac{\overline{z}}{|z|^2}
+                \]</p>
+
+                <h3>Exercice d'application</h3>
+                <p>Calculer l'inverse de \(z = 1 + i\).</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <p>\[
+                    \frac{1}{1 + i} = \frac{1 - i}{(1 + i)(1 - i)} = \frac{1 - i}{1 + 1} = \frac{1 - i}{2}
+                    \]</p>
+                </div>
+
+                <h3>d. Conjugué d’un nombre complexe</h3>
+                <p>Le conjugué d'un nombre complexe \(z = x + iy\) est défini par :</p>
+                <p>\[
+                \overline{z} = x - iy
+                \]</p>
+
+                <h3>Exercice d'application</h3>
+                <p>Calculer le conjugué de \(z = 3 - 4i\).</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <p>\[
+                    \overline{z} = 3 + 4i
+                    \]</p>
+                </div>
+            </section>
+
+            <section class="concepts">
+                <h2>5. Equations du second degré</h2>
+                <p>Pour résoudre l'équation \(az^2 + bz + c = 0\) dans \(\mathbb{C}\), on calcule le discriminant \(\Delta = b^2 - 4ac\).</p>
+
+                <h3>Exercice d'application</h3>
+                <p>Résoudre l'équation \(z^2 - 4z + 5 = 0\).</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <p>Le discriminant est \(\Delta = (-4)^2 - 4 \times 1 \times 5 = 16 - 20 = -4\). Les solutions sont :</p>
+                    <p>\[
+                    z_1 = \frac{4 + 2i}{2} = 2 + i \quad \text{et} \quad z_2 = \frac{4 - 2i}{2} = 2 - i
+                    \]</p>
+                </div>
+            </section>
+
+            <section class="concepts">
+                <h2>6. Représentation graphique des nombres complexes</h2>
+                <p>Un nombre complexe \(z = x + iy\) peut être représenté par un point \(M(x, y)\) dans le plan.</p>
+
+                <h3>Exercice d'application</h3>
+                <p>Représenter les points \(A(1 + i)\), \(B(-2 + 3i)\), et \(C(4 - 2i)\) dans le plan complexe.</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <p>Le point \(A\) a pour coordonnées \((1, 1)\), \(B\) a pour coordonnées \((-2, 3)\), et \(C\) a pour coordonnées \((4, -2)\).</p>
+                </div>
+            </section>
+
+            <section class="concepts">
+                <h2>7. Forme trigonométrique des nombres complexes</h2>
+                <p>Un nombre complexe \(z = x + iy\) peut s'écrire sous la forme \(z = r(\cos\theta + i\sin\theta)\), où \(r = |z|\) et \(\theta = \arg(z)\).</p>
+
+                <h3>Exercice d'application</h3>
+                <p>Écrire \(z = 1 + i\) sous forme trigonométrique.</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <p>On a \(r = \sqrt{1^2 + 1^2} = \sqrt{2}\) et \(\theta = \frac{\pi}{4}\). Donc :</p>
+                    <p>\[
+                    z = \sqrt{2}\left(\cos\frac{\pi}{4} + i\sin\frac{\pi}{4}\right)
+                    \]</p>
+                </div>
+            </section>
+
+            <section class="concepts">
+                <h2>8. Notation exponentielle</h2>
+                <p>Un nombre complexe \(z = r(\cos\theta + i\sin\theta)\) peut s'écrire sous la forme exponentielle :</p>
+                <p>\[
+                z = re^{i\theta}
+                \]</p>
+
+                <h3>Exercice d'application</h3>
+                <p>Écrire \(z = 2\left(\cos\frac{\pi}{3} + i\sin\frac{\pi}{3}\right)\) sous forme exponentielle.</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <p>\[
+                    z = 2e^{i\frac{\pi}{3}}
+                    \]</p>
+                </div>
+            </section>
+
+            <section class="concepts">
+                <h2>9. Formules d'Euler et de Moivre</h2>
+                <p>Les formules d'Euler permettent d'exprimer \(\cos\theta\) et \(\sin\theta\) en fonction de \(e^{i\theta}\) :</p>
+                <p>\[
+                \cos\theta = \frac{e^{i\theta} + e^{-i\theta}}{2}, \quad \sin\theta = \frac{e^{i\theta} - e^{-i\theta}}{2i}
+                \]</p>
+
+                <h3>Exercice d'application</h3>
+                <p>Utiliser la formule de Moivre pour calculer \((\cos\theta + i\sin\theta)^3\).</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <p>\[
+                    (\cos\theta + i\sin\theta)^3 = \cos(3\theta) + i\sin(3\theta)
+                    \]</p>
+                </div>
+            </section>
+        </main>
+        <section class="example">
+            <h3>Correction des Exercices</h3>
+            <div class="images-grid">
+                <div class="image-container">
+                    <img src="correctionmathsexp/exo 141.jpeg" alt="Correction de l'exercice 1">
+                    <p>Enoncé exo 141 p44</p>
+                </div>
+                <div class="image-container">
+                    <img src="correctionmathsexp/1.jpeg" alt="Correction de l'exercice 2">
+                    <p>Correction de l'exercice 141 </p>
+                </div>
+                <div class="image-container">
+                    <img src="correctionmathsexp/2.jpeg" alt="Correction de l'exercice 3">
+                    <p>Correction 141 suite</p>
+                </div>
+                <div class="image-container">
+                    <img src="correctionmathsexp/exo 140.jpeg" alt="Correction de l'exercice 3">
+                    <p>Correction de l'exercice 140 </p>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <p>Ce cours a été créé pour les étudiants en Mathématiques Expertes.</p>
+            <p>Retour au <a href="index.html">site principal</a>.</p>
+        </footer>
+    </div>
+
+    <script>
+        MathJax.typeset();
+    </script>
+</body>
+</html>
+
+
+            
+
+    

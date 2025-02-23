@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Structure en Chimie Organique – Fiche de Cours</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffe4e1;
+            color: rgb(63, 39, 39);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            width: 20px;
+            height: 20px;
+            background-color: #ff1493;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        h2, h3 {
+            color: #8b1152;
+        }
+
+        h4 {
+            font-size: 18px;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            color: #9abcab;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .concepts, .example {
+            background-color: #aa7788;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .concepts ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .concepts li {
+            margin-bottom: 15px;
+        }
+
+        .concepts li span {
+            color: #874b79;
+            font-weight: bold;
+        }
+
+        .example p {
+            font-size: 18px;
+        }
+
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .image-container {
+            background-color: #3c2b34;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .image-container p {
+            font-size: 14px;
+            color: #9abcab;
+            margin-top: 10px;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 50%;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        footer a {
+            color: #ff00c8;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"></div>
+            <h1>Structure en Chimie Organique – Fiche de Cours</h1>
+        </header>
+
+        <main>
+            <section class="concepts">
+                <h2>1. Représentation des molécules</h2>
+                <h3>a. Formule brute</h3>
+                <p>La formule brute d’une espèce chimique indique le nombre d’atome de chaque catégorie par ordre alphabétique.</p>
+                <p><strong>Exemple :</strong> \( C_2H_6O \)</p>
+
+                <h3>b. Formule semi-développée</h3>
+                <p>La formule semi-développée d’une espèce chimique indique les liaisons entre atomes (sauf entre un atome d’hydrogène et son voisin).</p>
+                <p><strong>Exemple :</strong> \( CH_3-OH \)</p>
+
+                <h3>c. Formule topologique</h3>
+                <p>Pour rendre la compréhension d’une molécule plus simple, on peut représenter son allure projetée sur un plan (sans les atomes de carbone et d’hydrogène liés aux atomes de carbone) ; il s’agit de la formule topologique.</p>
+                <p><strong>Exemple :</strong></p>
+                <img src="formule_topologique.png" alt="Formule topologique">
+
+                <h3>d. Isomérie</h3>
+                <p>Des isomères sont 2 espèces chimiques qui ont les mêmes formules brutes mais des formules semi-développées (développées) différentes.</p>
+
+                <h3>e. Domaine de la chimie organique</h3>
+                <p>Une espèce chimique appartient au domaine de la chimie organique si elle contient au moins un atome de carbone (à l’exception de quelques composés : monoxyde et dioxyde de carbone, carbonate).</p>
+            </section>
+
+            <section class="concepts">
+                <h2>2. Les alcanes</h2>
+                <p>Les alcanes sont des hydrocarbures (constitués par des atomes de C et H) saturés non cycliques (linéaires ou ramifiés) de formule brute \( \text{C}_n\text{H}_{2n+2} \).</p>
+                <p><strong>Préfixe correspondant au nombre d’atomes de la chaîne :</strong></p>
+                <table>
+                    <tr>
+                        <th>Nombre de C</th>
+                        <th>Préfixe</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>méth</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>éth</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>prop</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>but</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>pent</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>hex</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>hept</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>oct</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>non</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>déc</td>
+                    </tr>
+                </table>
+            </section>
+
+            <section class="concepts">
+                <h2>3. Groupes fonctionnels principaux</h2>
+                <h3>a. Familles fonctionnelles</h3>
+                <p>Les groupes fonctionnels sont des atomes ou des groupes d'atomes qui confèrent des propriétés chimiques spécifiques aux molécules.</p>
+                <p><strong>Exemples :</strong></p>
+                <ul>
+                    <li>Hydroxyle (\( -OH \)) : Alcool</li>
+                    <li>Carbonyle (\( -CO \)) : Aldéhyde ou Cétone</li>
+                    <li>Carboxyle (\( -COOH \)) : Acide carboxylique</li>
+                </ul>
+
+                <h3>b. Molécules polyfonctionnelles</h3>
+                <p>Une espèce chimique est dite polyfonctionnelle lorsqu’elle comporte plusieurs fonctions chimiques.</p>
+            </section>
+
+            <section class="concepts">
+                <h2>4. Polymères</h2>
+                <h3>a. Définitions</h3>
+                <p>Un polymère est une macromolécule formée par la répétition de motifs monomères.</p>
+                <p><strong>Exemples de polymères naturels :</strong></p>
+                <ul>
+                    <li>Kératine (cheveux)</li>
+                    <li>Cellulose (bois)</li>
+                    <li>Amidon (graines, tubercules)</li>
+                </ul>
+                <p><strong>Exemples de polymères artificiels :</strong></p>
+                <ul>
+                    <li>Polystyrène (isolant, emballage)</li>
+                    <li>Polyester (fibre textile)</li>
+                    <li>PVC (polychlorure de vinyle)</li>
+                </ul>
+            </section>
+
+            <section class="example">
+                <h2>Exercices d'application</h2>
+                <h3>Exercice 1 : Formule brute et semi-développée</h3>
+                <p>Donnez la formule brute et la formule semi-développée de l'éthanol.</p>
+                <p><strong>Solution :</strong></p>
+                <p>Formule brute : \( C_2H_6O \)</p>
+                <p>Formule semi-développée : \( CH_3-CH_2-OH \)</p>
+
+                <h3>Exercice 2 : Isomérie</h3>
+                <p>Identifiez deux isomères de \( C_4H_{10} \).</p>
+                <p><strong>Solution :</strong></p>
+                <p>1. Butane : \( CH_3-CH_2-CH_2-CH_3 \)</p>
+                <p>2. 2-méthylpropane : \( CH_3-CH(CH_3)-CH_3 \)</p>
+
+                <h3>Exercice 3 : Groupes fonctionnels</h3>
+                <p>Identifiez le groupe fonctionnel présent dans l'acide acétique (\( CH_3COOH \)).</p>
+                <p><strong>Solution :</strong></p>
+                <p>Le groupe fonctionnel est le groupe carboxyle (\( -COOH \)).</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>Ce cours a été créé pour les étudiants de terminale en spécialité physique-chimie.</p>
+            <p>Retour au <a href="index.html">site principal</a>.</p>
+        </footer>
+    </div>
+
+    <script>
+        MathJax.typeset();
+    </script>
+</body>
+</html>

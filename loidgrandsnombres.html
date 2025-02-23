@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loi des Grands Nombres - Fiche de Cours</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffe4e1;
+            color: rgb(63, 39, 39);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            width: 20px;
+            height: 20px;
+            background-color: #ff1493;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        h2, h3 {
+            color: #8b1152;
+        }
+
+        h4 {
+            font-size: 18px;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            color: #9abcab;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .concepts, .example {
+            background-color: #aa7788;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .concepts ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .concepts li {
+            margin-bottom: 15px;
+        }
+
+        .concepts li span {
+            color: #874b79;
+            font-weight: bold;
+        }
+
+        .example p {
+            font-size: 18px;
+        }
+
+        .solution {
+            background-color: #ba8295;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            color: #333;
+        }
+
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .image-container {
+            background-color: #3c2b34;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .image-container p {
+            font-size: 14px;
+            color: #9abcab;
+            margin-top: 10px;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 50%;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        footer a {
+            color: #ff00c8;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"></div>
+            <h1>Loi des Grands Nombres - Fiche de Cours</h1>
+        </header>
+
+        <main>
+            <section class="concepts">
+                <h2>1. Estimation par intervalle</h2>
+                <h3>a. Lois discrètes de probabilités</h3>
+                <p>Les lois discrètes de probabilités prennent un nombre fini de valeurs :</p>
+                <ul>
+                    <li>Loi binomiale : \( E(X) = n \cdot p \)</li>
+                    <li>Loi géométrique : \( E(X) = \frac{1}{p} \)</li>
+                    <li>Loi de Poisson : \( E(X) = \lambda \)</li>
+                </ul>
+                <p>Les variances respectives sont :</p>
+                <ul>
+                    <li>Loi binomiale : \( V(X) = n \cdot p \cdot (1 - p) \)</li>
+                    <li>Loi géométrique : \( V(X) = \frac{1 - p}{p^2} \)</li>
+                    <li>Loi de Poisson : \( V(X) = \lambda \)</li>
+                </ul>
+
+                <h3>Exercice d'application</h3>
+                <p>Soit \( X \) une variable aléatoire suivant une loi binomiale de paramètres \( n = 20 \) et \( p = 0.3 \). Calculez \( E(X) \) et \( V(X) \).</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <p>Pour une loi binomiale :</p>
+                    <p>\[
+                    E(X) = n \cdot p = 20 \times 0.3 = 6
+                    \]</p>
+                    <p>\[
+                    V(X) = n \cdot p \cdot (1 - p) = 20 \times 0.3 \times 0.7 = 4.2
+                    \]</p>
+                </div>
+
+                <h3>b. L’inégalité de Markov</h3>
+                <p>Soit \( X \) une variable aléatoire réelle positive ou nulle d’espérance \( E(X) \). Pour tout \( \alpha > 0 \), on a :</p>
+                <p>\[
+                P(X \geq \alpha) \leq \frac{E(X)}{\alpha}
+                \]</p>
+
+                <h3>Exercice d'application</h3>
+                <p>Soit \( X \) une variable aléatoire positive telle que \( E(X) = 5 \). Estimez \( P(X \geq 10) \).</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <p>En appliquant l'inégalité de Markov :</p>
+                    <p>\[
+                    P(X \geq 10) \leq \frac{E(X)}{10} = \frac{5}{10} = 0.5
+                    \]</p>
+                    <p>Ainsi, \( P(X \geq 10) \leq 0.5 \).</p>
+                </div>
+
+                <h3>c. L’inégalité de Bienaymé-Tchébytchev</h3>
+                <p>Soit \( X \) une variable aléatoire d’espérance \( E(X) \) et de variance \( V(X) \). Pour tout \( \alpha > 0 \), on a :</p>
+                <p>\[
+                P(|X - E(X)| \geq \alpha) \leq \frac{V(X)}{\alpha^2}
+                \]</p>
+
+                <h3>Exercice d'application</h3>
+                <p>Soit \( X \) une variable aléatoire telle que \( E(X) = 10 \) et \( V(X) = 4 \). Estimez \( P(|X - 10| \geq 3) \).</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <p>En appliquant l'inégalité de Bienaymé-Tchébytchev :</p>
+                    <p>\[
+                    P(|X - 10| \geq 3) \leq \frac{V(X)}{3^2} = \frac{4}{9} \approx 0.444
+                    \]</p>
+                    <p>Ainsi, \( P(|X - 10| \geq 3) \leq 0.444 \).</p>
+                </div>
+            </section>
+
+            <section class="concepts">
+                <h2>2. Loi des grands nombres</h2>
+                <h3>a. L’inégalité de concentration</h3>
+                <p>Soit \( X \) une variable aléatoire d’espérance \( E(X) \) et de variance \( V(X) \). On appelle \( M_n \) la variable moyenne définie par :</p>
+                <p>\[
+                M_n = \frac{1}{n} \sum_{i=1}^n X_i
+                \]</p>
+                <p>Pour tout \( a > 0 \), on a :</p>
+                <p>\[
+                P(|M_n - E(X)| \geq a) \leq \frac{V(X)}{n a^2}
+                \]</p>
+
+                <h3>Exercice d'application</h3>
+                <p>Soit \( X \) une variable aléatoire telle que \( E(X) = 5 \) et \( V(X) = 4 \). Pour un échantillon de taille \( n = 100 \), estimez \( P(|M_n - 5| \geq 0.5) \).</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <p>En appliquant l'inégalité de concentration :</p>
+                    <p>\[
+                    P(|M_n - 5| \geq 0.5) \leq \frac{V(X)}{n a^2} = \frac{4}{100 \times 0.5^2} = \frac{4}{25} = 0.16
+                    \]</p>
+                    <p>Ainsi, \( P(|M_n - 5| \geq 0.5) \leq 0.16 \).</p>
+                </div>
+
+                <h3>b. Loi faible des grands nombres</h3>
+                <p>Pour tout \( a > 0 \), on a :</p>
+                <p>\[
+                \lim_{n \to \infty} P(|M_n - E(X)| \geq a) = 0
+                \]</p>
+
+                <h3>Exercice d'application</h3>
+                <p>Expliquez en quoi la loi faible des grands nombres justifie l'utilisation de la moyenne empirique pour estimer l'espérance d'une variable aléatoire.</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <p>La loi faible des grands nombres indique que, lorsque la taille de l'échantillon \( n \) devient très grande, la probabilité que la moyenne empirique \( M_n \) s'écarte de l'espérance \( E(X) \) de plus d'une quantité \( a \) tend vers 0. Cela signifie que \( M_n \) converge en probabilité vers \( E(X) \), ce qui justifie son utilisation comme estimateur de l'espérance.</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Ce cours a été créé pour les étudiants de terminale en spécialité mathématiques.</p>
+            <p>Retour au <a href="index.html">site principal</a>.</p>
+        </footer>
+    </div>
+
+    <script>
+        MathJax.typeset();
+    </script>
+</body>
+</html>

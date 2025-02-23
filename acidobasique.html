@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformations Acido-Basiques et pH</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffe4e1;
+            color: rgb(63, 39, 39);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            width: 20px;
+            height: 20px;
+            background-color: #ff1493;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        h2, h3 {
+            color: #8b1152;
+        }
+
+        h4 {
+            font-size: 18px;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            color: #9abcab;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .concepts, .example {
+            background-color: #aa7788;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .concepts ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .concepts li {
+            margin-bottom: 15px;
+        }
+
+        .concepts li span {
+            color: #874b79;
+            font-weight: bold;
+        }
+
+        .example p {
+            font-size: 18px;
+        }
+
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .image-container {
+            background-color: #3c2b34;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .image-container p {
+            font-size: 14px;
+            color: #9abcab;
+            margin-top: 10px;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 50%;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        footer a {
+            color: #ff00c8;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"></div>
+            <h1>Transformations Acido-Basiques et pH</h1>
+        </header>
+
+        <main>
+            <section class="concepts">
+                <h2>1. Notions d’acides et de bases</h2>
+                <h3>a. Définition</h3>
+                <ul>
+                    <li><strong>Acide :</strong> Espèce chimique capable de libérer au moins un proton.</li>
+                    <li><strong>Base :</strong> Espèce chimique capable de capter au moins un proton.</li>
+                </ul>
+
+                <h3>b. Couple acide-base</h3>
+                <p>Un couple acide/base est défini par un acide et une base conjuguée, noté \( AH/A^- \).</p>
+                <p>Équation :</p>
+                <p>\[ AH_{(aq)} \leftrightarrow A_{(aq)} + H_{(aq)} \]</p>
+
+                <h3>c. Modélisation d’une réaction acide-base</h3>
+                <p>Une réaction acide-base implique l'échange de protons entre l'acide d'un couple et la base d'un autre couple.</p>
+                <p>Équation bilan :</p>
+                <p>\[ AH + B^- \leftrightarrow A^- + BH \]</p>
+
+                <h3>Exercice 1</h3>
+                <p>Écrivez l'équation de la réaction acide-base entre l'acide éthanoïque \( CH_3COOH \) et l'ion hydroxyde \( OH^- \).</p>
+                <p><strong>Solution :</strong></p>
+                <p>\[ CH_3COOH + OH^- \leftrightarrow CH_3COO^- + H_2O \]</p>
+            </section>
+
+            <section class="concepts">
+                <h2>2. Structure et caractère acide ou basique</h2>
+                <h3>a. La liaison R-H</h3>
+                <p>Plus la liaison R-H est polarisée, plus le caractère acide d'une molécule est affirmé.</p>
+
+                <h3>b. Acide carboxylique / Ion carboxylate</h3>
+                <p>Le groupe carboxyle possède un caractère acide. La base conjuguée d'un acide carboxylique est un ion carboxylate.</p>
+                <p>Exemple :</p>
+                <p>\[ \text{Acide carboxylique} \leftrightarrow \text{Ion carboxylate} \]</p>
+
+                <h3>c. Ion aminoate / Amine</h3>
+                <p>L'ion aminoate est l'acide conjugué d'une amine. Les amines ont généralement un caractère basique.</p>
+                <p>Exemple :</p>
+                <p>\[ R - NH_3^+ \leftrightarrow R - NH_2 \]</p>
+
+                <h3>Exercice 2</h3>
+                <p>Identifiez l'acide et la base dans le couple \( NH_4^+/NH_3 \).</p>
+                <p><strong>Solution :</strong></p>
+                <p>Acide : \( NH_4^+ \), Base : \( NH_3 \).</p>
+            </section>
+
+            <section class="concepts">
+                <h2>3. Lien entre acidité et pH</h2>
+                <h3>a. Définition du pH</h3>
+                <p>Le pH (potentiel hydrogène) caractérise l'acidité d'une solution.</p>
+                <p>Formule :</p>
+                <p>\[ pH = -\log \left[ \frac{H_3O^+}{\epsilon_0} \right] \]</p>
+                <p>où \( \epsilon_0 = 1 \, \text{mol} \cdot L^{-1} \).</p>
+
+                <h3>b. pH et dilution</h3>
+                <p>Le pH d'une solution diluée peut être calculé à partir du facteur de dilution \( \alpha \).</p>
+                <p>Formule :</p>
+                <p>\[ pH_{\text{dilué}} = pH_{\text{initial}} + \log \alpha \]</p>
+
+                <h3>Exercice 3</h3>
+                <p>Si une solution a un pH de 3 et est diluée 10 fois, quel est le nouveau pH ?</p>
+                <p><strong>Solution :</strong></p>
+                <p>\[ pH_{\text{dilué}} = 3 + \log 10 = 4 \]</p>
+            </section>
+
+            <section class="concepts">
+                <h2>4. Mesure du pH</h2>
+                <h3>a. Indicateur coloré</h3>
+                <p>Un indicateur coloré change de couleur en fonction du pH de la solution.</p>
+                <p>Exemple :</p>
+                <table>
+                    <tr>
+                        <th>Indicateur</th>
+                        <th>Avant zone de virage</th>
+                        <th>Zone de virage</th>
+                        <th>Après zone de virage</th>
+                    </tr>
+                    <tr>
+                        <td>Bleu de bromothymol (BBT)</td>
+                        <td>Jaune</td>
+                        <td>6.0 - 7.6</td>
+                        <td>Bleu</td>
+                    </tr>
+                    <tr>
+                        <td>Hélianthine</td>
+                        <td>Rouge</td>
+                        <td>3.1 - 4.4</td>
+                        <td>Jaune</td>
+                    </tr>
+                    <tr>
+                        <td>Phénolphtaléine (pp)</td>
+                        <td>Incolore</td>
+                        <td>8.2 - 10.0</td>
+                        <td>Rose</td>
+                    </tr>
+                </table>
+
+                <h3>b. Papier pH</h3>
+                <p>Le papier pH est imbibé d'un mélange d'indicateurs colorés et permet une estimation du pH.</p>
+
+                <h3>c. pH-mètre</h3>
+                <p>Un pH-mètre mesure le pH avec précision en mesurant la tension entre deux électrodes.</p>
+
+                <h3>Exercice 4</h3>
+                <p>Quel indicateur coloré utiliseriez-vous pour mesurer un pH de 5 ?</p>
+                <p><strong>Solution :</strong></p>
+                <p>L'hélianthine, car sa zone de virage est entre 3.1 et 4.4.</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>Ce cours a été créé pour les étudiants en physique-chimie de terminale.</p>
+            <p>Retour au <a href="index.html">site principal</a>.</p>
+        </footer>
+    </div>
+
+    <script>
+        MathJax.typeset();
+    </script>
+</body>
+</html>

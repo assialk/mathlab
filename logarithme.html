@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fonction Logarithme</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffe4e1;
+            color: rgb(63, 39, 39);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            width: 20px;
+            height: 20px;
+            background-color: #ff1493;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        h2, h3 {
+            color: #8b1152;
+        }
+
+        h4 {
+            font-size: 18px;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            color: #9abcab;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .concepts, .example {
+            background-color: #aa7788;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .concepts ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .concepts li {
+            margin-bottom: 15px;
+        }
+
+        .concepts li span {
+            color: #874b79;
+            font-weight: bold;
+        }
+
+        .example p {
+            font-size: 18px;
+        }
+
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .image-container {
+            background-color: #3c2b34;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .image-container p {
+            font-size: 14px;
+            color: #9abcab;
+            margin-top: 10px;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 50%;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        footer a {
+            color: #ff00c8;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"></div>
+            <h1>Fonction Logarithme</h1>
+        </header>
+
+        <main>
+            <section class="concepts">
+                <h2>1. Définition</h2>
+                <p>La fonction logarithme népérien, notée \( \ln \), est la réciproque de la fonction exponentielle \( e^x \). Elle est définie par :</p>
+                <p>\[
+                    \ln : ]0; +\infty[ \rightarrow \mathbb{R}
+                \]</p>
+                <p>La courbe de \( y = \ln(x) \) est symétrique à celle de \( y = e^x \) par rapport à la droite \( y = x \).</p>
+
+                <h3>Exercice 1 :</h3>
+                <p>Résoudre l'équation \( \ln(x) = 2 \).</p>
+                <p><strong>Solution :</strong></p>
+                <p>\[
+                    \ln(x) = 2 \Rightarrow x = e^2
+                \]</p>
+            </section>
+
+            <section class="concepts">
+                <h2>2. Propriétés</h2>
+                <ul>
+                    <li>Pour \( x \in ]0; 1[ \), \( \ln(x) < 0 \).</li>
+                    <li>Pour \( x = 1 \), \( \ln(x) = 0 \).</li>
+                    <li>Pour \( x \in ]1; +\infty[ \), \( \ln(x) > 0 \).</li>
+                </ul>
+
+                <h3>Exercice 2 :</h3>
+                <p>Étudier le signe de \( \ln(x) \) pour \( x \in ]0; 2] \).</p>
+                <p><strong>Solution :</strong></p>
+                <p>Pour \( x \in ]0; 1[ \), \( \ln(x) < 0 \). Pour \( x = 1 \), \( \ln(x) = 0 \). Pour \( x \in ]1; 2] \), \( \ln(x) > 0 \).</p>
+            </section>
+
+            <section class="concepts">
+                <h2>3. Règles de calcul</h2>
+                <p>Pour tout \( a > 0 \), \( b > 0 \) et \( n \in \mathbb{N} \) :</p>
+                <ul>
+                    <li>\[ \ln(a) + \ln(b) = \ln(a \cdot b) \]</li>
+                    <li>\[ \ln(a) - \ln(b) = \ln\left(\frac{a}{b}\right) \]</li>
+                    <li>\[ n \cdot \ln(a) = \ln(a^n) \]</li>
+                </ul>
+
+                <h3>Exercice 3 :</h3>
+                <p>Simplifier \( \ln(8) - \ln(2) \).</p>
+                <p><strong>Solution :</strong></p>
+                <p>\[
+                    \ln(8) - \ln(2) = \ln\left(\frac{8}{2}\right) = \ln(4)
+                \]</p>
+            </section>
+
+            <section class="concepts">
+                <h2>4. Liens avec la fonction exponentielle</h2>
+                <p>Pour tout \( a \in \mathbb{R} \) et \( b > 0 \) :</p>
+                <ul>
+                    <li>\[ \ln(e^a) = a \]</li>
+                    <li>\[ e^{\ln(b)} = b \]</li>
+                </ul>
+
+                <h3>Exercice 4 :</h3>
+                <p>Calculer \( \ln(e^5) \).</p>
+                <p><strong>Solution :</strong></p>
+                <p>\[
+                    \ln(e^5) = 5
+                \]</p>
+            </section>
+
+            <section class="concepts">
+                <h2>5. Équations et inéquations logarithmiques</h2>
+                <p>Pour tout \( a > 0 \) et \( b > 0 \) :</p>
+                <ul>
+                    <li>\[ \ln(a) > \ln(b) \Leftrightarrow a > b \]</li>
+                    <li>\[ \ln(a) = \ln(b) \Leftrightarrow a = b \]</li>
+                    <li>\[ \ln(a) < \ln(b) \Leftrightarrow a < b \]</li>
+                </ul>
+
+                <h3>Exercice 5 :</h3>
+                <p>Résoudre l'inéquation \( \ln(x) > \ln(3) \).</p>
+                <p><strong>Solution :</strong></p>
+                <p>\[
+                    \ln(x) > \ln(3) \Rightarrow x > 3
+                \]</p>
+            </section>
+
+            <section class="concepts">
+                <h2>6. Limites</h2>
+                <ul>
+                    <li>\[ \lim_{x \to 0^+} \ln(x) = -\infty \]</li>
+                    <li>\[ \lim_{x \to +\infty} \ln(x) = +\infty \]</li>
+                    <li>\[ \lim_{x \to 0^+} x^n \ln(x) = 0 \]</li>
+                    <li>\[ \lim_{x \to +\infty} \frac{\ln(x)}{x^n} = 0 \]</li>
+                </ul>
+
+                <h3>Exercice 6 :</h3>
+                <p>Calculer \( \lim_{x \to +\infty} \frac{\ln(x)}{x} \).</p>
+                <p><strong>Solution :</strong></p>
+                <p>\[
+                    \lim_{x \to +\infty} \frac{\ln(x)}{x} = 0
+                \]</p>
+            </section>
+
+            <section class="concepts">
+                <h2>7. Composition de fonction</h2>
+                <h3>a. Dérivée</h3>
+                <p>La dérivée de \( \ln(x) \) est :</p>
+                <p>\[
+                    (\ln(x))' = \frac{1}{x}
+                \]</p>
+                <p>Pour une fonction composée \( \ln(u) \), la dérivée est :</p>
+                <p>\[
+                    (\ln(u))' = \frac{u'}{u}
+                \]</p>
+
+                <h3>b. Fonction associée</h3>
+                <p>Si \( u \) est une fonction à valeurs positives définie sur \( I \), alors \( u \) et \( \ln(u) \) ont les mêmes variations sur \( I \).</p>
+
+                <h3>Exercice 7 :</h3>
+                <p>Soit \( f(x) = \ln(x^2 + 1) \). Calculer \( f'(x) \).</p>
+                <p><strong>Solution :</strong></p>
+                <p>\[
+                    f'(x) = \frac{2x}{x^2 + 1}
+                \]</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>Ce cours a été créé pour les étudiants en mathématiques.</p>
+            <p>Retour au <a href="index.html">site principal</a>.</p>
+        </footer>
+    </div>
+
+    <script>
+        MathJax.typeset();
+    </script>
+</body>
+</html>

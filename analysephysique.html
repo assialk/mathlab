@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Méthodes d'Analyse Physique</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffe4e1;
+            color: rgb(63, 39, 39);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            width: 20px;
+            height: 20px;
+            background-color: #ff1493;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        h2, h3 {
+            color: #8b1152;
+        }
+
+        h4 {
+            font-size: 18px;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            color: #9abcab;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .concepts, .example {
+            background-color: #aa7788;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .concepts ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .concepts li {
+            margin-bottom: 15px;
+        }
+
+        .concepts li span {
+            color: #874b79;
+            font-weight: bold;
+        }
+
+        .example p {
+            font-size: 18px;
+        }
+
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .image-container {
+            background-color: #3c2b34;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .image-container p {
+            font-size: 14px;
+            color: #9abcab;
+            margin-top: 10px;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 50%;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        footer a {
+            color: #ff00c8;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"></div>
+            <h1>Méthodes d'Analyse Physique</h1>
+        </header>
+
+        <main>
+            <section class="concepts">
+                <h2>1. Spectroscopie UV-visible</h2>
+                <h3>a. Loi de Beer-Lambert</h3>
+                <p>La loi de Beer-Lambert relie l'absorbance \( A \) à la concentration \( c \) :</p>
+                <p>\[ A = \varepsilon \times l \times c \]</p>
+                <p>où \( \varepsilon \) est le coefficient d'extinction molaire, \( l \) l'épaisseur de la cuve, et \( c \) la concentration.</p>
+
+                <h3>b. Conditions de validité</h3>
+                <ul>
+                    <li>Lumière monochromatique.</li>
+                    <li>Solution homogène et peu concentrée (\( c < 0.1 \, \text{mol/L} \)).</li>
+                    <li>Le soluté ne doit pas réagir sous l'effet de la lumière.</li>
+                </ul>
+
+                <h3>c. Application au titrage</h3>
+                <p>La courbe d'étalonnage permet de déterminer la concentration d'une solution inconnue.</p>
+
+                <h3>Exercice 1</h3>
+                <p>Une solution a une absorbance de 0.5, une épaisseur de cuve de 1 cm, et un coefficient d'extinction molaire de \( 1000 \, \text{L/mol/cm} \). Calculez la concentration.</p>
+                <p><strong>Solution :</strong></p>
+                <p>\[ c = \frac{A}{\varepsilon \times l} = \frac{0.5}{1000 \times 1} = 0.0005 \, \text{mol/L} \]</p>
+            </section>
+
+            <section class="concepts">
+                <h2>2. Spectroscopie infrarouge</h2>
+                <h3>a. Principe</h3>
+                <p>Les molécules absorbent l'énergie lumineuse à des fréquences spécifiques, ce qui permet d'identifier des groupes fonctionnels.</p>
+                <p>Le nombre d'onde est défini par :</p>
+                <p>\[ \bar{v} = \frac{1}{\lambda} \, (\text{cm}^{-1}) \]</p>
+
+                <h3>b. Groupes fonctionnels</h3>
+                <ul>
+                    <li><strong>Acide carboxylique :</strong> Pic intense vers 1740 cm\(^{-1}\).</li>
+                    <li><strong>Cétone :</strong> Pic intense vers 1740 cm\(^{-1}\).</li>
+                    <li><strong>Alcool :</strong> Pic faible vers 3100 cm\(^{-1}\).</li>
+                    <li><strong>Ester :</strong> Pic intense vers 1700 cm\(^{-1}\).</li>
+                    <li><strong>Aldéhyde :</strong> Pic intense vers 1740 cm\(^{-1}\).</li>
+                </ul>
+
+                <h3>Exercice 2</h3>
+                <p>Un spectre infrarouge montre un pic intense à 1740 cm\(^{-1}\). Quel groupe fonctionnel est probablement présent ?</p>
+                <p><strong>Solution :</strong></p>
+                <p>Acide carboxylique, cétone ou aldéhyde.</p>
+            </section>
+
+            <section class="concepts">
+                <h2>3. Mesure du volume pour les gaz</h2>
+                <h3>a. Loi des gaz parfaits</h3>
+                <p>La loi des gaz parfaits relie la pression \( P \), le volume \( V \), la température \( T \), et la quantité de matière \( n \) :</p>
+                <p>\[ PV = nRT \]</p>
+
+                <h3>Exercice 3</h3>
+                <p>Un gaz a une pression de 1 atm, un volume de 22.4 L, et une température de 273 K. Calculez la quantité de matière \( n \).</p>
+                <p><strong>Solution :</strong></p>
+                <p>\[ n = \frac{PV}{RT} = \frac{1 \times 22.4}{0.0821 \times 273} \approx 1 \, \text{mol} \]</p>
+            </section>
+
+            <section class="concepts">
+                <h2>4. pH-métrie</h2>
+                <h3>a. Mesure du pH</h3>
+                <p>Le pH mesure la concentration en ions oxonium \( [H_3O^+] \) dans une solution.</p>
+                <p>\[ \text{pH} = -\log [H_3O^+] \]</p>
+
+                <h3>Exercice 4</h3>
+                <p>Si la concentration en ions oxonium est de \( 10^{-5} \, \text{mol/L} \), quel est le pH ?</p>
+                <p><strong>Solution :</strong></p>
+                <p>\[ \text{pH} = -\log 10^{-5} = 5 \]</p>
+            </section>
+
+            <section class="concepts">
+                <h2>5. Conductimétrie</h2>
+                <h3>a. Conductance</h3>
+                <p>La conductance \( G \) est définie par :</p>
+                <p>\[ G = \frac{I}{U} \quad (\text{unité en Siemens, S}) \]</p>
+
+                <h3>b. Conductivité</h3>
+                <p>La conductivité \( \sigma \) est donnée par :</p>
+                <p>\[ \sigma = G \times \frac{L}{S} \quad (\text{unité en S/m}) \]</p>
+
+                <h3>c. Loi de Kohlrausch</h3>
+                <p>La conductivité totale d'une solution est la somme des conductivités molaires des ions :</p>
+                <p>\[ \sigma = \sum_{i=1}^{n} \lambda_i [X_i] \]</p>
+
+                <h3>Exercice 5</h3>
+                <p>Une solution contient \( 0.01 \, \text{mol/L} \) de \( \text{Na}^+ \) et \( 0.01 \, \text{mol/L} \) de \( \text{Cl}^- \). Calculez la conductivité totale.</p>
+                <p><strong>Solution :</strong></p>
+                <p>\[ \sigma = (5.01 \times 0.01) + (7.63 \times 0.01) = 0.1264 \, \text{S/m} \]</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>Ce cours a été créé pour les étudiants en physique-chimie de terminale.</p>
+            <p>Retour au <a href="index.html">site principal</a>.</p>
+        </footer>
+    </div>
+
+    <script>
+        MathJax.typeset();
+    </script>
+</body>
+</html>

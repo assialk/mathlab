@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arithmétique en Mathématiques Expertes - Fiche de Cours</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffe4e1;
+            color: rgb(63, 39, 39);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            width: 20px;
+            height: 20px;
+            background-color: #ff1493;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        h2, h3 {
+            color: #8b1152;
+        }
+
+        h4 {
+            font-size: 18px;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            color: #9abcab;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .concepts, .example {
+            background-color: #aa7788;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .concepts ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .concepts li {
+            margin-bottom: 15px;
+        }
+
+        .concepts li span {
+            color: #874b79;
+            font-weight: bold;
+        }
+
+        .example p {
+            font-size: 18px;
+        }
+
+        .solution {
+            background-color: #ba8295;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            color: #333;
+        }
+
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .image-container {
+            background-color: #3c2b34;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .image-container p {
+            font-size: 14px;
+            color: #9abcab;
+            margin-top: 10px;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 50%;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        footer a {
+            color: #ff00c8;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"></div>
+            <h1>Arithmétique en Mathématiques Expertes - Fiche de Cours</h1>
+        </header>
+
+        <main>
+            <section class="concepts">
+                <h2>1. Divisibilité dans \(\mathbb{Z}\)</h2>
+                <h3>a. Définition et propriétés</h3>
+                <p>Soit \(a\) et \(b\) deux entiers. On dit que \(b\) divise \(a\) (ou que \(b\) est un diviseur de \(a\)) s'il existe un entier \(k\) tel que \(a = k \times b\). On note alors \(b \mid a\).</p>
+
+                <h3>Exercice d'application</h3>
+                <p>Montrer que si \(b \mid a\) et \(a \mid b\), alors \(|a| = |b|\).</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <p>Si \(b \mid a\), alors il existe un entier \(k\) tel que \(a = k \times b\). De même, si \(a \mid b\), il existe un entier \(m\) tel que \(b = m \times a\). En substituant, on obtient \(a = k \times m \times a\), donc \(k \times m = 1\). Comme \(k\) et \(m\) sont des entiers, cela implique que \(k = m = 1\) ou \(k = m = -1\). Ainsi, \(a = b\) ou \(a = -b\), donc \(|a| = |b|\).</p>
+                </div>
+
+                <h3>b. Division euclidienne</h3>
+                <p>Pour tout entier \(a\) et tout entier \(b > 0\), il existe un unique couple \((q, r)\) d'entiers tels que \(a = bq + r\) avec \(0 \leq r < b\).</p>
+
+                <h3>Exercice d'application</h3>
+                <p>Effectuer la division euclidienne de 1315 par 24 et déterminer le quotient et le reste.</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <p>On a \(1315 = 24 \times 54 + 19\), donc le quotient est 54 et le reste est 19.</p>
+                </div>
+            </section>
+
+            <section class="concepts">
+                <h2>2. Congruences modulo un entier naturel</h2>
+                <h3>a. Définition</h3>
+                <p>Soit \(m\) un entier naturel et \(a\), \(b\) deux entiers. On dit que \(a\) est congru à \(b\) modulo \(m\) si \(m\) divise \(a - b\). On note \(a \equiv b \pmod{m}\).</p>
+
+                <h3>Exercice d'application</h3>
+                <p>Montrer que \(17 \equiv 2 \pmod{3}\).</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <p>On a \(17 - 2 = 15\), et \(15\) est divisible par \(3\) car \(15 = 3 \times 5\). Donc \(17 \equiv 2 \pmod{3}\).</p>
+                </div>
+
+                <h3>b. Propriétés des congruences</h3>
+                <p>Les congruences sont réflexives, symétriques et transitives. De plus, elles sont compatibles avec l'addition, la soustraction et la multiplication.</p>
+
+                <h3>Exercice d'application</h3>
+                <p>Montrer que si \(a \equiv b \pmod{m}\) et \(c \equiv d \pmod{m}\), alors \(a + c \equiv b + d \pmod{m}\).</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <p>Si \(a \equiv b \pmod{m}\), alors \(m \mid (a - b)\). De même, si \(c \equiv d \pmod{m}\), alors \(m \mid (c - d)\). Donc \(m \mid (a - b + c - d)\), ce qui implique \(a + c \equiv b + d \pmod{m}\).</p>
+                </div>
+            </section>
+
+            <section class="concepts">
+                <h2>3. PGCD et algorithme d'Euclide</h2>
+                <h3>a. Définition du PGCD</h3>
+                <p>Le PGCD de deux entiers \(a\) et \(b\) est le plus grand entier qui divise à la fois \(a\) et \(b\). On le note \(\text{PGCD}(a, b)\).</p>
+
+                <h3>Exercice d'application</h3>
+                <p>Calculer \(\text{PGCD}(15, 27)\).</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <p>Les diviseurs de 15 sont \(\{1, 3, 5, 15\}\) et ceux de 27 sont \(\{1, 3, 9, 27\}\). Le plus grand diviseur commun est 3, donc \(\text{PGCD}(15, 27) = 3\).</p>
+                </div>
+
+                <h3>b. Algorithme d'Euclide</h3>
+                <p>L'algorithme d'Euclide permet de calculer le PGCD de deux entiers en effectuant des divisions successives.</p>
+
+                <h3>Exercice d'application</h3>
+                <p>Utiliser l'algorithme d'Euclide pour calculer \(\text{PGCD}(1636, 1128)\).</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <p>On effectue les divisions successives :</p>
+                    <pre>
+1636 = 1 × 1128 + 508
+1128 = 2 × 508 + 112
+508 = 4 × 112 + 60
+112 = 1 × 60 + 52
+60 = 1 × 52 + 8
+52 = 6 × 8 + 4
+8 = 2 × 4 + 0
+                    </pre>
+                    <p>Le dernier reste non nul est 4, donc \(\text{PGCD}(1636, 1128) = 4\).</p>
+                </div>
+            </section>
+
+            <section class="concepts">
+                <h2>4. Théorème de Bézout</h2>
+                <h3>a. Théorème de Bézout</h3>
+                <p>Deux entiers \(a\) et \(b\) sont premiers entre eux si et seulement s'il existe des entiers \(u\) et \(v\) tels que \(au + bv = 1\).</p>
+
+                <h3>Exercice d'application</h3>
+                <p>Montrer que 11 et 32 sont premiers entre eux en trouvant des entiers \(u\) et \(v\) tels que \(11u + 32v = 1\).</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <p>On a \(11 \times 3 + 32 \times (-1) = 33 - 32 = 1\). Donc \(u = 3\) et \(v = -1\) conviennent.</p>
+                </div>
+
+                <h3>b. Identité de Bézout</h3>
+                <p>L'identité de Bézout est une égalité de la forme \(au + bv = \text{PGCD}(a, b)\).</p>
+
+                <h3>Exercice d'application</h3>
+                <p>Trouver une identité de Bézout pour \(a = 257\) et \(b = 124\).</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <p>En utilisant l'algorithme d'Euclide, on trouve :</p>
+                    <pre>
+257 = 2 × 124 + 9
+124 = 13 × 9 + 7
+9 = 1 × 7 + 2
+7 = 3 × 2 + 1
+2 = 2 × 1 + 0
+                    </pre>
+                    <p>En remontant les calculs, on obtient \(1 = 7 - 3 \times 2 = 7 - 3 \times (9 - 1 \times 7) = 4 \times 7 - 3 \times 9\). En continuant, on trouve \(1 = 4 \times (124 - 13 \times 9) - 3 \times 9 = 4 \times 124 - 55 \times 9\). Finalement, \(1 = 4 \times 124 - 55 \times (257 - 2 \times 124) = 114 \times 124 - 55 \times 257\). Donc \(u = -55\) et \(v = 114\).</p>
+                </div>
+            </section>
+
+            <section class="concepts">
+                <h2>5. Théorème de Gauss</h2>
+                <h3>a. Théorème de Gauss</h3>
+                <p>Si \(a\) divise \(bc\) et si \(a\) est premier avec \(b\), alors \(a\) divise \(c\).</p>
+
+                <h3>Exercice d'application</h3>
+                <p>Montrer que si \(3a = 5b\), alors \(5\) divise \(a\).</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <p>Si \(3a = 5b\), alors \(5\) divise \(3a\). Comme \(5\) et \(3\) sont premiers entre eux, par le théorème de Gauss, \(5\) divise \(a\).</p>
+                </div>
+
+                <h3>b. Applications du théorème de Gauss</h3>
+                <p>Le théorème de Gauss est souvent utilisé pour résoudre des équations diophantiennes.</p>
+
+                <h3>Exercice d'application</h3>
+                <p>Résoudre l'équation diophantienne \(24x + 18y = 36\).</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <p>On commence par simplifier l'équation en divisant par \(\text{PGCD}(24, 18) = 6\) : \(4x + 3y = 6\). Une solution particulière est \(x = 6\), \(y = -6\). Les solutions générales sont de la forme \(x = 6 + 3k\), \(y = -6 - 4k\) pour \(k \in \mathbb{Z}\).</p>
+                </div>
+            </section>
+
+            <section class="concepts">
+                <h2>6. PPCM et applications</h2>
+                <h3>a. Définition du PPCM</h3>
+                <p>Le PPCM de deux entiers \(a\) et \(b\) est le plus petit entier positif qui est un multiple de \(a\) et de \(b\). On le note \(\text{PPCM}(a, b)\).</p>
+
+                <h3>Exercice d'application</h3>
+                <p>Calculer \(\text{PPCM}(4, 10)\).</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <p>Les multiples de 4 sont \(\{4, 8, 12, 16, 20, \dots\}\) et ceux de 10 sont \(\{10, 20, 30, \dots\}\). Le plus petit multiple commun est 20, donc \(\text{PPCM}(4, 10) = 20\).</p>
+                </div>
+
+                <h3>b. Relation entre PGCD et PPCM</h3>
+                <p>Pour tout couple d'entiers \(a\) et \(b\), on a \(\text{PGCD}(a, b) \times \text{PPCM}(a, b) = |a \times b|\).</p>
+
+                <h3>Exercice d'application</h3>
+                <p>Vérifier la relation entre PGCD et PPCM pour \(a = 12\) et \(b = 18\).</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <p>On a \(\text{PGCD}(12, 18) = 6\) et \(\text{PPCM}(12, 18) = 36\). On vérifie que \(6 \times 36 = 216 = 12 \times 18\).</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Ce cours a été créé pour les étudiants en Mathématiques Expertes.</p>
+            <p>Retour au <a href="index.html">site principal</a>.</p>
+        </footer>
+    </div>
+
+    <script>
+        MathJax.typeset();
+    </script>
+</body>
+</html>

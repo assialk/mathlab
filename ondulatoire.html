@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phénomènes Ondulatoires</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffe4e1;
+            color: rgb(63, 39, 39);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            width: 20px;
+            height: 20px;
+            background-color: #ff1493;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        h2, h3 {
+            color: #8b1152;
+        }
+
+        h4 {
+            font-size: 18px;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            color: #9abcab;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .concepts, .example {
+            background-color: #aa7788;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .concepts ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .concepts li {
+            margin-bottom: 15px;
+        }
+
+        .concepts li span {
+            color: #874b79;
+            font-weight: bold;
+        }
+
+        .example p {
+            font-size: 18px;
+        }
+
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .image-container {
+            background-color: #3c2b34;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .image-container p {
+            font-size: 14px;
+            color: #9abcab;
+            margin-top: 10px;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 50%;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        footer a {
+            color: #ff00c8;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"></div>
+            <h1>Phénomènes Ondulatoires</h1>
+        </header>
+
+        <main>
+            <section class="concepts">
+                <h2>1. Les ondes sonores</h2>
+                <h3>a. Définition</h3>
+                <p>Un son est créé par la vibration d'un objet. Une onde sonore est une onde mécanique qui se propage dans un milieu sans transport de matière.</p>
+
+                <h3>b. Caractéristiques physiologiques</h3>
+                <ul>
+                    <li><strong>Hauteur :</strong> Fréquence fondamentale du son.</li>
+                    <li><strong>Timbre :</strong> Forme d'onde d'une période.</li>
+                    <li><strong>Intensité :</strong> Puissance sonore par unité de surface.</li>
+                </ul>
+
+                <h3>c. Intensité sonore</h3>
+                <p>L'intensité sonore est définie par :</p>
+                <p>\[ I = \frac{P}{S} \quad (\text{unité en } W/m^2) \]</p>
+
+                <h3>d. Dilution sonore (formule de Sabine)</h3>
+                <p>La puissance d'une onde sonore se répartit sur une surface sphérique de rayon \( R \) :</p>
+                <p>\[ I = \frac{P}{4\pi R^2} \quad (\text{unité en } W/m^2) \]</p>
+
+                <h3>e. Niveau d'intensité sonore</h3>
+                <p>Le niveau sonore est défini par :</p>
+                <p>\[ L = 10\log \frac{I}{I_0} \quad (\text{L en dB}, I_0 = 10^{-12} W/m^2) \]</p>
+
+                <h3>f. Échelle des bruits</h3>
+                <p>Exemples de niveaux sonores :</p>
+                <ul>
+                    <li><strong>120 dB :</strong> Seuil de la douleur.</li>
+                    <li><strong>90 dB :</strong> Seuil de danger.</li>
+                    <li><strong>0 dB :</strong> Seuil d'audibilité.</li>
+                </ul>
+
+                <h3>Exercice 1</h3>
+                <p>Calculez le niveau sonore en dB si l'intensité sonore est de \( 10^{-6} W/m^2 \).</p>
+                <p><strong>Solution :</strong></p>
+                <p>\[ L = 10\log \frac{10^{-6}}{10^{-12}} = 60 \, \text{dB} \]</p>
+            </section>
+
+            <section class="concepts">
+                <h2>2. Diffraction</h2>
+                <h3>a. Définition</h3>
+                <p>La diffraction est le comportement des ondes lorsqu'elles rencontrent un obstacle ou une ouverture. L'onde change de direction.</p>
+
+                <h3>b. Objet diffractant rectiligne</h3>
+                <p>Le demi-angle de diffraction \( \theta \) est donné par :</p>
+                <p>\[ \theta = \frac{\lambda}{a} \]</p>
+                <p>où \( \lambda \) est la longueur d'onde et \( a \) la dimension de l'objet diffractant.</p>
+
+                <h3>c. Objet diffractant sphérique</h3>
+                <p>Pour un objet sphérique, l'angle de diffraction est :</p>
+                <p>\[ \theta = 1.22 \frac{\lambda}{a} \]</p>
+
+                <h3>Exercice 2</h3>
+                <p>Une onde de longueur d'onde \( 500 \, \text{nm} \) rencontre une fente de \( 0.1 \, \text{mm} \). Calculez l'angle de diffraction.</p>
+                <p><strong>Solution :</strong></p>
+                <p>\[ \theta = \frac{500 \times 10^{-9}}{0.1 \times 10^{-3}} = 0.005 \, \text{rad} \]</p>
+            </section>
+
+            <section class="concepts">
+                <h2>3. Interférences</h2>
+                <h3>a. Définition</h3>
+                <p>Les interférences résultent de la superposition de deux ondes de même fréquence et amplitude.</p>
+
+                <h3>b. Interférences constructives</h3>
+                <p>Les interférences sont constructives lorsque la différence de marche \( \delta \) est un multiple entier de la longueur d'onde \( \lambda \) :</p>
+                <p>\[ \delta = k\lambda \quad (k \in \mathbb{Z}) \]</p>
+
+                <h3>c. Interférences destructives</h3>
+                <p>Les interférences sont destructives lorsque :</p>
+                <p>\[ \delta = k\lambda + \frac{\lambda}{2} \quad (k \in \mathbb{Z}) \]</p>
+
+                <h3>d. Distance interfrange</h3>
+                <p>La distance entre deux franges est donnée par :</p>
+                <p>\[ i = \frac{\lambda D}{a} \]</p>
+
+                <h3>Exercice 3</h3>
+                <p>Deux ondes de longueur d'onde \( 600 \, \text{nm} \) interfèrent. La distance entre les sources est de \( 0.5 \, \text{mm} \) et l'écran est à \( 2 \, \text{m} \). Calculez la distance interfrange.</p>
+                <p><strong>Solution :</strong></p>
+                <p>\[ i = \frac{600 \times 10^{-9} \times 2}{0.5 \times 10^{-3}} = 2.4 \, \text{mm} \]</p>
+            </section>
+
+            <section class="concepts">
+                <h2>4. Effet Doppler-Fizeau</h2>
+                <h3>a. Définition</h3>
+                <p>L'effet Doppler-Fizeau se produit lorsqu'il y a un mouvement relatif entre un émetteur et un récepteur, ce qui modifie la fréquence perçue.</p>
+
+                <h3>b. Déplacement de la source</h3>
+                <p>Si la source se rapproche du récepteur, la fréquence perçue est :</p>
+                <p>\[ f_R = \frac{f_E}{1 - \frac{v}{c}} \]</p>
+
+                <h3>c. Déplacement de la source</h3>
+                <p>Si la source s'éloigne du récepteur, la fréquence perçue est :</p>
+                <p>\[ f_R = \frac{f_E}{1 + \frac{v}{c}} \]</p>
+
+                <h3>d. Fréquence Doppler</h3>
+                <p>La différence de fréquence entre l'émetteur et le récepteur est :</p>
+                <p>\[ |f_R - f_E| = f_D \approx 2f_E \times \frac{v}{c} \]</p>
+
+                <h3>Exercice 4</h3>
+                <p>Une ambulance émet un son de fréquence \( 1000 \, \text{Hz} \) et se déplace à \( 30 \, \text{m/s} \) vers un observateur. Calculez la fréquence perçue si la vitesse du son est \( 340 \, \text{m/s} \).</p>
+                <p><strong>Solution :</strong></p>
+                <p>\[ f_R = \frac{1000}{1 - \frac{30}{340}} \approx 1091 \, \text{Hz} \]</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>Ce cours a été créé pour les étudiants en physique-chimie de terminale.</p>
+            <p>Retour au <a href="index.html">site principal</a>.</p>
+        </footer>
+    </div>
+
+    <script>
+        MathJax.typeset();
+    </script>
+</body>
+</html>

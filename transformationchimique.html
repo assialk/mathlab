@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformations chimiques forcées – Fiche de cours</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffe4e1;
+            color: rgb(63, 39, 39);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            width: 20px;
+            height: 20px;
+            background-color: #ff1493;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        h2, h3 {
+            color: #8b1152;
+        }
+
+        h4 {
+            font-size: 18px;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            color: #9abcab;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .concepts, .example {
+            background-color: #aa7788;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .concepts ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .concepts li {
+            margin-bottom: 15px;
+        }
+
+        .concepts li span {
+            color: #874b79;
+            font-weight: bold;
+        }
+
+        .example p {
+            font-size: 18px;
+        }
+
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .image-container {
+            background-color: #3c2b34;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .image-container p {
+            font-size: 14px;
+            color: #9abcab;
+            margin-top: 10px;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 50%;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        footer a {
+            color: #ff00c8;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"></div>
+            <h1>Transformations chimiques forcées – Fiche de cours</h1>
+        </header>
+
+        <main>
+            <section class="concepts">
+                <h2>1. L’électrolyse</h2>
+                <h3>a. Définition</h3>
+                <p>L’électrolyse est une technique consistant à convertir l’énergie électrique en énergie chimique. Elle est utilisée dans des domaines tels que la séparation d’éléments chimiques, la métallisation et la synthèse d’espèces chimiques.</p>
+                <p><strong>Exercice d'application :</strong> Expliquez en quoi l’électrolyse est une transformation chimique forcée.</p>
+                <p><strong>Solution :</strong> L’électrolyse force une réaction chimique non spontanée en utilisant une source d’énergie électrique externe.</p>
+
+                <h3>b. Transformation chimique forcée</h3>
+                <p>Une transformation chimique forcée consiste à inverser le sens d’évolution d’un système, ce qui en fait une transformation totale. Pour une réaction d’oxydoréduction, on peut inverser le sens d’évolution en utilisant un générateur de tension continue.</p>
+                <p><strong>Exercice d'application :</strong> Donnez un exemple de réaction d’oxydoréduction qui peut être inversée par électrolyse.</p>
+                <p><strong>Solution :</strong> La décomposition de l’eau en hydrogène et oxygène peut être inversée par électrolyse pour reformer de l’eau.</p>
+
+                <h3>c. Constitution d’un électrolyseur</h3>
+                <p>Un électrolyseur est constitué de :</p>
+                <ul>
+                    <li>Une cathode (siège d’une réduction, borne négative)</li>
+                    <li>Une anode (siège d’une oxydation, borne positive)</li>
+                    <li>Un électrolyte</li>
+                    <li>Un générateur de tension continue</li>
+                </ul>
+                <p><strong>Exercice d'application :</strong> Expliquez le rôle de l’électrolyte dans un électrolyseur.</p>
+                <p><strong>Solution :</strong> L’électrolyte permet la conduction des ions entre les électrodes, facilitant ainsi la réaction d’électrolyse.</p>
+            </section>
+
+            <section class="concepts">
+                <h2>2. Lien avec l’électricité</h2>
+                <h3>a. Charge électrique et intensité du courant</h3>
+                <p>La charge électrique \( Q \) est liée à l’intensité du courant \( I \) et au temps \( \Delta t \) par :</p>
+                <p>\[ Q = I \cdot \Delta t \]</p>
+                <p><strong>Exercice d'application :</strong> Calculez la charge électrique délivrée par un courant de 2 A pendant 10 secondes.</p>
+                <p><strong>Solution :</strong> \( Q = 2 \times 10 = 20 \, \text{C} \).</p>
+
+                <h3>b. Charge électrique et quantité d’électrons</h3>
+                <p>La charge électrique est également liée à la quantité d’électrons \( n(e^-) \) par :</p>
+                <p>\[ Q = n(e^-) \cdot F \]</p>
+                <p>où \( F = 96500 \, \text{C/mol} \) est la constante de Faraday.</p>
+                <p><strong>Exercice d'application :</strong> Calculez la quantité d’électrons correspondant à une charge de 19300 C.</p>
+                <p><strong>Solution :</strong> \( n(e^-) = \frac{19300}{96500} = 0.2 \, \text{mol} \).</p>
+            </section>
+
+            <section class="concepts">
+                <h2>3. Stockage et conversion d’énergie</h2>
+                <h3>a. Piles</h3>
+                <p>Une pile électrique est un convertisseur d’énergie chimique en énergie électrique.</p>
+                <p><strong>Exercice d'application :</strong> Expliquez le principe de fonctionnement d’une pile.</p>
+                <p><strong>Solution :</strong> Une pile utilise une réaction d’oxydoréduction spontanée pour générer un courant électrique.</p>
+
+                <h3>b. Accumulateurs</h3>
+                <p>Les accumulateurs sont des systèmes électrochimiques rechargeables. Lors de la décharge, une réaction spontanée se produit, et lors de la charge, une transformation inverse permet de reconstituer les réactifs initiaux.</p>
+                <p><strong>Exercice d'application :</strong> Expliquez la différence entre une pile et un accumulateur.</p>
+                <p><strong>Solution :</strong> Une pile est non rechargeable, tandis qu’un accumulateur est rechargeable grâce à une réaction inverse lors de la charge.</p>
+            </section>
+
+            <section class="concepts">
+                <h2>4. Organismes chlorophylliens</h2>
+                <p>Certaines réactions d’oxydoréduction peuvent être forcées sous l’effet de la lumière, comme dans la photosynthèse.</p>
+                <p><strong>Équation de la photosynthèse :</strong></p>
+                <p>\[ 6 \, \text{CO}_2 + 6 \, \text{H}_2\text{O} \rightarrow \text{C}_6\text{H}_{12}\text{O}_6 + 6 \, \text{O}_2 \]</p>
+                <p><strong>Exercice d'application :</strong> Expliquez comment la lumière influence la photosynthèse.</p>
+                <p><strong>Solution :</strong> La lumière fournit l’énergie nécessaire pour forcer la réaction d’oxydoréduction qui transforme le dioxyde de carbone et l’eau en glucose et en oxygène.</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>Ce cours a été créé pour les étudiants de terminale en spécialité physique-chimie.</p>
+            <p>Retour au <a href="index.html">site principal</a>.</p>
+        </footer>
+    </div>
+
+    <script>
+        MathJax.typeset();
+    </script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transferts thermiques – Fiche de cours</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffe4e1;
+            color: rgb(63, 39, 39);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            width: 20px;
+            height: 20px;
+            background-color: #ff1493;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        h2, h3 {
+            color: #8b1152;
+        }
+
+        h4 {
+            font-size: 18px;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            color: #9abcab;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .concepts, .example {
+            background-color: #aa7788;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .concepts ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .concepts li {
+            margin-bottom: 15px;
+        }
+
+        .concepts li span {
+            color: #874b79;
+            font-weight: bold;
+        }
+
+        .example p {
+            font-size: 18px;
+        }
+
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .image-container {
+            background-color: #3c2b34;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .image-container p {
+            font-size: 14px;
+            color: #9abcab;
+            margin-top: 10px;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 50%;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        footer a {
+            color: #ff00c8;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"></div>
+            <h1>Transferts thermiques – Fiche de cours</h1>
+        </header>
+
+        <main>
+            <section class="concepts">
+                <h2>1. Du microscopique au macroscopique</h2>
+                <p>La matière est constituée d’entités microscopiques (atomes, ions ou molécules), et leur comportement collectif peut être décrit par des grandeurs macroscopiques comme la pression et la température.</p>
+                <p><strong>Exercice d'application :</strong> Expliquez comment l’agitation thermique des molécules influence la température d’un système.</p>
+                <p><strong>Solution :</strong> L’agitation thermique des molécules est directement liée à la température : plus l’agitation est grande, plus la température est élevée.</p>
+            </section>
+
+            <section class="concepts">
+                <h2>2. Variation de l’énergie interne</h2>
+                <p>L’énergie interne d’un système varie lorsque l’agitation thermique change. Elle est donnée par :</p>
+                <p>\[ \Delta U = W + Q \]</p>
+                <p>où \( W \) est le travail et \( Q \) est le transfert thermique.</p>
+
+                <h3>a. Variation de l’énergie interne sans changement d’état</h3>
+                <p>Pour un système sans changement d’état, la variation d’énergie interne est :</p>
+                <p>\[ \Delta U = mc \cdot \Delta T \]</p>
+                <p><strong>Exercice d'application :</strong> Calculez la variation d’énergie interne pour \( 1 \, \text{kg} \) d’eau chauffée de \( 20^\circ \text{C} \) à \( 30^\circ \text{C} \) (\( c = 4180 \, \text{J/kg·K} \)).</p>
+                <p><strong>Solution :</strong> \( \Delta U = 1 \times 4180 \times 10 = 41800 \, \text{J} \).</p>
+
+                <h3>b. Variation de l’énergie interne avec changement d’état</h3>
+                <p>Pour un système avec changement d’état, la variation d’énergie interne est :</p>
+                <p>\[ \Delta U = m \cdot L \]</p>
+                <p><strong>Exercice d'application :</strong> Calculez l’énergie nécessaire pour faire fondre \( 0.5 \, \text{kg} \) de glace (\( L = 334000 \, \text{J/kg} \)).</p>
+                <p><strong>Solution :</strong> \( \Delta U = 0.5 \times 334000 = 167000 \, \text{J} \).</p>
+            </section>
+
+            <section class="concepts">
+                <h2>3. Les transferts thermiques</h2>
+                <h3>a. Transfert thermique par conduction</h3>
+                <p>L’énergie thermique se transmet de proche en proche sans déplacement de matière.</p>
+                <p><strong>Exercice d'application :</strong> Donnez un exemple de transfert thermique par conduction.</p>
+                <p><strong>Solution :</strong> Le chauffage d’une casserole sur une plaque chauffante est un exemple de conduction.</p>
+
+                <h3>b. Transfert thermique par convection</h3>
+                <p>L’énergie thermique se transmet avec déplacement de matière.</p>
+                <p><strong>Exercice d'application :</strong> Expliquez comment la convection se produit dans l’eau bouillante.</p>
+                <p><strong>Solution :</strong> L’eau chaude monte et l’eau froide descend, créant un mouvement de convection.</p>
+
+                <h3>c. Transfert thermique par rayonnement</h3>
+                <p>L’énergie thermique se transmet par rayonnement électromagnétique.</p>
+                <p><strong>Exercice d'application :</strong> Donnez un exemple de transfert thermique par rayonnement.</p>
+                <p><strong>Solution :</strong> Le chauffage de la Terre par le Soleil est un exemple de transfert par rayonnement.</p>
+            </section>
+
+            <section class="concepts">
+                <h2>4. Le flux thermique</h2>
+                <h3>a. Définition</h3>
+                <p>Le flux thermique est une puissance et s’exprime en Watt :</p>
+                <p>\[ \phi = \frac{Q}{\Delta t} \]</p>
+                <p><strong>Exercice d'application :</strong> Calculez le flux thermique si \( 1000 \, \text{J} \) sont transférés en \( 10 \, \text{s} \).</p>
+                <p><strong>Solution :</strong> \( \phi = \frac{1000}{10} = 100 \, \text{W} \).</p>
+
+                <h3>b. Flux thermique traversant une paroi</h3>
+                <p>Le flux thermique à travers une paroi est donné par :</p>
+                <p>\[ \phi = \frac{\Delta T}{R_n} \quad \text{avec} \quad R_n = \frac{e}{\lambda S} \]</p>
+                <p><strong>Exercice d'application :</strong> Calculez le flux thermique à travers une paroi d’épaisseur \( 0.1 \, \text{m} \), de conductivité \( 0.5 \, \text{W/m·K} \), et de surface \( 2 \, \text{m}^2 \) avec une différence de température de \( 10 \, \text{K} \).</p>
+                <p><strong>Solution :</strong> \( R_n = \frac{0.1}{0.5 \times 2} = 0.1 \, \text{K/W} \), donc \( \phi = \frac{10}{0.1} = 100 \, \text{W} \).</p>
+            </section>
+
+            <section class="concepts">
+                <h2>5. Le bilan radiatif terrestre</h2>
+                <h3>a. Calcul simplifié du bilan radiatif terrestre</h3>
+                <p>Le bilan radiatif terrestre est la différence entre la puissance solaire reçue, la puissance renvoyée par albédo et la puissance IR réémise.</p>
+                <p><strong>Exercice d'application :</strong> Calculez le bilan radiatif si la puissance solaire reçue est \( 342 \, \text{W/m}^2 \), la puissance albédo est \( 102 \, \text{W/m}^2 \), et la puissance IR réémise est \( 240 \, \text{W/m}^2 \).</p>
+                <p><strong>Solution :</strong> \( BR = 342 - 102 - 240 = 0 \, \text{W/m}^2 \).</p>
+
+                <h3>b. Loi de Stéfan</h3>
+                <p>Le flux thermique par rayonnement est donné par :</p>
+                <p>\[ \phi = \sigma T^4 \quad \text{avec} \quad \sigma = 5.67 \times 10^{-8} \, \text{W/m}^2 \cdot \text{K}^4 \]</p>
+                <p><strong>Exercice d'application :</strong> Calculez le flux thermique pour un corps à \( 300 \, \text{K} \).</p>
+                <p><strong>Solution :</strong> \( \phi = 5.67 \times 10^{-8} \times 300^4 = 459 \, \text{W/m}^2 \).</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>Ce cours a été créé pour les étudiants de terminale en spécialité physique-chimie.</p>
+            <p>Retour au <a href="index.html">site principal</a>.</p>
+        </footer>
+    </div>
+
+    <script>
+        MathJax.typeset();
+    </script>
+</body>
+</html>

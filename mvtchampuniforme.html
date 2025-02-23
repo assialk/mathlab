@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouvement dans un Champ Uniforme</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffe4e1;
+            color: rgb(63, 39, 39);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            width: 20px;
+            height: 20px;
+            background-color: #ff1493;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        h2, h3 {
+            color: #8b1152;
+        }
+
+        h4 {
+            font-size: 18px;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            color: #9abcab;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .concepts, .example {
+            background-color: #aa7788;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .concepts ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .concepts li {
+            margin-bottom: 15px;
+        }
+
+        .concepts li span {
+            color: #874b79;
+            font-weight: bold;
+        }
+
+        .example p {
+            font-size: 18px;
+        }
+
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .image-container {
+            background-color: #3c2b34;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .image-container p {
+            font-size: 14px;
+            color: #9abcab;
+            margin-top: 10px;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 50%;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        footer a {
+            color: #ff00c8;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"></div>
+            <h1>Mouvement dans un Champ Uniforme</h1>
+        </header>
+
+        <main>
+            <section class="concepts">
+                <h2>Introduction</h2>
+                <p>Le mouvement dans un champ uniforme est une notion clé de la spécialité Physique-Chimie en terminale. Ce type de mouvement se produit lorsqu'un objet est soumis à une force constante (en intensité et en direction) tout au long de son parcours. Ce type de force peut être le poids (dans le cas de la chute libre) ou la force électrique dans un champ électrostatique uniforme.</p>
+            </section>
+
+ 
+            <section class="concepts">
+                <h2>I) Mouvement d’un projectile dans le champ de pesanteur uniforme</h2>
+                <h3>1) Position du problème</h3>
+                <p>On se limitera à l’étude d’un solide de masse \( m \) uniquement soumis à son poids \( \vec{P} \) dans le champ de pesanteur uniforme \( \vec{g} \). L’objet est en chute libre.</p>
+                <p>On considère que l’objet est lancé avec une vitesse initiale \( \vec{V_0} \) formant un angle \( \alpha \) avec l’horizontale.</p>
+                <p>Les coordonnées des vecteurs sont :</p>
+                <ul>
+                    <li>\( V_{0x} = V_0 \cos(\alpha) \)</li>
+                    <li>\( V_{0y} = V_0 \sin(\alpha) \)</li>
+                    <li>\( V_{0z} = 0 \)</li>
+                </ul>
+                <p>De même :</p>
+                <ul>
+                    <li>\( g_x = 0 \)</li>
+                    <li>\( g_y = -g \)</li>
+                    <li>\( g_z = 0 \)</li>
+                </ul>
+            </section>
+
+            <section class="concepts">
+                <h3>2) Utilisation de la Deuxième loi de Newton</h3>
+                <p>La deuxième loi de Newton permet d’établir :</p>
+                <p>\[ \sum \vec{F_{ext}} = m \vec{a} \]</p>
+                <p>En projetant sur les axes :</p>
+                <ul>
+                    <li>\( d^2x/dt^2 = 0 \)</li>
+                    <li>\( d^2y/dt^2 = -g \)</li>
+                </ul>
+                <p>Les équations horaires après intégration :</p>
+                <ul>
+                    <li>\( x(t) = V_0 \cos(\alpha) t \)</li>
+                    <li>\( y(t) = -\frac{1}{2} g t^2 + V_0 \sin(\alpha) t + y_0 \)</li>
+                </ul>
+                <p>L’équation de la trajectoire est donnée par :</p>
+                <p>\[ y(x) = -\frac{1}{2} g \left(\frac{x}{V_0 \cos(\alpha)}\right)^2 + \tan(\alpha) x + y_0 \]</p>
+                <img src="physique/integration+derivation.PNG"  alt="">
+
+            </section>
+
+            <section class="concepts">
+                <h2>II) Étude du mouvement d’une particule chargée dans un champ électrique uniforme</h2>
+                <h3>1) Condensateur plan et champ uniforme</h3>
+                <p>Un condensateur plan est constitué de deux plaques conductrices en regard l’une de l’autre, entre lesquelles règne un champ électrique uniforme \( \vec{E} \), perpendiculaire aux plaques.</p>
+                <p>Une particule chargée \( q \) subit une force électrique :</p>
+                <p>\[ \vec{F} = q \vec{E} \]</p>
+                <p>Les équations horaires pour une particule de charge \( q \) et de masse \( m \) sont :</p>
+                <ul>
+                    <li>\( x(t) = V_0 t \)</li>
+                    <li>\( y(t) = \frac{1}{2} \frac{qE}{m} t^2 \)</li>
+                </ul>
+                <p>La trajectoire suit l’équation :</p>
+                <p>\[ y(x) = \frac{qE}{2mV_0^2} x^2 \]</p>
+            </section>
+
+            <section class="concepts">
+                <h2>III) Applications</h2>
+                <p>Les concepts étudiés dans ce chapitre s’appliquent dans divers domaines :</p>
+                <ul>
+                    <li><strong>Sports :</strong> Étudier la trajectoire d’un ballon.</li>
+                    <li><strong>Physique :</strong> Mouvement des électrons dans un tube cathodique.</li>
+                    <li><strong>Technologie :</strong> Fonctionnement des accélérateurs de particules.</li>
+                </ul>
+            </section>
+        </main>
+
+        
+
+                <section class="example">
+                    <h3>Fiches de révision</h3>
+                    <div class="images-grid">
+                        <div class="image-container">
+                            <img src="physique/1.jpeg" alt="Correction de l'exercice 1">
+                            <p>p1</p>
+                        </div>
+                        <div class="image-container">
+                            <img src="physique/2.jpeg" alt="Correction de l'exercice 2">
+                            <p>p2</p>
+                        </div>
+                        <div class="image-container">
+                            <img src="physique/3.jpeg" alt="Correction de l'exercice 3">
+                            <p>p3</p>
+                        </div>
+                        <div class="image-container">
+                            <img src="physique/4.jpeg" alt="Correction de l'exercice 4">
+                            <p>p4</p>
+                        </div>
+                        <div class="image-container">
+                            <img src="physique/5.jpeg" alt="Correction de l'exercice 5">
+                            <p>p5</p>
+                        </div>
+                    </div>
+                </section>
+        
+                
+                <section class="example">
+                    <h3>Corrections</h3>
+                    <div class="images-grid">
+                        <div class="image-container">
+                            <img src="physique/exoskateboardmvtuniforme1.jpeg" alt="Correction de l'exercice 1">
+                            <p></p>
+                        </div>
+                        <div class="image-container">
+                            <img src="physique/exoskateboardmvtuniforme2.jpeg" alt="Correction de l'exercice 2">
+                            <p></p>
+                        </div>
+                        <div class="image-container">
+                            <img src="physique/DSmvtuniforme11.jpeg" alt="Correction de l'exercice 3">
+                            <p></p>
+                        </div>
+                        <div class="image-container">
+                            <img src="physique/DSmvtuniforme12.jpeg" alt="Correction de l'exercice 4">
+                            <p></p>
+                        </div>
+
+                    </div>
+                </section>
+        
+                <footer>
+                    <p>Ce cours a été créé pour les étudiants de terminale en spécialité physique-chimie.</p>
+                    <p>Retour au <a href="index.html">site principal</a>.</p>
+                </footer>
+            </div>
+        
+            <script>
+                MathJax.typeset();
+            </script>
+        </body>
+        </html>
+        

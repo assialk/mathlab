@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sommes de Variables Aléatoires - Fiche de Cours</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffe4e1;
+            color: rgb(63, 39, 39);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            width: 20px;
+            height: 20px;
+            background-color: #ff1493;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        h2, h3 {
+            color: #8b1152;
+        }
+
+        h4 {
+            font-size: 18px;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            color: #9abcab;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .concepts, .example {
+            background-color: #aa7788;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .concepts ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .concepts li {
+            margin-bottom: 15px;
+        }
+
+        .concepts li span {
+            color: #874b79;
+            font-weight: bold;
+        }
+
+        .example p {
+            font-size: 18px;
+        }
+
+        .solution {
+            background-color: #ba8295;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            color: #333;
+        }
+
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .image-container {
+            background-color: #3c2b34;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .image-container p {
+            font-size: 14px;
+            color: #9abcab;
+            margin-top: 10px;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 50%;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        footer a {
+            color: #ff00c8;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"></div>
+            <h1>Sommes de Variables Aléatoires </h1>
+        </header>
+
+        <main>
+            <section class="concepts">
+                <h2>1. Variables Aléatoires Réelles (VAR)</h2>
+                <h3>a. Définition</h3>
+                <p>Soit \(\Omega\) un univers associé à une expérience aléatoire. On appelle variable aléatoire réelle \(X\) une fonction définie de \(\Omega \rightarrow \mathbb{R}\).</p>
+
+                <h3>Exercice d'application</h3>
+                <p>Soit une expérience aléatoire consistant à lancer un dé à six faces. Définissez une variable aléatoire \(X\) qui représente le résultat du lancer. Quelle est la loi de probabilité de \(X\) ?</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <p>La variable aléatoire \(X\) peut prendre les valeurs 1, 2, 3, 4, 5, 6 avec une probabilité de \(\frac{1}{6}\) pour chaque valeur. La loi de probabilité de \(X\) est donc :</p>
+                    <p>\[
+                    P(X = k) = \frac{1}{6} \quad \text{pour} \quad k = 1, 2, 3, 4, 5, 6
+                    \]</p>
+                </div>
+
+                <h3>b. Opérations</h3>
+                <p>Nous étudierons les opérations suivantes avec des variables aléatoires :</p>
+                <ul>
+                    <li>Multiplication par un réel : \(\lambda X\)</li>
+                    <li>Somme de 2 variables aléatoires : \(X + Y\)</li>
+                </ul>
+
+                <h3>Exercice d'application</h3>
+                <p>Soient \(X\) et \(Y\) deux variables aléatoires indépendantes telles que \(E(X) = 3\) et \(E(Y) = 5\). Calculez \(E(2X + 3Y)\).</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <p>On utilise la linéarité de l'espérance :</p>
+                    <p>\[
+                    E(2X + 3Y) = 2E(X) + 3E(Y) = 2 \times 3 + 3 \times 5 = 6 + 15 = 21
+                    \]</p>
+                </div>
+
+                <h3>c. Loi de probabilité</h3>
+                <p>On appelle loi de probabilité de la variable aléatoire \(X\) la fonction qui à chaque valeur \(x_i\) associe la probabilité de l’événement \(P(X = x_i)\).</p>
+
+                <h3>Exercice d'application</h3>
+                <p>Soit \(X\) une variable aléatoire prenant les valeurs 1, 2, 3 avec les probabilités respectives 0.2, 0.5, 0.3. Calculez \(E(X)\) et \(V(X)\).</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <p>L'espérance \(E(X)\) est donnée par :</p>
+                    <p>\[
+                    E(X) = 1 \times 0.2 + 2 \times 0.5 + 3 \times 0.3 = 0.2 + 1.0 + 0.9 = 2.1
+                    \]</p>
+                    <p>La variance \(V(X)\) est donnée par :</p>
+                    <p>\[
+                    V(X) = E(X^2) - E(X)^2
+                    \]</p>
+                    <p>Calculons \(E(X^2)\) :</p>
+                    <p>\[
+                    E(X^2) = 1^2 \times 0.2 + 2^2 \times 0.5 + 3^2 \times 0.3 = 0.2 + 2.0 + 2.7 = 4.9
+                    \]</p>
+                    <p>Donc :</p>
+                    <p>\[
+                    V(X) = 4.9 - (2.1)^2 = 4.9 - 4.41 = 0.49
+                    \]</p>
+                </div>
+            </section>
+
+            <section class="concepts">
+                <h2>2. Espérance Mathématique / Écart Type</h2>
+                <h3>a. Espérance Mathématique</h3>
+                <p>\[E(X) = \sum_{k=0}^n p_k \cdot x_k\]</p>
+                <p>\[E(aX + b) = aE(X) + b\]</p>
+                <p>\[E(X + Y) = E(X) + E(Y)\]</p>
+
+                <h3>Exercice d'application</h3>
+                <p>Soit \(X\) une variable aléatoire telle que \(E(X) = 4\). Calculez \(E(3X - 2)\).</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <p>On utilise la linéarité de l'espérance :</p>
+                    <p>\[
+                    E(3X - 2) = 3E(X) - 2 = 3 \times 4 - 2 = 12 - 2 = 10
+                    \]</p>
+                </div>
+
+                <h3>b. Variance</h3>
+                <p>\[V(X) = \sum_{k=0}^n p_k (x_k - E(X))^2\]</p>
+                <p>\[V(X) = E(X^2) - E(X)^2\]</p>
+                <p>\[V(X + Y) = V(X) + V(Y)\] pour \(X\) et \(Y\) indépendantes.</p>
+
+                <h3>Exercice d'application</h3>
+                <p>Soient \(X\) et \(Y\) deux variables aléatoires indépendantes telles que \(V(X) = 2\) et \(V(Y) = 3\). Calculez \(V(X + Y)\).</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <p>Puisque \(X\) et \(Y\) sont indépendantes, on a :</p>
+                    <p>\[
+                    V(X + Y) = V(X) + V(Y) = 2 + 3 = 5
+                    \]</p>
+                </div>
+
+                <h3>c. Écart Type</h3>
+                <p>\[\sigma(X) = \sqrt{V(X)}\]</p>
+                <p>\[\sigma(aX) = |a| \sigma(X)\]</p>
+
+                <h3>Exercice d'application</h3>
+                <p>Soit \(X\) une variable aléatoire telle que \(\sigma(X) = 4\). Calculez \(\sigma(2X)\).</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <p>On utilise la propriété de l'écart type :</p>
+                    <p>\[
+                    \sigma(2X) = |2| \times \sigma(X) = 2 \times 4 = 8
+                    \]</p>
+                </div>
+            </section>
+
+            <section class="concepts">
+                <h2>3. Application à la Loi Binomiale</h2>
+                <h3>a. Définition</h3>
+                <p>Deux variables sont identiquement distribuées lorsqu’elles ont la même loi de probabilités.</p>
+
+                <h3>Exercice d'application</h3>
+                <p>Soit \(X\) une variable aléatoire suivant une loi binomiale de paramètres \(n = 10\) et \(p = 0.5\). Calculez \(E(X)\) et \(V(X)\).</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <p>Pour une loi binomiale, on a :</p>
+                    <p>\[
+                    E(X) = np = 10 \times 0.5 = 5
+                    \]</p>
+                    <p>\[
+                    V(X) = np(1 - p) = 10 \times 0.5 \times 0.5 = 2.5
+                    \]</p>
+                </div>
+
+                <h3>b. Espérance Mathématique</h3>
+                <p>Toute variable aléatoire suivant une loi binomiale peut s’écrire comme une somme de variables aléatoires de Bernoulli indépendantes et identiquement distribuées.</p>
+
+                <h3>c. Propriétés</h3>
+                <p>Si \(X\) suit une loi binomiale de paramètres \(n\) et \(p\) :</p>
+                <p>\[E(X) = np\]</p>
+                <p>\[V(X) = np(1-p)\]</p>
+                <p>\[\sigma(X) = \sqrt{np(1-p)}\]</p>
+
+                <h3>Exercice d'application</h3>
+                <p>Soit \(X\) une variable aléatoire suivant une loi binomiale de paramètres \(n = 20\) et \(p = 0.3\). Calculez \(E(X)\), \(V(X)\) et \(\sigma(X)\).</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <p>Pour une loi binomiale, on a :</p>
+                    <p>\[
+                    E(X) = np = 20 \times 0.3 = 6
+                    \]</p>
+                    <p>\[
+                    V(X) = np(1 - p) = 20 \times 0.3 \times 0.7 = 4.2
+                    \]</p>
+                    <p>\[
+                    \sigma(X) = \sqrt{np(1 - p)} = \sqrt{4.2} \approx 2.05
+                    \]</p>
+                </div>
+            </section>
+
+            <section class="concepts">
+                <h2>4. Échantillons de n Variables Aléatoires</h2>
+                <h3>a. Définition</h3>
+                <p>Un échantillon de taille \(n\) est une liste de résultats obtenus pour \(n\) répétitions identiques et indépendantes.</p>
+
+                <h3>b. Propriétés</h3>
+                <p>Soit \(X\) une variable aléatoire de moyenne \(E(X)\), de variance \(V(X)\) et d’écart type \(\sigma(X)\).</p>
+                <p>Soient \(n\) variables aléatoires \(X_1, X_2, \dots, X_n\) distribuées identiquement suivant la même loi de probabilité.</p>
+                <p>On appelle \(M_n\) la moyenne de l’échantillon définie par :</p>
+                <p>\[M_n = \frac{X_1 + X_2 + \dots + X_n}{n}\]</p>
+                <p>On appelle \(E(M_n)\) l'espérance mathématique de la moyenne de l’échantillon définie par :</p>
+                <p>\[E(M_n) = E(X)\]</p>
+                <p>On appelle \(V(M_n)\) la variance de la moyenne de l’échantillon définie par :</p>
+                <p>\[V(M_n) = \frac{V(X)}{n}\]</p>
+                <p>On appelle \(\sigma(M_n)\) l'écart type de la moyenne de l’échantillon définie par :</p>
+                <p>\[\sigma(M_n) = \frac{\sigma(X)}{\sqrt{n}}\]</p>
+
+                <h3>Exercice d'application</h3>
+                <p>Soit \(X\) une variable aléatoire de moyenne \(E(X) = 5\) et de variance \(V(X) = 4\). Calculez \(E(M_{10})\) et \(V(M_{10})\) pour un échantillon de taille 10.</p>
+
+                <div class="solution">
+                    <p><strong>Solution :</strong></p>
+                    <p>Pour un échantillon de taille \(n = 10\), on a :</p>
+                    <p>\[
+                    E(M_{10}) = E(X) = 5
+                    \]</p>
+                    <p>\[
+                    V(M_{10}) = \frac{V(X)}{n} = \frac{4}{10} = 0.4
+                    \]</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Ce cours a été créé pour les étudiants de terminale en spécialité mathématiques.</p>
+            <p>Retour au <a href="index.html">site principal</a>.</p>
+        </footer>
+    </div>
+
+    <script>
+        MathJax.typeset();
+    </script>
+</body>
+</html>
