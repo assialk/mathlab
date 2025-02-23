@@ -1,295 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathlab</title>
+    <style>
+        :root {
+            --primary-color: #7a2f58; /* Rose foncé */
+            --secondary-color: #b76e79; /* Rose terne */
+            --background-color: #4a2a3a; /* Fond sombre rosé */
+            --text-color: #5a2a42; /* Texte sombre rosé */
+            --modal-background: #f5e6e8; /* Fond modal rose pâle */
+            --dark-background: #1e1e1e; /* Fond sombre pour le thème nuit */
+            --dark-text: #e0e0e0; /* Texte clair pour le thème nuit */
+        }
 
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Georgia', serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
 
-            <!DOCTYPE html>
-            <html lang="fr">
-            <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Mathlab</title>
-                <style>
-                    :root {
-                        --primary-color: #a43a77;
-                        --secondary-color: #ff69b4;
-                        --background-color: #643852;
-                        --text-color: #800000;
-                        --modal-background: #fff0f5;
-                        --dark-background: #2c2c2c;
-                        --dark-text: #ffffff;
-                    }
+        body.dark-theme {
+            background-color: var(--dark-background);
+            color: var(--dark-text);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            width: 20px;
+            height: 20px;
+            background-color: #b76e79; /* Rose terne */
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #7a2f58; /* Rose foncé */
+        }
+
+        main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .geometric-pattern {
+            width: 50%;
+            height: 400px;
+            background-color: transparent;
+        }
+
+        .buttons {
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        button {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover, button:focus {
+            background-color: #9a5a6b; /* Rose plus sombre */
+            outline: none;
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background-color: var(--modal-background);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 100%;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+
+        .modal-content h2 {
+            color: #7a2f58; /* Rose foncé */
+        }
+
+        .modal-content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .modal-content li {
+            margin-bottom: 10px;
+            cursor: pointer;
+            color: #7a2f58; /* Rose foncé */
+        }
+
+        .modal-content li:hover {
+            color: #9a5a6b; /* Rose plus sombre */
+        }
+
+        #themeToggle {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            padding: 5px 10px;
+            font-size: 14px;
+            border-radius: 15px;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                flex-direction: column;
+            }
+
+            .geometric-pattern, .buttons {
+                width: 100%;
+            }
+
+            .geometric-pattern {
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"></div>
+            <h1>MATHLAB</h1>
+        </header>
+        <main>
+            <svg class="geometric-pattern" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <radialGradient id="circleGradient" cx="0.5" cy="0.5" r="0.5">
+                        <stop offset="99%" stop-color="#b76e79"/>
+                        <stop offset="100%" stop-color="#f5e6e8"/>
+                    </radialGradient>
+                </defs>
+                
+                <circle cx="200" cy="200" r="150" stroke="url(#circleGradient)" stroke-width="2"/>
+                <circle cx="200" cy="200" r="120" stroke="url(#circleGradient)" stroke-width="2"/>
+                <circle cx="200" cy="200" r="90" stroke="url(#circleGradient)" stroke-width="2"/>
+                <circle cx="200" cy="200" r="60" stroke="url(#circleGradient)" stroke-width="2"/>
+                <circle cx="200" cy="200" r="30" stroke="url(#circleGradient)" stroke-width="2"/>
+                <rect x="140" y="140" width="120" height="120" stroke="url(#circleGradient)" stroke-width="2"/>
+                <rect x="160" y="160" width="80" height="80" stroke="url(#circleGradient)" stroke-width="2"/>
+                <rect x="180" y="180" width="40" height="40" stroke="url(#circleGradient)" stroke-width="2"/>
+                <polygon points="200,50 170,130 230,130" stroke="url(#circleGradient)" fill="none" stroke-width="2"/>
+                <polygon points="200,350 170,270 230,270" stroke="url(#circleGradient)" fill="none" stroke-width="2"/>
+                <polygon points="50,200 130,170 130,230" stroke="url(#circleGradient)" fill="none" stroke-width="2"/>
+                <polygon points="350,200 270,170 270,230" stroke="url(#circleGradient)" fill="none" stroke-width="2"/>
+                <line x1="200" y1="50" x2="200" y2="200" stroke="#b76e79" stroke-width="1.5" stroke-dasharray="5,5"/>
+                <line x1="200" y1="350" x2="200" y2="200" stroke="#b76e79" stroke-width="1.5" stroke-dasharray="5,5"/>
+                <line x1="50" y1="200" x2="200" y2="200" stroke="#b76e79" stroke-width="1.5" stroke-dasharray="5,5"/>
+                <line x1="350" y1="200" x2="200" y2="200" stroke="#b76e79" stroke-width="1.5" stroke-dasharray="5,5"/>
+            </svg>
             
-                    body {
-                        margin: 0;
-                        padding: 0;
-                        font-family: 'Georgia', serif;
-                        background-color: var(--background-color);
-                        color: var(--text-color);
-                        transition: background-color 0.3s ease, color 0.3s ease;
-                    }
-            
-                    body.dark-theme {
-                        background-color: var(--dark-background);
-                        color: var(--dark-text);
-                    }
-            
-                    .container {
-                        max-width: 1200px;
-                        margin: 0 auto;
-                        padding: 20px;
-                    }
-            
-                    header {
-                        display: flex;
-                        align-items: center;
-                        margin-bottom: 50px;
-                    }
-            
-                    .logo {
-                        width: 20px;
-                        height: 20px;
-                        background-color: #ffb6c1;
-                        border-radius: 50%;
-                        margin-right: 10px;
-                    }
-            
-                    h1 {
-                        font-size: 28px;
-                        font-weight: bold;
-                        letter-spacing: 2px;
-                        color: #d87093;
-                    }
-            
-                    main {
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                    }
-            
-                    .geometric-pattern {
-                        width: 50%;
-                        height: 400px;
-                        background-color: transparent;
-                    }
-            
-                    .buttons {
-                        width: 45%;
-                        display: flex;
-                        flex-direction: column;
-                        gap: 20px;
-                    }
-            
-                    button {
-                        background-color: var(--secondary-color);
-                        color: white;
-                        border: none;
-                        padding: 10px 20px;
-                        font-size: 16px;
-                        font-weight: bold;
-                        border-radius: 20px;
-                        cursor: pointer;
-                        transition: background-color 0.3s ease;
-                    }
-            
-                    button:hover, button:focus {
-                        background-color: #db7093;
-                        outline: none;
-                    }
-            
-                    .modal {
-                        position: fixed;
-                        top: 0;
-                        left: 0;
-                        width: 100%;
-                        height: 100%;
-                        background-color: rgba(0, 0, 0, 0.5);
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        animation: fadeIn 0.3s ease;
-                    }
-            
-                    @keyframes fadeIn {
-                        from { opacity: 0; }
-                        to { opacity: 1; }
-                    }
-            
-                    .modal-content {
-                        background-color: var(--modal-background);
-                        padding: 20px;
-                        border-radius: 10px;
-                        max-width: 500px;
-                        width: 100%;
-                        max-height: 70vh;
-                        overflow-y: auto;
-                    }
-            
-                    .modal-content h2 {
-                        color: #ff1493;
-                    }
-            
-                    .modal-content ul {
-                        list-style-type: none;
-                        padding: 0;
-                    }
-            
-                    .modal-content li {
-                        margin-bottom: 10px;
-                        cursor: pointer;
-                        color: #ff1493;
-                    }
-            
-                    .modal-content li:hover {
-                        color: #db7093;
-                    }
-            
-                    #themeToggle {
-                        position: fixed;
-                        top: 10px;
-                        left: 10px;
-                        padding: 5px 10px;
-                        font-size: 14px;
-                        border-radius: 15px;
-                    }
-            
-                    @media (max-width: 768px) {
-                        main {
-                            flex-direction: column;
-                        }
-            
-                        .geometric-pattern, .buttons {
-                            width: 100%;
-                        }
-            
-                        .geometric-pattern {
-                            margin-bottom: 30px;
-                        }
-                    }
-                </style>
-            </head>
-            <body>
-                <div class="container">
-                    <header>
-                        <div class="logo"></div>
-                        <h1>MATHLAB</h1>
-                    </header>
-                    <main>
-                        <svg class="geometric-pattern" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <radialGradient id="circleGradient" cx="0.5" cy="0.5" r="0.5">
-                                    <stop offset="99%" stop-color="#ff69b4"/>
-                                    <stop offset="100%" stop-color="#ffe4e1"/>
-                                </radialGradient>
-                            </defs>
-                            
-                            <circle cx="200" cy="200" r="150" stroke="url(#circleGradient)" stroke-width="2"/>
-                            <circle cx="200" cy="200" r="120" stroke="url(#circleGradient)" stroke-width="2"/>
-                            <circle cx="200" cy="200" r="90" stroke="url(#circleGradient)" stroke-width="2"/>
-                            <circle cx="200" cy="200" r="60" stroke="url(#circleGradient)" stroke-width="2"/>
-                            <circle cx="200" cy="200" r="30" stroke="url(#circleGradient)" stroke-width="2"/>
-                            <rect x="140" y="140" width="120" height="120" stroke="url(#circleGradient)" stroke-width="2"/>
-                            <rect x="160" y="160" width="80" height="80" stroke="url(#circleGradient)" stroke-width="2"/>
-                            <rect x="180" y="180" width="40" height="40" stroke="url(#circleGradient)" stroke-width="2"/>
-                            <polygon points="200,50 170,130 230,130" stroke="url(#circleGradient)" fill="none" stroke-width="2"/>
-                            <polygon points="200,350 170,270 230,270" stroke="url(#circleGradient)" fill="none" stroke-width="2"/>
-                            <polygon points="50,200 130,170 130,230" stroke="url(#circleGradient)" fill="none" stroke-width="2"/>
-                            <polygon points="350,200 270,170 270,230" stroke="url(#circleGradient)" fill="none" stroke-width="2"/>
-                            <line x1="200" y1="50" x2="200" y2="200" stroke="#ff69b4" stroke-width="1.5" stroke-dasharray="5,5"/>
-                            <line x1="200" y1="350" x2="200" y2="200" stroke="#ff69b4" stroke-width="1.5" stroke-dasharray="5,5"/>
-                            <line x1="50" y1="200" x2="200" y2="200" stroke="#ff69b4" stroke-width="1.5" stroke-dasharray="5,5"/>
-                            <line x1="350" y1="200" x2="200" y2="200" stroke="#ff69b4" stroke-width="1.5" stroke-dasharray="5,5"/>
-                        </svg>
-                        
-                        <div class="buttons">
-                            <button id="mathsBtn">Mathématiques</button>
-                            <button id="mathsExpertesBtn">Maths Expertes</button>
-                            <button id="physicsBtn">Physique - Chimie </button>
-                        </div>
-                    </main>
-                </div>
-            
-                <button id="themeToggle">Changer le thème</button>
-            
-                <script>
-                    document.addEventListener('DOMContentLoaded', () => {
-                        const mathsBtn = document.getElementById('mathsBtn');
-                        const mathsExpertesBtn = document.getElementById('mathsExpertesBtn');
-                        const physicsBtn = document.getElementById('physicsBtn');
-                        const themeToggle = document.getElementById('themeToggle');
-            
-                        mathsBtn.addEventListener('click', () => showTopics('Mathématiques'));
-                        mathsExpertesBtn.addEventListener('click', () => showTopics('Maths Expertes'));
-                        physicsBtn.addEventListener('click', () => showTopics('Physique'));
-                        themeToggle.addEventListener('click', toggleTheme);
-            
-                        function showTopics(subject) {
-                            const topics = subject === 'Mathématiques' 
-                                ? ['Combinatoire et dénombrement', 'Suites numériques', 'Vecteurs, droites et plans dans l’espace', 'Limites de fonctions', 'Continuité', 'Complément de dérivation', 'Logarithme népérien', 'Loi binomiale', 'Orthogonalité et distances dans l’espace', 'Fonctions trigonométriques', 'Primitives et équations différentielles', 'Calcul intégral', 'Sommes de variables aléatoires', 'Loi des grands nombres', 'Python et algorithmes', 'Relation des ensembles et logique']
-                                : subject === 'Maths Expertes'
-                                ? ['Arithmétique', 'Nombres complexes', 'Matrices et graphes']
-                                : ['Transformations acido-basiques et pH', 'Phénomène ondulatoire', 'Méthode d’analyse physique', 'Former des images', 'Suivi d’un titrage', 'Circuits électriques capacitifs', 'Evolution temporelle d’un système chimique', 'Evolution spontanée d’un système chimique', 'Force des acides et des bases', 'Transformations chimiques forcées', 'Ecoulement d’un fluide', 'Gaz parfaits et thermodynamique', 'Transferts thermiques', 'Cinématique et lois de Newton', 'Mouvement dans un champ uniforme', 'Mouvement dans un champ de gravitation', 'Transformations nucléaires', 'Structure en chimie organique', 'Stratégie de synthèse', 'Effet photoélectrique', 'Les incertitudes'];
-            
-                            const topicLinks = {
-                                "Combinatoire et dénombrement": "maths1.html",
-                                "Suites numériques": "suitesnum.html",
-                                "Limites de fonctions": "limitefonction.html",
-                                "Logarithme népérien" : "logarithme.html",
-                                "Orthogonalité et distances dans l’espace" : "orthogonalité.html",
-                                "Fonctions trigonométriques": "fonctionstrigo.html",
-                                "Primitives et équations différentielles": "primitiveequadiff.html",
-                                "Calcul intégral": "calculintegral.html",
-                                "Sommes de variables aléatoires": "sommesvariablesaleatoires.html",
-                                "Loi des grands nombres": "loidgrandsnombres.html",
-                                "Python et algorithmes": "pythonalgorithmes.html",
-                                "Matrices et graphes": "matrices.html",
-                                "Nombres complexes": "nbcomplexes.html",
-                                "Arithmétique": "arithmetique.html",
-                                "Mouvement dans un champ uniforme": "mvtchampuniforme.html",
-                                "Vecteurs, droites et plans dans l’espace" : "geometrie.html",
-                                "Continuité" : "continuite.html",
-                                "Complément de dérivation" : "complementderivation.html",
-                                "Loi binomiale" : "loibinomial.html",
-                                "Transformations acido-basiques et pH": "acidobasique.html",
-                                "Phénomène ondulatoire": "ondulatoire.html",
-                                "Méthode d’analyse physique": "analysephysique.html",
-                                "Former des images": "formerimages.html",
-                                "Suivi d’un titrage": "titrage.html",
-                                "Circuits électriques capacitifs": "circuitelectrique.html",
-                                "Evolution temporelle d’un système chimique": "evolutiontemporelle.html",
-                                "Evolution spontanée d’un système chimique": "evolutionspontanee.html",
-                                "Force des acides et des bases": "forceacides.html",
-                                "Transformations chimiques forcées": "transformationchimique.html",
-                                "Ecoulement d’un fluide": "ecoulementfluide.html",
-                                "Gaz parfaits et thermodynamique": "gazparfaits.html",
-                                "Transferts thermiques": "transfertthermique.html",
-                                "Cinématique et lois de Newton": "cinematique.html",
-                                "Mouvement dans un champ de gravitation": "mvtchampgravitation.html",
-                                "Transformations nucléaires": "transformationnucleaire.html",
-                                "Structure en chimie organique": "structurechimieorganique.html",
-                                "Stratégie de synthèse": "strategiesynthese.html",
-                                "Effet photoélectrique": "effetphotoelectrique.html",
-                                "Les incertitudes": "incertitudes.html",
-                            };
-            
-                            const topicList = topics.map(topic => `
-                                <li onclick="window.location.href='${topicLinks[topic] || '#'}'">${topic}</li>
-                            `).join('');
-                            
-                            const modal = document.createElement('div');
-                            modal.className = 'modal';
-                            modal.innerHTML = `
-                                <div class="modal-content">
-                                    <h2>${subject}</h2>
-                                    <ul>${topicList}</ul>
-                                    <button onclick="this.closest('.modal').remove()">Fermer</button>
-                                </div>
-                            `;
-            
-                            document.body.appendChild(modal);
-                        }
-            
-                        function toggleTheme() {
-                            document.body.classList.toggle('dark-theme');
-                        }
-                    });
-                </script>
-            </body>
-            </html>
+            <div class="buttons">
+                <button id="mathsBtn">Mathématiques</button>
+                <button id="mathsExpertesBtn">Maths Expertes</button>
+                <button id="physicsBtn">Physique - Chimie </button>
+            </div>
+        </main>
+    </div>
+
+    <button id="themeToggle">Changer le thème</button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mathsBtn = document.getElementById('mathsBtn');
+            const mathsExpertesBtn = document.getElementById('mathsExpertesBtn');
+            const physicsBtn = document.getElementById('physicsBtn');
+            const themeToggle = document.getElementById('themeToggle');
+
+            mathsBtn.addEventListener('click', () => showTopics('Mathématiques'));
+            mathsExpertesBtn.addEventListener('click', () => showTopics('Maths Expertes'));
+            physicsBtn.addEventListener('click', () => showTopics('Physique'));
+            themeToggle.addEventListener('click', toggleTheme);
+
+            function showTopics(subject) {
+                const topics = subject === 'Mathématiques' 
+                    ? ['Combinatoire et dénombrement', 'Suites numériques', 'Vecteurs, droites et plans dans l’espace', 'Limites de fonctions', 'Continuité', 'Complément de dérivation', 'Logarithme népérien', 'Loi binomiale', 'Orthogonalité et distances dans l’espace', 'Fonctions trigonométriques', 'Primitives et équations différentielles', 'Calcul intégral', 'Sommes de variables aléatoires', 'Loi des grands nombres', 'Python et algorithmes', 'Relation des ensembles et logique']
+                    : subject === 'Maths Expertes'
+                    ? ['Arithmétique', 'Nombres complexes', 'Matrices et graphes']
+                    : ['Transformations acido-basiques et pH', 'Phénomène ondulatoire', 'Méthode d’analyse physique', 'Former des images', 'Suivi d’un titrage', 'Circuits électriques capacitifs', 'Evolution temporelle d’un système chimique', 'Evolution spontanée d’un système chimique', 'Force des acides et des bases', 'Transformations chimiques forcées', 'Ecoulement d’un fluide', 'Gaz parfaits et thermodynamique', 'Transferts thermiques', 'Cinématique et lois de Newton', 'Mouvement dans un champ uniforme', 'Mouvement dans un champ de gravitation', 'Transformations nucléaires', 'Structure en chimie organique', 'Stratégie de synthèse', 'Effet photoélectrique', 'Les incertitudes'];
+
+                const topicLinks = {
+                    "Combinatoire et dénombrement": "maths1.html",
+                    "Suites numériques": "suitesnum.html",
+                    "Limites de fonctions": "limitefonction.html",
+                    "Logarithme népérien" : "logarithme.html",
+                    "Orthogonalité et distances dans l’espace" : "orthogonalité.html",
+                    "Fonctions trigonométriques": "fonctionstrigo.html",
+                    "Primitives et équations différentielles": "primitiveequadiff.html",
+                    "Calcul intégral": "calculintegral.html",
+                    "Sommes de variables aléatoires": "sommesvariablesaleatoires.html",
+                    "Loi des grands nombres": "loidgrandsnombres.html",
+                    "Python et algorithmes": "pythonalgorithmes.html",
+                    "Matrices et graphes": "matrices.html",
+                    "Nombres complexes": "nbcomplexes.html",
+                    "Arithmétique": "arithmetique.html",
+                    "Mouvement dans un champ uniforme": "mvtchampuniforme.html",
+                    "Vecteurs, droites et plans dans l’espace" : "geometrie.html",
+                    "Continuité" : "continuite.html",
+                    "Complément de dérivation" : "complementderivation.html",
+                    "Loi binomiale" : "loibinomial.html",
+                    "Transformations acido-basiques et pH": "acidobasique.html",
+                    "Phénomène ondulatoire": "ondulatoire.html",
+                    "Méthode d’analyse physique": "analysephysique.html",
+                    "Former des images": "formerimages.html",
+                    "Suivi d’un titrage": "titrage.html",
+                    "Circuits électriques capacitifs": "circuitelectrique.html",
+                    "Evolution temporelle d’un système chimique": "evolutiontemporelle.html",
+                    "Evolution spontanée d’un système chimique": "evolutionspontanee.html",
+                    "Force des acides et des bases": "forceacides.html",
+                    "Transformations chimiques forcées": "transformationchimique.html",
+                    "Ecoulement d’un fluide": "ecoulementfluide.html",
+                    "Gaz parfaits et thermodynamique": "gazparfaits.html",
+                    "Transferts thermiques": "transfertthermique.html",
+                    "Cinématique et lois de Newton": "cinematique.html",
+                    "Mouvement dans un champ de gravitation": "mvtchampgravitation.html",
+                    "Transformations nucléaires": "transformationnucleaire.html",
+                    "Structure en chimie organique": "structurechimieorganique.html",
+                    "Stratégie de synthèse": "strategiesynthese.html",
+                    "Effet photoélectrique": "effetphotoelectrique.html",
+                    "Les incertitudes": "incertitudes.html",
+                };
+
+                const topicList = topics.map(topic => `
+                    <li onclick="window.location.href='${topicLinks[topic] || '#'}'">${topic}</li>
+                `).join('');
+                
+                const modal = document.createElement('div');
+                modal.className = 'modal';
+                modal.innerHTML = `
+                    <div class="modal-content">
+                        <h2>${subject}</h2>
+                        <ul>${topicList}</ul>
+                        <button onclick="this.closest('.modal').remove()">Fermer</button>
+                    </div>
+                `;
+
+                document.body.appendChild(modal);
+            }
+
+            function toggleTheme() {
+                document.body.classList.toggle('dark-theme');
+            }
+        });
+    </script>
+</body>
+</html>
